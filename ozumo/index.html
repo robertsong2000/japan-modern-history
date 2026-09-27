@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大相扑 · 由来、规则与现状</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@450;600&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #efe2c8;
+  --paper-2: #f7f0e0;
+  --clay: #c9ae86;
+  --ink: #1b140f;
+  --muted: #5e5146;
+  --line: #c9b48e;
+  --east: #9d2a22;
+  --west: #1b140f;
+  --seiji: #1f655c;
+  --slip: #f3e6cc;
+  --shadow: 0 18px 40px rgba(48, 32, 16, 0.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 420px at 80% -10%, rgba(255, 250, 240, 0.9), transparent 60%),
+    radial-gradient(700px 380px at -10% 20%, rgba(31, 101, 92, 0.06), transparent 50%),
+    var(--paper);
+  font-family: "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+  font-weight: 450;
+  line-height: 1.85;
+  font-size: 17.5px;
+}
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply;
+}
+a { color: var(--east); text-underline-offset: 0.18em; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6px 10px;
+  z-index: 20;
+}
+.skip:focus { top: 12px; }
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 22px;
+  background: rgba(27, 20, 15, 0.94);
+  color: #f3e7d2;
+  backdrop-filter: blur(8px);
+}
+.brand {
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  letter-spacing: 0.22em;
+  font-size: 15px;
+  margin: 0;
+  white-space: nowrap;
+}
+.brand i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 8px;
+  background: var(--east);
+  vertical-align: 1px;
+  font-style: normal;
+}
+nav.dir {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 2px;
+}
+nav.dir a {
+  color: #f3e7d2;
+  text-decoration: none;
+  font-size: 13.5px;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+nav.dir a[aria-current="true"] {
+  background: #f3e7d2;
+  color: var(--ink);
+}
+nav.dir a:hover { color: #fff; }
+
+.wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.72fr);
+  gap: 42px;
+  align-items: end;
+  padding: 42px 0 18px;
+}
+.kicker {
+  margin: 0 0 10px;
+  letter-spacing: 0.28em;
+  font-size: 12px;
+  color: var(--seiji);
+}
+h1 {
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: clamp(56px, 8vw, 92px);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: 0.06em;
+}
+.lede {
+  font-size: 20px;
+  margin: 18px 0 0;
+  max-width: 36em;
+}
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 16px 0 0;
+}
+.seals { display: flex; gap: 8px; margin-top: 22px; }
+.seal {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-family: "Shippori Mincho", serif;
+  font-size: 16px;
+  border: 1.5px solid currentColor;
+}
+.seal.e { color: var(--east); }
+.seal.w { color: var(--ink); background: transparent; }
+.tassels { display: flex; gap: 14px; margin-top: 18px; font-size: 12px; letter-spacing: 0.14em; color: var(--muted); }
+.tassels span::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: -4px;
+}
+.t-ao::before { background: var(--seiji); }
+.t-aka::before { background: var(--east); }
+.t-shiro::before { background: #f7f3ea; box-shadow: inset 0 0 0 1px #b7a88a; }
+.t-kuro::before { background: var(--ink); }
+
+.portrait { margin: 0; }
+.frame {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: inherit;
+}
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--paper-2);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(60, 42, 24, 0.25);
+}
+.portrait .frame img {
+  max-height: 82vh;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  object-fit: contain;
+}
+figcaption, .cap {
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin-top: 8px;
+}
+
+.tawara {
+  height: 18px;
+  margin: 28px 0 8px;
+  background:
+    radial-gradient(ellipse 12px 9px at 14px 4px, #efe2c8 0 70%, transparent 72%) 0 0 / 28px 18px,
+    linear-gradient(#6a5138, #6a5138);
+}
+
+section { padding: 28px 0 10px; }
+section h2 {
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+}
+.en {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.82em;
+  letter-spacing: 0.04em;
+}
+.sub {
+  color: var(--muted);
+  margin: 0 0 18px;
+  font-size: 15px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px 36px;
+  align-items: start;
+}
+.grid-2.flip { grid-template-columns: 0.9fr 1.1fr; }
+p { margin: 0 0 0.9em; }
+.slip {
+  background: var(--slip);
+  border-left: 3px solid var(--seiji);
+  padding: 12px 16px;
+  margin: 12px 0 16px;
+}
+.slip strong { font-weight: 600; }
+.quote {
+  background: #fbf6ec;
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  font-size: 15.5px;
+  margin: 0 0 14px;
+}
+.quote .label {
+  display: block;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--east);
+  margin-bottom: 4px;
+}
+
+ol.steps, ul.plain { margin: 0 0 1em; padding-left: 1.2em; }
+ol.steps li, ul.plain li { margin: 0.25em 0; }
+ol.steps { list-style: none; padding: 0; counter-reset: step; }
+ol.steps li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+ol.steps li::before {
+  counter-increment: step;
+  content: counter(step, cjk-ideographic);
+  font-family: "Shippori Mincho", serif;
+  color: var(--east);
+}
+
+.dohyo-card {
+  background: #e7d3b0;
+  border: 1px solid #b89a70;
+  padding: 12px 12px 4px;
+  box-shadow: var(--shadow);
+}
+.dohyo-card svg { width: 100%; height: auto; display: block; }
+.three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 8px 0 18px;
+}
+.three article {
+  background: var(--paper-2);
+  border-top: 3px solid var(--ink);
+  padding: 12px 14px 8px;
+}
+.three h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 20px;
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+.three p { font-size: 15px; margin: 0; color: #3b3128; }
+
+.banzuke {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--ink);
+  background: #fbf6ea;
+  margin: 8px 0 14px;
+}
+.banzuke header, .banzuke .rankrow {
+  display: contents;
+}
+.colhead, .cell {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.colhead {
+  font-family: "Shippori Mincho", serif;
+  letter-spacing: 0.2em;
+  text-align: center;
+  background: var(--ink);
+  color: #f4ead8;
+}
+.colhead.east { background: var(--east); }
+.cell.west { text-align: right; border-right: 1px solid var(--line); }
+.cell .lv {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.cell strong {
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  font-weight: 600;
+}
+.cell.y strong { font-size: 28px; }
+.cell.o strong { font-size: 22px; }
+.cell.s strong { font-size: 18px; }
+.note { color: var(--muted); font-size: 14px; }
+
+table.year {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  margin: 8px 0 16px;
+  background: var(--paper-2);
+}
+table.year th, table.year td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+table.year th {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  color: var(--muted);
+}
+table.year tr.now td { background: rgba(157, 42, 34, 0.08); }
+
+.timeline { margin: 0; padding: 0; list-style: none; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 14px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+}
+.timeline time {
+  font-family: "Shippori Mincho", serif;
+  color: var(--east);
+  letter-spacing: 0.04em;
+}
+
+.thread {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.thread article {
+  border-top: 1px solid var(--ink);
+  padding-top: 8px;
+}
+.thread h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 18px;
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+.thread p { font-size: 15px; color: #3a3129; }
+
+footer.site {
+  margin-top: 28px;
+  padding: 22px 0 48px;
+  color: var(--muted);
+  font-size: 13.5px;
+  border-top: 1px solid var(--line);
+}
+footer.site ul { padding-left: 1.1em; }
+
+dialog {
+  border: 0;
+  padding: 18px;
+  background: #16110e;
+  color: #f6efe4;
+  max-width: min(1100px, 96vw);
+  width: auto;
+}
+dialog::backdrop { background: rgba(16, 10, 6, 0.82); }
+dialog img { display: block; max-width: 92vw; max-height: 78vh; width: auto; height: auto; margin: 0 auto; }
+dialog p { color: #e6d8c4; font-size: 14px; max-width: 70ch; }
+dialog button {
+  font: inherit;
+  background: transparent;
+  color: #f6efe4;
+  border: 1px solid #f6efe4;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .hero, .grid-2, .grid-2.flip, .three, .thread { grid-template-columns: 1fr; }
+  .top { align-items: flex-start; flex-direction: column; gap: 6px; padding: 10px 14px 12px; }
+  .wrap { width: min(1080px, calc(100% - 28px)); }
+  .timeline li { grid-template-columns: 1fr; gap: 0; }
+  .cell.y strong { font-size: 22px; }
+  h1 { font-size: 58px; }
+  .portrait .frame img { max-height: none; width: min(100%, 420px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#what">跳到正文</a>
+<header class="top">
+  <p class="brand"><i></i>大相扑</p>
+  <nav class="dir" aria-label="目录">
+    <a href="#what">这是什么</a>
+    <a href="#origin">由来</a>
+    <a href="#dohyo">土俵上</a>
+    <a href="#rules">规则</a>
+    <a href="#banzuke">番付</a>
+    <a href="#heya">部屋</a>
+    <a href="#now">现状</a>
+    <a href="#thread">怎么串起来</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero" id="what">
+    <div>
+      <p class="kicker">国技 · すもう</p>
+      <h1>大相扑</h1>
+      <p class="lede">职业相扑没有体重分级。谁先出圈，或者谁的脚掌以外先着地，这一番就结束。前面的仪式往往比角力本身长。</p>
+      <p class="meta">江户时代定成今天这套样子。主场在东京两国。这一页写由来、一场怎么打、以及 2026 年九月场所开赛前的番付。</p>
+      <div class="seals" aria-hidden="true">
+        <span class="seal e">東</span>
+        <span class="seal w">西</span>
+      </div>
+      <p class="tassels">吊屋顶四角的缨：<span class="t-ao">东·青·春</span><span class="t-aka">南·赤·夏</span><span class="t-shiro">西·白·秋</span><span class="t-kuro">北·黑·冬</span></p>
+    </div>
+    <figure class="portrait">
+      <button class="frame" type="button" data-full="originals/01-tanikaze.jpg" data-alt="胜川春章画谷风梶之助全身像，侧身，穿条纹羽织，佩刀，足踏草履" data-cap="胜川春章《日本一 谷风梶之助》。克利夫兰艺术博物馆藏，编号 1930.209。">
+        <img src="originals/01-tanikaze.jpg" alt="胜川春章画谷风梶之助全身像，侧身，穿条纹羽织，佩刀，足踏草履">
+      </button>
+      <figcaption>胜川春章画谷风梶之助。题「日本一」。克利夫兰艺术博物馆 1930.209。他是 1789 年拿到横纲免状的人。</figcaption>
+    </figure>
+  </div>
+
+  <div class="tawara" aria-hidden="true"></div>
+
+  <section class="wrap" id="origin">
+    <h2>由来</h2>
+    <p class="sub">从《日本书纪》里的一则角力，到两国回向院的卖票兴行。</p>
+    <div class="grid-2">
+      <div>
+        <p>后世常把起源讲到《日本书纪》垂仁天皇条：出云的野见宿祢和当麻蹶速比试，野见把对方的腰骨踢折，对方死了。这是史书里的传说，用来说明相扑很古，不能当成一场有裁判记录的比赛。野见宿祢后来又被土师氏奉为祖先，和陶瓷、丧仪扯在一起，已经离开角力本身。</p>
+        <p>奈良、平安宫廷有「相扑节会」，列在七月的年中行事里。左右近卫分番出场，天皇观战。它是仪式，一年一次，没有今天这种靠胜场升级的职业榜。这套节会在平安后期废止。</p>
+        <div class="slip">
+          <strong>名物 · 劝进相扑。</strong>
+          江户时代，力士借寺社场地表演，名义上是为修缮庙宇募钱，实际上变成卖票的兴行。江户的场子后来固定在两国的回向院。大阪、京都也有自己的兴行。番付、四股名、土俵、横纲，都是在这条商业线路上长成的。
+        </div>
+        <ul class="timeline">
+          <li><time>1789</time><span>宽政元年十一月，吉田司家发给谷风梶之助和小野川喜三郎横纲免状。这是今天还能对上姓名和文书的最早横纲许可。明石志贺之助常被说成初代，那是后来追认的系谱，没有当时的免状。</span></li>
+          <li><time>1884</time><span>明治初年，相扑被看成旧俗，发髻和兴行都受过挤压。明治十七年天皇亲临观看之后，它重新成为可以公开炫耀的国技。</span></li>
+          <li><time>1909</time><span>第一座两国国技馆开馆。关东大地震后曾重建，1945 年又毁于空袭。</span></li>
+          <li><time>1985</time><span>现在的两国国技馆开馆，仍在两国。</span></li>
+        </ul>
+      </div>
+      <figure>
+        <button class="frame" type="button" data-full="originals/06-shunsho.jpg" data-alt="胜川春章画两位力士，左边站立者披纹样羽织，右边坐者系兜裆布，题字标着西方" data-cap="胜川春章画。题字标「西方」，并写出两人的四股名。">
+          <img src="originals/06-shunsho.jpg" alt="胜川春章画两位力士，一站一坐，题字标着西方">
+        </button>
+        <figcaption>胜川春章。题字标「西方」，旁边写着四股名。款「春章画」。</figcaption>
+        <div class="quote">
+          <span class="label">题字</span>
+          西方。武藏野苇内。真鹤咲右卫门。春章画。
+        </div>
+        <p>画面按可见文字辨认。站着的人披羽织，坐着的人只系兜裆布。相扑绘经常这样：榜上的名字写在身体旁边，衣服则说明他是在上场还是在场下。</p>
+      </figure>
+    </div>
+  </section>
+
+  <div class="tawara" aria-hidden="true"></div>
+
+  <section class="wrap" id="dohyo">
+    <h2>土俵上的一场</h2>
+    <p class="sub">观众记住的往往是盐、跺脚和军配，真正分胜负的是后面那一下。</p>
+    <div class="grid-2 flip">
+      <figure>
+        <button class="frame" type="button" data-full="originals/03-kunisada.jpg" data-alt="歌川国贞1854年相扑三联画：左侧行司持军配，中间两力士互抓兜裆布，右侧黑衣胜负审判坐在台边" data-cap="歌川国贞（三代丰国），1854年。波士顿美术馆藏。左为行司木村庄太郎，右为胜负审判追手风。">
+          <img src="originals/03-kunisada.jpg" alt="歌川国贞相扑三联画，行司、力士与胜负审判同在一个画面">
+        </button>
+        <figcaption>歌川国贞，1854年（嘉永七年十月）。波士顿美术馆藏，比奇洛旧藏。从左到右：行司木村庄太郎、力士云龙与六峰、胜负审判追手风。</figcaption>
+      </figure>
+      <div>
+        <p>幕内的一场，限时只限制开打之前。行司唱过名字，力士走上土俵，四分钟里要完成蹲下、对视、双手扶土。这四分钟用来找立合的时机。手还没扶稳，可以喊停。两人手都扶到土上，再起身，这一下叫立合，比赛就算开始了。开始之后没有回合时间，直到有人输。</p>
+        <ol class="steps">
+          <li><span><b>呼出唱名。</b>拖长的腔是呼出的职业声音。呼出也负责垒土俵。</span></li>
+          <li><span><b>撒盐。</b>盐在这里是洁净场地的意思。力士抓一把，撒向圈内。</span></li>
+          <li><span><b>力水。</b>同一侧上一番的胜者把水递给下一位。上一番若是输了，这口水就不往下传。</span></li>
+          <li><span><b>四股。</b>把腿高高抬起，再重重跺下。和撒盐一样，属于上场的动作，不计入胜负。</span></li>
+          <li><span><b>立合。</b>双方同时起步冲撞。谁先动、谁的手没有扶实，这场可以重来。</span></li>
+          <li><span><b>行司举军配。</b>军配指向胜者。台边还有五名胜负审判。有异议就「物言」，可以改判。</span></li>
+        </ol>
+        <div class="slip">
+          <strong>名物 · 化粧廻し。</strong>
+          带刺绣和穗子的围裙只在土俵入时穿，由支持者出资。比赛时系的是窄兜裆布，前面打结，穗子垂在身前。抓的就是这根带子。
+        </div>
+      </div>
+    </div>
+    <figure>
+      <button class="frame" type="button" data-full="originals/05-photo1886.jpg" data-alt="1886年前手绘上色照片：两名力士系刺绣围裙，一臂前伸，木屋前还有草履和坐着的人" data-cap="1886年以前的手绘上色照片，推测出自阿道夫·法萨里的日本相簿。围裙是化妆回，姿势接近土俵入。">
+        <img src="originals/05-photo1886.jpg" alt="明治时期手绘上色照片，两名力士穿着化妆回围裙">
+      </button>
+      <figcaption>1886 年以前的手绘上色照片，相簿注记把原拍推测为阿道夫·法萨里。这是摆拍，不是比赛当场。围裙、赤足、一只手臂平伸，都是关取做土俵入时的样子。地上的草履说明他们还在场边。</figcaption>
+    </figure>
+  </section>
+
+  <div class="tawara" aria-hidden="true"></div>
+
+  <section class="wrap" id="rules">
+    <h2>规则</h2>
+    <p class="sub">土俵圆圈内径 4.55 米。土台是边长约 6.7 米的方台。没有体重分级。</p>
+    <div class="dohyo-card">
+      <svg viewBox="0 0 720 560" role="img" aria-labelledby="dohyoTitle dohyoDesc">
+        <title id="dohyoTitle">土俵俯视图</title>
+        <desc id="dohyoDesc">方台中央是稻草包围成的圆圈。东西方力士相对，行司手持军配站在圈外。</desc>
+        <rect x="70" y="48" width="500" height="470" fill="#d7c09a" stroke="#6a5138" stroke-width="3"/>
+        <g fill="none" stroke="#5c4634" stroke-width="2">
+          <path d="M70 48 H570 M70 518 H570 M70 48 V518 M570 48 V518"/>
+        </g>
+        <g transform="translate(320,270)">
+          <circle r="168" fill="#e6d3b0" stroke="none"/>
+          <g fill="#efe2c8" stroke="#5a432c" stroke-width="1.2">
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(0)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(22.5)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(45)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(67.5)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(90)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(112.5)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(135)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(157.5)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(180)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(202.5)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(225)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(247.5)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(270)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(292.5)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(315)"/>
+            <rect x="-18" y="-186" width="36" height="22" rx="4" transform="rotate(337.5)"/>
+          </g>
+          <circle r="132" fill="#e7d2ae"/>
+          <g font-family="Shippori Mincho, Noto Serif SC, serif" font-size="18" fill="#1b140f">
+            <circle cx="-36" cy="-8" r="16" fill="#f7f1e4" stroke="#1b140f"/>
+            <text x="-36" y="-2" text-anchor="middle">西</text>
+            <circle cx="40" cy="18" r="16" fill="#f7f1e4" stroke="#9d2a22"/>
+            <text x="40" y="24" text-anchor="middle" fill="#9d2a22">東</text>
+          </g>
+        </g>
+        <g transform="translate(318,430)">
+          <path d="M0 0 L34 18 L0 36 Z" fill="#f4e4b0" stroke="#1b140f"/>
+          <rect x="-28" y="8" width="26" height="22" fill="#1b140f"/>
+          <text x="8" y="58" font-family="Noto Serif SC, serif" font-size="14" fill="#1b140f">行司 · 军配</text>
+        </g>
+        <g font-family="Noto Serif SC, Songti SC, serif" font-size="14" fill="#1b140f">
+          <text x="590" y="270">东</text>
+          <text x="36" y="270">西</text>
+          <text x="308" y="36">北</text>
+          <text x="308" y="548">南 · 行司所立</text>
+          <text x="78" y="78">盐撒在圈内</text>
+        </g>
+      </svg>
+      <p class="cap">俯视图是为这一页画的，不是测绘图。稻草包的个数各本图录画法不一，这里只表示「一圈俵把比赛圈镶出来」。</p>
+    </div>
+
+    <div class="three">
+      <article>
+        <h3>出圈</h3>
+        <p>脚踩出稻草圈，或者身体任何部分落到圈外，这一方输。两个人几乎同时出去，看谁先触到圈外。</p>
+      </article>
+      <article>
+        <h3>着地</h3>
+        <p>脚掌以外的部位先碰到土：手、膝、头、背都可以。倒地的人输，即使他还在圈里。</p>
+      </article>
+      <article>
+        <h3>重赛</h3>
+        <p>分不出先后，这一番作废，叫取直，当场重来。行司的军配若被胜负审判改掉，以改判为准。</p>
+      </article>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <p>协会把取胜的招数整理成八十多种，叫决胜手。看的时候不用背全表。常见的是四类：把人推出圈（押し出し）、抓住带子逼出圈（寄り切り）、用手或带子摔倒对方（投げ）、以及趁对方扑空时按下去（叩き込み、はたき込み）。</p>
+        <figure>
+          <button class="frame" type="button" data-full="originals/04-gekko.jpg" data-alt="尾形月耕1899年画：一名力士抓住对手兜裆布，把对方头朝下翻过去，上角小图里有观战的人" data-cap="尾形月耕《月耕随笔》之《相扑》，1899年。画面是一次抓带子的抛技。">
+            <img src="originals/04-gekko.jpg" alt="尾形月耕1899年相扑图，一名力士把对手从头顶翻过">
+          </button>
+          <figcaption>尾形月耕《月耕随笔》中的《相扑》，1899年。款「月耕」。上面的人抓住带子，把对手从肩上翻过去。脚一旦离地、手再撑到土上，这一番就结束了。</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="quote">
+          <span class="label">允许，而且很常见</span>
+          张掌扇耳光。抓兜裆布的侧面和后面。用头、肩、胸把人顶出去。借对方的劲摔倒。
+        </div>
+        <div class="quote">
+          <span class="label">反则，直接判负</span>
+          握拳打人。抓头发。插眼、打耳朵。踢胸口和腹部。掐咽喉。折手指。抓兜裆布的正前方。
+        </div>
+        <p>张掌可以打，握拳不行。带子可以抓，唯独正前那一块不行。这些界线比「看起来像摔跤」更要紧。</p>
+        <div class="slip">
+          <strong>十五日。</strong>
+          幕内力士一场场所打十五番，一天一番。赢满八番叫胜越，不满八番叫负越。八番是保住地位的线。休场的人，对手记不战胜。
+        </div>
+      </div>
+    </div>
+
+    <figure>
+      <button class="frame" type="button" data-full="originals/02-bout.jpg" data-alt="胜川春章画两名力士互相抓住兜裆布角力，身后行司木村庄之助举起军配" data-cap="胜川春章。行司为木村庄之助。洛杉矶郡立艺术博物馆藏，M.2006.136.328。">
+        <img src="originals/02-bout.jpg" alt="胜川春章画的相扑对战，两力士抓带角力，行司在身后举军配">
+      </button>
+      <figcaption>胜川春章。两位力士抓着对方的带子较劲，行司木村庄之助在身后举军配。洛杉矶郡立艺术博物馆藏，编号 M.2006.136.328。馆方标题把两人记为 Kajigahama Rikiemon 与 Sekinoto Hachiroji。画面左侧另有「东方」和四股名题字。</figcaption>
+    </figure>
+  </section>
+
+  <div class="tawara" aria-hidden="true"></div>
+
+  <section class="wrap" id="banzuke">
+    <h2>番付</h2>
+    <p class="sub">从右往左读。右栏是东，同一级里东比西高。</p>
+    <p>力士的等级写在番付上，每场场所前更新。字号越大，地位越高。横纲的名字在最上，也最大。十两以上叫关取，有月俸，可以带弟子，土俵入时穿化妆回。十两以下靠场所津贴，住在部屋里打杂、做饭、伺候前辈。</p>
+    <div class="banzuke" aria-label="地位从高到低">
+      <div class="colhead">西</div>
+      <div class="colhead east">東</div>
+      <div class="cell west y"><span class="lv">横纲</span><strong>豊昇龍</strong><span class="lv">丰昇龙</span></div>
+      <div class="cell y"><span class="lv">横纲</span><strong>大の里</strong><span class="lv">大之里</span></div>
+      <div class="cell west o"><span class="lv">大关</span><strong>琴櫻</strong><span class="lv">琴樱</span></div>
+      <div class="cell o"><span class="lv">大关</span><strong>霧島</strong><span class="lv">雾岛</span></div>
+      <div class="cell west o"><span class="lv">大关</span><strong>—</strong></div>
+      <div class="cell o"><span class="lv">大关</span><strong>安青錦</strong><span class="lv">安青锦</span></div>
+      <div class="cell west s"><span class="lv">关胁</span><strong>藤ノ川</strong><span class="lv">藤乃川</span></div>
+      <div class="cell s"><span class="lv">关胁</span><strong>熱海富士</strong><span class="lv">热海富士</span></div>
+      <div class="cell west s"><span class="lv">小结</span><strong>大栄翔</strong><span class="lv">大荣翔</span></div>
+      <div class="cell s"><span class="lv">小结</span><strong>伯乃富士</strong><span class="lv">伯乃富士</span></div>
+    </div>
+    <p class="note">上表是 2026 年九月场所的三役，按八月三十一日发表的番付排。右栏为东。前头以下从略。完整名单以日本相扑协会公布的为准。</p>
+    <div class="grid-2">
+      <div>
+        <p>再往下，幕内还有前头，按笔头、二枚目一直排到十几枚。前头之上的关胁、小结、大关、横纲合称三役，横纲单独算最高的一档。</p>
+        <p>关取之下是幕下、三段目、序二段、序之口。新弟子从序之口起步。幕下打七番，更下面的也是七番，和幕内的十五番不是同一套计算。</p>
+      </div>
+      <div>
+        <div class="slip">
+          <strong>降级。</strong>
+          大关若是一场负越，下一场就成「角番」：再负越，就要降回关胁。横纲没有降级这一格。横纲的成绩若是连续撑不住，就引退，不往下排。
+        </div>
+        <div class="slip">
+          <strong>晋升横纲。</strong>
+          没有写死的胜场公式。惯例是连续优胜，或优胜加上与之相当的内容。横纲审议委员会先看，再向协会推荐。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tawara" aria-hidden="true"></div>
+
+  <section class="wrap" id="heya">
+    <h2>部屋</h2>
+    <p class="sub">力士的四股名、饭和发髻，都归一部屋管。</p>
+    <div class="grid-2">
+      <div>
+        <p>职业力士从小或从初中毕业后入门，住进部屋。训练、睡觉、吃饭在同一栋房子里。早上先练，练完才吃当天的第一顿。这顿的代表是肉菜锅，日语叫ちゃんこ。体重大，是因为训练消耗和这锅饭叠在一起，不是只靠胖。</p>
+        <p>对外使用的名字是四股名，常常继承部屋里的旧名，和户籍上的本名分开。谷风、丰昇龙、大之里都是四股名。</p>
+        <p>关取把头发梳成大银杏髻。下面的等级是普通的丁髻。引退仪式叫断发式：来宾一个一个上前，剪一刀，最后由师父剪断发髻。</p>
+      </div>
+      <div>
+        <div class="quote">
+          <span class="label">画面 · 谷风出门</span>
+          这一页开头那张画，谷风没有系兜裆布。他穿条纹羽织和袴，腰间佩刀，脚下是草履。题字是「日本一　谷风梶之助」，款「春章画」，下方有版元印。江户的高级力士离开土俵之后，可以这样走在街上。
+        </div>
+        <div class="slip">
+          <strong>名物 · 横纲的绳子。</strong>
+          只有横纲在土俵入时系白色注连绳，和神社上挂的是同一类东西。绳上的纸带一折一折垂下来。做法分云龙型和不知火型两种，差别在手臂怎么展开。绳子不用于比赛。
+        </div>
+        <p>立行司的礼服最上等，腰间还佩一把短刀。那是旧时判错要负责的遗物，现在只留在衣服上。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="tawara" aria-hidden="true"></div>
+
+  <section class="wrap" id="now">
+    <h2>现状</h2>
+    <p class="sub">2026 年九月二十七日是秋场所千秋乐。下面写的是开赛前的番付，不是这一天的优胜者。</p>
+    <p>主办者是公益财团法人日本相扑协会。一年六场本场所，每场十五天。东京的三场在两国国技馆，三月在大阪，七月在名古屋，十一月在福冈。电视转播长期由 NHK 承担。票分当日和预售，国技馆的座席从榻榻米座到椅子都有。</p>
+    <table class="year">
+      <thead>
+        <tr><th>场所</th><th>2026 年日期</th><th>场地</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>一月</td><td>1 月 11 日 – 1 月 25 日</td><td>两国国技馆</td></tr>
+        <tr><td>三月</td><td>3 月 8 日 – 3 月 22 日</td><td>大阪 · 艾迪昂竞技场</td></tr>
+        <tr><td>五月</td><td>5 月 10 日 – 5 月 24 日</td><td>两国国技馆</td></tr>
+        <tr><td>七月</td><td>7 月 12 日 – 7 月 26 日</td><td>名古屋 · IG 竞技场</td></tr>
+        <tr class="now"><td>九月</td><td>9 月 13 日 – 9 月 27 日</td><td>两国国技馆 · 千秋乐即今日</td></tr>
+        <tr><td>十一月</td><td>11 月 8 日 – 11 月 22 日</td><td>福冈国际中心</td></tr>
+      </tbody>
+    </table>
+    <p class="note">日程据日本相扑协会公布的令和八年本场所日程。</p>
+
+    <div class="grid-2">
+      <div>
+        <p>九月场所的番付在八月三十一日发表。横纲两位：东是大之里，石川县出身，二所之关部屋，番付上记 192 厘米、176 公斤、26 岁；西是丰昇龙，蒙古出身，立浪部屋，朝青龙的侄子，187 厘米、140 公斤、27 岁。两人都是 2025 年晋升的横纲。</p>
+        <p>大关三位：雾岛、琴樱、安青锦。安青锦出身乌克兰，安治川部屋。他在七月的名古屋场所优胜，并按「十胜以上」的特例回到大关。关胁是热海富士和藤乃川，小结是伯乃富士和大荣翔。新入幕里有朝翠龙和寿之富士。</p>
+        <div class="slip">
+          <strong>外国出身。</strong>
+          一部屋同时只招一名外国出身力士。蒙古力士从朝青龙、白鹏那一代起长期站在番付最上端。2026 年的西横纲仍是蒙古出身，东横纲则是日本出身。
+        </div>
+      </div>
+      <div>
+        <div class="quote">
+          <span class="label">土俵还是仪式场地</span>
+          协会至今不让女性走上土俵，给出的理由是神道仪式。2018 年，舞鹤市长在土俵上倒下，女医务人员被要求离开，这条规矩因此被公开争论。比赛规则本身没有改这一条。
+        </div>
+        <p>业余相扑、学生相扑另成系统，不在这张职业番付上。职业力士一旦注册，就离开学生比赛，住进部屋，受协会的番付和休场规定约束。</p>
+        <p>要看当场的星取和优胜，得等千秋乐结束之后的协会公告。这一页故意停在番付，不把进行中的胜负写成定局。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="tawara" aria-hidden="true"></div>
+
+  <section class="wrap" id="thread">
+    <h2>怎么串起来</h2>
+    <p class="sub">六张旧图和一张现在的榜，说的是同一套格子。</p>
+    <div class="thread">
+      <article>
+        <h3>名字先于身体</h3>
+        <p>春章在谷风身边写「日本一」，在另两人身边写「西方」和四股名。国贞在带子旁边贴红签：云龙、六峰、追手风、木村庄太郎。番付到今天仍是东大西小，名字的字号就是地位。</p>
+      </article>
+      <article>
+        <h3>衣服分两套</h3>
+        <p>谷风出门佩刀。明治相册里的围裙只属于土俵入。春章和国贞画里真正较劲时，身上只剩兜裆布。横纲的白绳也只在仪式里出现。</p>
+      </article>
+      <article>
+        <h3>胜负很短</h3>
+        <p>月耕把一场抛技画成脚朝天。规则页上的三句话可以盖住它：出圈，着地，或者分不清就重来。十五日里攒够八番，格子才往上走。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>图来自公有领域的浮世绘和明治相册，未做修复。题字按画面可见文字摘录。土俵俯视图是本页绘制的示意图。</p>
+    <ul>
+      <li>胜川春章《日本一 谷风梶之助》，克利夫兰艺术博物馆 1930.209。</li>
+      <li>胜川春章对战图，洛杉矶郡立艺术博物馆 M.2006.136.328。</li>
+      <li>歌川国贞，1854 年，波士顿美术馆，威廉·斯特吉斯·比奇洛 1911 年捐赠。</li>
+      <li>尾形月耕《月耕随笔》之《相扑》，1899 年。</li>
+      <li>1886 年以前手绘上色照片，维基共享资源著录推测作者为 Adolfo Farsari。</li>
+      <li>令和八年场所日程：<a href="https://www.sumo.or.jp/Admission/schedule/">日本相扑协会</a>。九月场所番付发表于 2026 年 8 月 31 日。</li>
+    </ul>
+  </div>
+</footer>
+
+<dialog id="light">
+  <button type="button" id="light-close">关闭</button>
+  <img id="light-img" alt="">
+  <p id="light-cap"></p>
+</dialog>
+<script>
+(function () {
+  var light = document.getElementById("light");
+  var img = document.getElementById("light-img");
+  var cap = document.getElementById("light-cap");
+  document.querySelectorAll(".frame").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      img.src = btn.getAttribute("data-full");
+      img.alt = btn.getAttribute("data-alt") || "";
+      cap.textContent = btn.getAttribute("data-cap") || "";
+      light.showModal();
+    });
+  });
+  document.getElementById("light-close").addEventListener("click", function () {
+    light.close();
+  });
+  light.addEventListener("click", function (event) {
+    if (event.target === light) light.close();
+  });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav.dir a"));
+  var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id], #what"));
+  if (!("IntersectionObserver" in window)) return;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      links.forEach(function (a) { a.removeAttribute("aria-current"); });
+      var id = entry.target.id;
+      var current = document.querySelector('nav.dir a[href="#' + id + '"]');
+      if (current) current.setAttribute("aria-current", "true");
+    });
+  }, { rootMargin: "-42% 0px -50% 0px", threshold: 0.01 });
+  sections.forEach(function (section) { obs.observe(section); });
+})();
+</script>
+</body>
+</html>
