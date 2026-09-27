@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>平型关乔沟伏击 · 1937年9月25日</title>
+<style>
+:root {
+  --paper: #f4ecdc;
+  --ink: #1b1612;
+  --muted: #6d6256;
+  --line: #d9cbb6;
+  --card: #fbf7ef;
+  --seal: #8e2f2a;
+  --moss: #2f463c;
+  --ridge: #e7dcc8;
+  --road: #c4b49a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #fffaf1 0%, transparent 50%),
+    var(--paper);
+  font-family: "Iowan Old Style", Palatino, "Songti SC", "Noto Serif SC", "Source Han Serif SC", serif;
+  line-height: 1.75;
+}
+a { color: var(--seal); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.wrap { width: min(1100px, calc(100% - 36px)); margin: 0 auto; }
+header.site { border-bottom: 1px solid var(--line); padding: 26px 0 20px; }
+.kicker { letter-spacing: 0.18em; font-size: 12px; color: var(--seal); margin: 0 0 8px; }
+h1 { font-weight: 560; font-size: 34px; line-height: 1.25; margin: 0; }
+.lede { color: var(--muted); margin: 12px 0 0; font-size: 17px; max-width: 42em; }
+.layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr); gap: 28px; padding: 26px 0 10px; align-items: start; }
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 14px 10px;
+}
+.panel h2, .block h2 {
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  font-weight: 560;
+  color: var(--moss);
+  margin: 0 0 8px;
+}
+svg.map { width: 100%; height: auto; display: block; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 4px; }
+button.step {
+  font: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+button.step[aria-pressed="true"] {
+  color: #fffaf1;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.hint { color: var(--muted); font-size: 13px; margin: 8px 2px 4px; min-height: 3.2em; }
+.side p { margin: 0 0 0.9em; font-size: 16px; }
+.side h2 { margin-top: 1.3em; }
+.clock { color: var(--seal); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px 18px; font-size: 13px; color: var(--muted); margin: 4px 2px 8px; }
+.swatch { display: inline-block; width: 18px; height: 4px; vertical-align: middle; margin-right: 6px; border-radius: 2px; }
+.block { padding: 8px 0 28px; }
+.cuts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.note {
+  background: var(--card);
+  border-left: 3px solid var(--seal);
+  padding: 12px 16px;
+  color: #3c332c;
+  font-size: 15px;
+}
+footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; padding: 18px 0 48px; }
+.place { cursor: pointer; }
+.dim { opacity: 0.18; }
+@media (max-width: 860px) {
+  .layout, .cuts { grid-template-columns: 1fr; }
+  h1 { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .march { animation: none; }
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<p class="kicker">昭和十二年九月二十五日 · 山西省灵丘县</p>
+<h1>乔沟里的两支后勤</h1>
+<p class="lede">日军档案把这一天记在平型关口以东的公路上。关口上的步兵已经进了长城，沟里相向而行的是汽车队和行李队。两场战斗隔着大约一公里，没有连成一个包围圈。</p>
+</div></header>
+
+<main class="wrap">
+<div class="layout">
+<section class="panel" aria-label="乔沟示意图">
+<h2>乔沟当天</h2>
+<div class="legend">
+<span><i class="swatch" style="background:#8e2f2a"></i>汽车队，驶回灵丘</span>
+<span><i class="swatch" style="background:#2f463c"></i>行李队，驶向关口</span>
+<span><i class="swatch" style="background:#1b1612"></i>沟底公路</span>
+</div>
+<svg class="map" viewBox="0 0 880 820" role="img" aria-labelledby="mapTitle mapDesc">
+<title id="mapTitle">1937年9月25日乔沟伏击示意图</title>
+<desc id="mapDesc">上为灵丘方向，下为平型关口。老爷庙一段是汽车队战场，小寨村西南是行李队战场，两处相距约一公里。</desc>
+<rect width="880" height="820" fill="#fbf7ef"/>
+<text x="36" y="40" fill="#6d6256" font-size="13" font-family="Palatino, Songti SC, serif">北 · 灵丘方向在上</text>
+<path d="M168 28 V58 M160 42 H176" fill="none" stroke="#1b1612" stroke-width="1.2"/>
+<polygon points="168,16 162,32 174,32" fill="#1b1612"/>
+
+<!-- ridge wash -->
+<path d="M250 70 C 300 140, 250 220, 310 300 C 360 370, 300 460, 340 540 C 370 610, 320 700, 360 780 L 560 780 C 500 690, 560 600, 510 520 C 470 450, 540 360, 490 280 C 450 200, 520 120, 470 70 Z" fill="#efe6d6"/>
+
+<!-- ravine and road, NE at top -->
+<path id="floor" d="M430 78 C 400 160, 460 230, 430 310 C 400 390, 455 470, 430 560 C 410 640, 450 700, 430 760" fill="none" stroke="#e4d3b8" stroke-width="46" stroke-linecap="round"/>
+<path id="road" d="M430 78 C 400 160, 460 230, 430 310 C 400 390, 455 470, 430 560 C 410 640, 450 700, 430 760" fill="none" stroke="#9a8468" stroke-width="2.5" stroke-dasharray="2 7"/>
+
+<!-- cliff lines -->
+<g id="layer-eighth" fill="none" stroke="#1b1612" stroke-width="1.3" stroke-dasharray="3 4">
+<path d="M360 120 C 340 200, 390 280, 360 360"/>
+<path d="M500 120 C 520 200, 470 280, 500 360"/>
+<path d="M350 430 C 330 510, 380 590, 355 670"/>
+<path d="M510 430 C 530 510, 480 590, 505 670"/>
+</g>
+
+<!-- gap bracket -->
+<g id="gap" fill="none" stroke="#6d6256" stroke-width="1">
+<path d="M560 300 H 590 V 470 H 560"/>
+<text x="604" y="392" fill="#6d6256" font-size="13" font-family="Palatino, Songti SC, serif">约 1 公里</text>
+<text x="604" y="412" fill="#6d6256" font-size="12" font-family="Palatino, Songti SC, serif">两场没有会合</text>
+</g>
+
+<!-- baggage, moving down (toward the pass) -->
+<g id="layer-baggage">
+<path class="march" d="M418 250 C 424 280, 412 300, 418 328" fill="none" stroke="#2f463c" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 6">
+<animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.8s" repeatCount="indefinite"/>
+</path>
+<polygon points="418,340 410,324 426,324" fill="#2f463c"/>
+</g>
+
+<!-- motor, moving up (back toward Lingqiu) -->
+<g id="layer-motor">
+<path class="march" d="M444 520 C 438 490, 450 470, 444 442" fill="none" stroke="#8e2f2a" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 6">
+<animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.8s" repeatCount="indefinite"/>
+</path>
+<polygon points="444,428 436,446 452,446" fill="#8e2f2a"/>
+</g>
+
+<!-- left labels -->
+<g font-family="Palatino, Songti SC, serif" fill="#1b1612">
+<text x="36" y="150" font-size="14">崖上设伏</text>
+<text x="36" y="170" font-size="12" fill="#6d6256">一一五师</text>
+<line x1="92" y1="146" x2="330" y2="160" stroke="#d9cbb6" stroke-width="1"/>
+
+<text x="36" y="330" font-size="15">北段战场</text>
+<text x="36" y="350" font-size="12" fill="#2f463c">行李队 · 开向关口</text>
+<text x="36" y="368" font-size="12" fill="#6d6256">11:00–15:30</text>
+<line x1="108" y1="324" x2="400" y2="310" stroke="#d9cbb6" stroke-width="1"/>
+
+<text x="36" y="500" font-size="15">南段 · 老爷庙</text>
+<text x="36" y="520" font-size="12" fill="#8e2f2a">汽车队 · 驶回灵丘</text>
+<text x="36" y="538" font-size="12" fill="#6d6256">09:20 开火，12:40 撤</text>
+<line x1="148" y1="494" x2="400" y2="470" stroke="#d9cbb6" stroke-width="1"/>
+
+<text x="36" y="700" font-size="14">关沟村</text>
+<text x="36" y="718" font-size="12" fill="#6d6256">残部 15:00 集结</text>
+<line x1="92" y1="694" x2="400" y2="700" stroke="#d9cbb6" stroke-width="1"/>
+</g>
+
+<!-- right / top places -->
+<g font-family="Palatino, Songti SC, serif" fill="#1b1612">
+<circle cx="430" cy="78" r="4.5"/>
+<text x="500" y="74" font-size="15">蔡家峪</text>
+<text x="500" y="94" font-size="12" fill="#6d6256">再往东北：东河南、灵丘</text>
+
+<circle cx="418" cy="200" r="4.5"/>
+<text x="500" y="196" font-size="15">小寨村</text>
+<text x="500" y="216" font-size="12" fill="#6d6256">行李队从这里的上游开来</text>
+<line x1="428" y1="200" x2="492" y2="190" stroke="#d9cbb6"/>
+
+<circle cx="430" cy="310" r="6" fill="#2f463c"/>
+<text x="604" y="300" font-size="13">桥本在此战死</text>
+
+<circle cx="430" cy="470" r="6" fill="#8e2f2a"/>
+<text x="604" y="456" font-size="13">新庄在此战死</text>
+<text x="604" y="474" font-size="12" fill="#6d6256">庙在沟北崖顶</text>
+
+<circle cx="430" cy="700" r="4.5"/>
+<text x="500" y="760" font-size="15">向下：平型关口</text>
+<text x="500" y="780" font-size="12" fill="#6d6256">山路约 4 公里，三浦旅团在关口</text>
+</g>
+</svg>
+<div class="controls" role="group" aria-label="选择时段">
+<button class="step" type="button" data-step="all" aria-pressed="true">全天</button>
+<button class="step" type="button" data-step="south" aria-pressed="false">上午 · 老爷庙</button>
+<button class="step" type="button" data-step="north" aria-pressed="false">午前至午后 · 行李队</button>
+<button class="step" type="button" data-step="road" aria-pressed="false">此后三日 · 路仍断着</button>
+</div>
+<p class="hint" id="hint">两支部队相向进入同一条沟。汽车队在西段先打响，行李队在东段晚大约一个半小时。中间那一公里，两边没有会合。</p>
+</section>
+
+<aside class="side">
+<h2>这一天在打什么</h2>
+<p>9月22日以后，第五师团第二十一旅团（三浦敏事）已经攻到内长城的平型关口，对手是杨爱源部晋绥军。旅团的粮弹要从灵丘沿这条沟送上去。</p>
+<p><span class="clock">09:20 前后</span>　第六兵站自动车队两个中队从关沟村往灵丘开，车上是空的，去接援兵。新庄淳中佐的本部和矢岛俊彦中尉的第二中队在前，中西学大尉的第八十七中队在后。队列在老爷庙下的沟底被截住。十点半，关口上第二十一联队第十二中队的一个小队回来增援。新庄战死后，矢岛下令烧车，十二点四十分开始撤，下午三点残部回到关沟。</p>
+<p><span class="clock">11:00</span>　东边一公里，第二十一联队的混合行李队从东河南方向关口走，车上是干面包、冬装和一部分弹药。大约七十名辎重特务兵，三十九式辎重车 42 辆，马约 70 匹，护卫是高桥义夫少尉的一个步兵小队。师团参谋桥本顺正中佐带七个人乘车赶路，陷在雨后的泥里，和行李队走到一起，由他在崖上组织抵抗。下午三点半，桥本战死。这支约一百人的队伍，除少数逃出外没有回来。</p>
+<p><span class="clock">12:30</span>　灵丘的前线司令部接到急报。第二天，步兵第四十二联队主力才开到小寨村。路打通是 9 月 28 日午前。这三天里，关口上的三浦旅团弹药见底。师团机密日志写的是：小寨村附近后方联络线被切断，对方取得了相当的成功。</p>
+<p class="note">矢岛中队战斗详报记本中队战死 41、负伤 50。第二十一联队损耗表里，对应这场战斗的非战斗员死亡是 67 人。姜克实把详报、死亡公告和报纸核对后，将 25 日这一天合成死伤约 240 人，其中死亡约 166 人，包括两名中佐。这是加总，不是某一份战报里现成的总数。</p>
+</aside>
+</div>
+
+<section class="block">
+<h2>沟的断面</h2>
+<div class="cuts">
+<svg viewBox="0 0 520 280" role="img" aria-label="乔沟断面：公路在沟底，两侧是陡崖">
+<rect width="520" height="280" fill="#fbf7ef" rx="12"/>
+<path d="M20 70 L 150 200 L 200 214 L 320 214 L 370 200 L 500 60 L 500 40 L 360 150 L 300 40 L 230 150 L 160 36 L 20 48 Z" fill="#efe6d6" stroke="#d9cbb6"/>
+<rect x="214" y="206" width="92" height="8" fill="#9a8468"/>
+<text x="228" y="198" fill="#6d6256" font-size="12" font-family="Palatino, Songti SC, serif">沟底公路</text>
+<circle cx="248" cy="202" r="5" fill="#8e2f2a"/>
+<circle cx="276" cy="202" r="5" fill="#2f463c"/>
+<text x="36" y="58" fill="#1b1612" font-size="14" font-family="Palatino, Songti SC, serif">南侧崖</text>
+<text x="36" y="76" fill="#6d6256" font-size="12" font-family="Palatino, Songti SC, serif">一一五师居高射击</text>
+<text x="392" y="52" fill="#1b1612" font-size="14" font-family="Palatino, Songti SC, serif">北侧崖 · 老爷庙</text>
+<text x="392" y="70" fill="#6d6256" font-size="12" font-family="Palatino, Songti SC, serif">汽车队爬上来争夺</text>
+<text x="150" y="250" fill="#6d6256" font-size="13" font-family="Palatino, Songti SC, serif">1937 年路面只容车马单行。雨后泥泞，汽车会陷住。</text>
+</svg>
+<svg viewBox="0 0 520 280" role="img" aria-label="平型关口与后方补给的关系">
+<rect width="520" height="280" fill="#fbf7ef" rx="12"/>
+<text x="24" y="36" fill="#2f463c" font-size="14" font-family="Palatino, Songti SC, serif" letter-spacing="1">关口和它后面的路</text>
+<line x1="36" y1="150" x2="484" y2="150" stroke="#9a8468" stroke-width="2" stroke-dasharray="2 6"/>
+<g fill="#1b1612" font-size="13" font-family="Palatino, Songti SC, serif">
+<circle cx="70" cy="150" r="5"/>
+<text x="40" y="128">灵丘</text>
+<circle cx="190" cy="150" r="5" fill="#2f463c"/>
+<text x="158" y="128">小寨</text>
+<text x="150" y="180" fill="#6d6256" font-size="12">25 日路在这里断</text>
+<circle cx="300" cy="150" r="5" fill="#8e2f2a"/>
+<text x="268" y="128">乔沟</text>
+<circle cx="430" cy="150" r="5"/>
+<text x="392" y="128">平型关口</text>
+<text x="378" y="180" fill="#6d6256" font-size="12">三浦旅团在关口</text>
+</g>
+<path d="M430 118 V96 H300" fill="none" stroke="#8e2f2a" stroke-width="1.4"/>
+<text x="248" y="90" fill="#8e2f2a" font-size="12" font-family="Palatino, Songti SC, serif">粮弹要沿这条路送上去</text>
+<text x="36" y="230" fill="#6d6256" font-size="13" font-family="Palatino, Songti SC, serif">42 联队 26 日从灵丘方向来打通。28 日午前路才重新接上。</text>
+<text x="36" y="252" fill="#6d6256" font-size="13" font-family="Palatino, Songti SC, serif">粟饭原所率第二十一联队主力，25 日还在关北约 30 公里。</text>
+</svg>
+</div>
+</section>
+
+<section class="block">
+<h2>图上各点</h2>
+<div class="note">
+<p style="margin:0 0 0.7em">东北→西南，沿当时的灵丘—平型关公路：蔡家峪、小寨村、北段战场、老爷庙、关沟村，再往西南才是关口。北段是行李队，从灵丘方向来。南段是汽车队，从关沟村回头向灵丘开。老爷庙在沟北的崖顶上，汽车队一度爬上去，没有站住。</p>
+<p style="margin:0">一一五师的团指挥所位置，图上只画了崖上的设伏带。纪念地把 685、686、687 团的指挥所标在这条沟两侧；日军详报写明汽车队对上的是一一五师，没有按团记下对方番号。姜克实的核对把老爷庙一段对应到 686 团。</p>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<p>方位根据樱田武《桥本参谋战死之状况》（JACAR C11110924000）、第二十一联队损耗表（C11111184000）、矢岛中队战斗详报，以及姜克实《平型关大捷日军死伤数考证》（冈山大学，2017）。沟的走向和老爷庙在沟北，参照灵丘战场遗址的实地记述。这是示意图，不是测绘图。距离取自上述记载里的约数。</p>
+<p><a href="index.html">回到史料目录</a></p>
+</div></footer>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll("button.step");
+  var hint = document.getElementById("hint");
+  var layers = {
+    baggage: document.getElementById("layer-baggage"),
+    motor: document.getElementById("layer-motor"),
+    eighth: document.getElementById("layer-eighth"),
+    gap: document.getElementById("gap")
+  };
+  var copy = {
+    all: "两支部队相向进入同一条沟。汽车队在西段先打响，行李队在东段晚大约一个半小时。中间那一公里，两边没有会合。",
+    south: "上午九点二十分前后，空车的自动车队在老爷庙下被截住。他们要驶回灵丘接援兵。新庄中佐战死，十二点四十分烧车撤退，下午三点残部回到关沟。",
+    north: "十一点，桥本顺正在小寨村西听到西边的枪声，仍继续前进，和行李队一起进入伏击地。护卫只有高桥小队十数名步兵。三点半桥本战死，行李队基本覆灭。",
+    road: "二十五日午后，关口与灵丘之间的路已经断了。第四十二联队二十六日才到小寨村，二十八日午前打通。这三天切断的是三浦旅团的补给，不是关口上的步兵主力。"
+  };
+  function show(step) {
+    var dim = function (node, off) { node.classList.toggle("dim", off); };
+    dim(layers.motor, step === "north");
+    dim(layers.baggage, step === "south");
+    dim(layers.gap, step === "road");
+    dim(layers.eighth, false);
+    hint.textContent = copy[step];
+    buttons.forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-step") === step ? "true" : "false");
+    });
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () { show(btn.getAttribute("data-step")); });
+  });
+})();
+</script>
+</body>
+</html>

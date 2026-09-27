@@ -1,0 +1,5 @@
+.DS_Store
+__pycache__/
+*.pyc
+# Diet Library scans; part 1 exceeds GitHub's 100MB file limit.
+hikawa-seiwa/source/*.pdf

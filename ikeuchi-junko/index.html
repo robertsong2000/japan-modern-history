@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>池内淳子 · 一九三三年至二〇一〇年</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cabinet: #141c20;
+  --paper: #f2ebe0;
+  --sheet: #faf6ef;
+  --ink: #1c1714;
+  --mute: #5f574e;
+  --brass: #a67c32;
+  --dress: #6f97ab;
+  --navy: #243038;
+  --line: #d8cec0;
+  --slip: #fffaf2;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 420px at 100% -10%, rgba(111, 151, 171, 0.18), transparent 60%),
+    var(--paper);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  line-height: 1.85;
+}
+a { color: var(--navy); }
+.shell {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  width: min(1180px, calc(100% - 28px));
+  margin: 22px auto 64px;
+  background: var(--sheet);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 50px rgba(20, 28, 32, 0.08);
+}
+nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  padding: 28px 18px 24px;
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(166, 124, 50, 0.08), transparent 120px),
+    var(--sheet);
+}
+.mark {
+  margin: 0 0 22px;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  writing-mode: vertical-rl;
+  height: 9.2em;
+  color: var(--cabinet);
+}
+.mark small {
+  display: block;
+  margin-top: 0.6em;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  font-size: 0.62em;
+  color: var(--brass);
+}
+nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  display: block;
+  padding: 7px 0 7px 10px;
+  border-left: 2px solid transparent;
+  color: var(--mute);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+nav a.active,
+nav a:hover {
+  color: var(--ink);
+  border-left-color: var(--brass);
+}
+main { min-width: 0; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(240px, 440px) minmax(0, 1fr);
+  background: var(--cabinet);
+  color: #f6f1e8;
+}
+.hero figure { margin: 0; }
+.hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 760px;
+  cursor: zoom-in;
+}
+.hero-copy {
+  padding: 42px 36px 32px;
+  align-self: end;
+}
+.kicker {
+  margin: 0 0 14px;
+  color: var(--brass);
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+}
+h1 {
+  margin: 0;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+}
+.ruby {
+  margin: 8px 0 0;
+  font-family: "Shippori Mincho", serif;
+  letter-spacing: 0.28em;
+  color: var(--dress);
+}
+.lede {
+  margin: 22px 0 0;
+  max-width: 28em;
+  font-size: 1.05rem;
+}
+.meta {
+  margin: 18px 0 0;
+  color: #c9c0b2;
+  font-size: 0.92rem;
+}
+section { padding: 42px 40px 8px; }
+section h2 {
+  margin: 0 0 8px;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.12em;
+}
+.en {
+  margin: 0 0 18px;
+  color: var(--brass);
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+}
+.plate {
+  margin: 0 0 8px;
+}
+.plate img {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  cursor: zoom-in;
+  background: #111;
+}
+.plate.small img {
+  width: 280px;
+  image-rendering: auto;
+}
+figcaption {
+  margin-top: 8px;
+  color: var(--mute);
+  font-size: 0.86rem;
+}
+.slip, .plain {
+  margin: 16px 0 22px;
+  padding: 14px 16px;
+}
+.slip {
+  background: var(--slip);
+  border: 1px solid var(--line);
+}
+.slip strong, .plain strong {
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--brass);
+  font-weight: 600;
+}
+.plain {
+  border-left: 3px solid var(--dress);
+  color: var(--navy);
+}
+.years {
+  list-style: none;
+  margin: 8px 0 28px;
+  padding: 0;
+}
+.years li {
+  display: grid;
+  grid-template-columns: 7.2em minmax(0, 1fr);
+  gap: 12px 18px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.years time {
+  font-family: "Shippori Mincho", serif;
+  color: var(--brass);
+  letter-spacing: 0.04em;
+}
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 8px 0 28px;
+}
+.works article {
+  padding-top: 8px;
+  border-top: 2px solid var(--cabinet);
+}
+.works h3 {
+  margin: 0 0 8px;
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+}
+.works p { margin: 0; font-size: 0.95rem; }
+footer {
+  margin: 12px 40px 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 0.86rem;
+}
+footer a { color: var(--brass); }
+#lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(12, 16, 18, 0.92);
+  z-index: 20;
+  padding: 24px;
+}
+#lightbox.open { display: grid; }
+#lightbox img {
+  max-width: min(960px, 100%);
+  max-height: 92vh;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+@media (max-width: 900px) {
+  .shell { display: block; width: min(100% - 16px, 1180px); }
+  nav {
+    position: sticky;
+    top: 0;
+    height: auto;
+    z-index: 5;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 12px 8px;
+  }
+  .mark { writing-mode: horizontal-tb; height: auto; margin: 0 0 8px; letter-spacing: 0.2em; }
+  .mark small { display: inline; margin-left: 0.8em; }
+  nav ol { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+  nav a { padding: 4px 0; border-left: 0; border-bottom: 2px solid transparent; }
+  nav a.active, nav a:hover { border-left-color: transparent; border-bottom-color: var(--brass); }
+  .hero, .works { grid-template-columns: 1fr; }
+  .hero-copy, section, footer { padding-left: 18px; padding-right: 18px; }
+  .years li { grid-template-columns: 1fr; gap: 0; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav aria-label="目录">
+    <p class="mark">池内淳子<small>1933–2010</small></p>
+    <ol>
+      <li><a href="#cover">封面</a></li>
+      <li><a href="#portrait">肖像</a></li>
+      <li><a href="#mrs">ミセス</a></li>
+      <li><a href="#life">生平</a></li>
+      <li><a href="#works">剧目</a></li>
+      <li><a href="#aoba">青叶之家</a></li>
+    </ol>
+  </nav>
+  <main>
+    <header class="hero">
+      <figure>
+        <img src="originals/01-cover-1954.jpg" alt="1954年10月24日《サンケイグラフ》封面，池内淳子穿淡蓝水手领连衣裙，身后是银器柜" data-full="originals/01-cover-1954.jpg">
+      </figure>
+      <div class="hero-copy">
+        <p class="kicker">週刊 · 一九五四年十月二十四日</p>
+        <h1>池内淳子</h1>
+        <p class="ruby">いけうち じゅんこ</p>
+        <p class="lede">三越吴服柜台出来的人，在银器柜前被选成封面，后来成了电视机前穿着围裙的母亲。</p>
+        <p class="meta">本名中泽纯子 · 东京本所区东两国 · 1933年11月4日–2010年9月26日</p>
+      </div>
+    </header>
+
+    <section id="cover">
+      <h2>封面</h2>
+      <p class="en">THE SANKEI GRAPHIC · 1954.10.24</p>
+      <figure class="plate">
+        <img src="originals/01-cover-1954.jpg" alt="《サンケイグラフ》1954年10月24日号封面">
+        <figcaption>产业经济新闻社《サンケイグラフ》1954年10月24日号封面。此处为 960 像素宽的公有领域扫描。</figcaption>
+      </figure>
+      <div class="slip">
+        <strong>封面文字</strong>
+        サンケイグラフ　週刊 10.24 1954<br>
+        第二回推薦スター発表<br>
+        THE SANKEI GRAPHIC　40円
+      </div>
+      <div class="plain">
+        <strong>这一张</strong>
+        1954年9月10日，新东宝本社开第二回「封面女郎」选考会。日本桥三越吴服卖场退职不久的中泽纯子得了第一。杂志把她推荐进摄影所，艺名改成池内淳子。封面把她放在一排银茶壶前面，淡蓝水手领、黑绦带、左手叉腰。刊名是黄铜字，左侧竖排「第二回推荐明星发表」。次年她以《皇太子的新娘》出道，演的是皇太子妃候选人。
+      </div>
+    </section>
+
+    <section id="portrait">
+      <h2>肖像</h2>
+      <p class="en">同一期 · 1954</p>
+      <figure class="plate">
+        <img src="originals/02-portrait-1954.jpg" alt="1954年池内淳子坐着翻开一本书，身穿与封面相同的水手领连衣裙">
+        <figcaption>《サンケイグラフ》1954年10月24日号内页肖像。池内淳子，1954年。</figcaption>
+      </figure>
+      <div class="slip">
+        <strong>著录</strong>
+        池内淳子（1954年）。出处与封面同一期。黑白，银盐印刷的杂志页。
+      </div>
+      <div class="plain">
+        <strong>这一张</strong>
+        裙子和封面是同一件：宽水手领、袖口两道深绦、腰间绦带垂下来。她坐着，左手按着摊开的书，腕上一条细镯。身后一个穿白衬衫、花领带的男人看着这边。封面是站姿和银器，这一张是坐下以后的室内。二十岁，还没有进片场。
+      </div>
+    </section>
+
+    <section id="mrs">
+      <h2>ミセス</h2>
+      <p class="en">文化出版局 · 1961年10月 · 创刊号</p>
+      <figure class="plate small">
+        <img src="originals/03-mrs-1961.jpg" alt="1961年10月《ミセス》创刊号封面，池内淳子侧脸">
+        <figcaption>扫描只有 300×382 像素，按原大附近陈列，没有放大修复。放大只会把印刷网点拉虚。</figcaption>
+      </figure>
+      <div class="slip">
+        <strong>封面文字</strong>
+        装苑編集　ミセス　NO.1 October<br>
+        初秋のミセス・デザイン集　ミセスが美しく装うために<br>
+        衣裳棚の設計　子供服　ミセスの読物<br>
+        中间一项字小，疑为扬げ料理，不把看不清的字定死。
+      </div>
+      <div class="plain">
+        <strong>这一张</strong>
+        侧脸，发髻在脑后挽起，格子纹的高领。七年前封面还是水手裙和短卷发，这一期已经把她放进「主妇」两个字里。1960年富士电视台午间剧《日日の背信》（丹羽文雄原作，原保美共演）把白天的家庭主妇钉在电视机前，她因此被叫做「よろめき女优」——演那种婚外的动摇。创刊号用她的侧脸，卖的是初秋衣服、食谱和儿童服。
+      </div>
+    </section>
+
+    <section id="life">
+      <h2>生平</h2>
+      <p class="en">本所 · 三越 · 新东宝 · 午间剧 · 舞台</p>
+      <ul class="years">
+        <li><time>1933</time><span>11月4日生于东京府东京市本所区东两国，今墨田区。本名中泽纯子，四姐妹的长女。上代做过八代干货铺，父亲做洋伞电镀。小时候想当幼儿园老师。战时干过灶上、插秧、挑炭，骨架变粗。她后来说，洋服显不出柔，所以改穿肩线藏得住的硬质木棉风和服；和服穿一整天，也比洋服省事。</span></li>
+        <li><time>1952</time><span>十文字学园高等部毕业，进日本桥三越本店吴服卖场。次年退职。</span></li>
+        <li><time>1954</time><span>9月10日封面女郎选考第一，入新东宝。10月24日上了这一期封面。</span></li>
+        <li><time>1955</time><span>电影《皇太子の花嫁》出道。1956年《新妻镜》第一次主演。</span></li>
+        <li><time>1957</time><span>与演员柳泽慎一结婚，退出电影。1958年离婚，回到银幕和电视，此后独身。电视出道作是《眠狂四郎无頼控》。</span></li>
+        <li><time>1960</time><span>《日日の背信》。一部午间剧，收视高到把她送进全国的午饭桌。</span></li>
+        <li><time>1965</time><span>松本清张原作《けものみち》，电影里的成泽民子。同年起在 TBS《东芝日曜剧场》演《女と味噌汁》，一直演到 1980 年，共 38 回。角色是艺伎室户千佳子，艺名「手鞠」。白围裙、和服、厨房。她主演的剧经常到两成以上的收视率，被称为「20% 女优」。</span></li>
+        <li><time>1971</time><span>《男はつらいよ 寅次郎恋歌》里演六波罗贵子。东宝《社长》系列和《驿前》系列里，她多次演迷惑森繁久弥的艺伎。</span></li>
+        <li><time>1973</time><span>味之素「ほんだし」第一代广告面孔，做到 1985 年。1974 年 4 月到 1980 年 3 月与日本电视签专属，电影和《日曜剧场》除外。桥田寿贺子、石井富子的剧，主演助演都常有她。</span></li>
+        <li><time>2002</time><span>东宝现代剧《空のかあさま》获艺术选奖文部科学大臣奖，同年受紫绶褒章。大河剧《利家とまつ》里演福。晨间剧演过《ひらり》（1992）、《天うらら》（1998）。</span></li>
+        <li><time>2008</time><span>受旭日小绶章。</span></li>
+        <li><time>2010</time><span>5月在中日剧场演《三婆》的松子，这是最后一部舞台。9月26日因肺腺癌在东京的医院去世，七十六岁。</span></li>
+      </ul>
+      <div class="plain">
+        <strong>本人说过的几句</strong>
+        她想演恶女，说女人身上有许多嘴上说不出来的一面；又觉得自己是江户人，也许还是把话说开更合适。戏里常演忍的妻子，生活里性急：菜要别人做，少一道菜、桌上没有味噌汤，脸色就会变。白兰地五杯就醉。她说自己不适合结婚，所以一直独身。幼年时和黑柳彻子是旧识。
+      </div>
+    </section>
+
+    <section id="works">
+      <h2>剧目</h2>
+      <p class="en">电影 · 电视 · 舞台</p>
+      <div class="works">
+        <article>
+          <h3>电影</h3>
+          <p>《新妻镜》（1956）初主演。《けものみち》（1965）。《沓挂时次郎 游侠一匹》（1966）演阿绢，对面是中村锦之助。《寅次郎恋歌》（1971）。《社长》《驿前》系列里的艺伎，常常叫染子、染太郎。</p>
+        </article>
+        <article>
+          <h3>电视</h3>
+          <p>《日日の背信》（1960）。《女と味噌汁》（1965–1980）。《国盗り物语》（1973）演阿万阿。《一人来い二人来いみんな来い》（1980–1981）。《ひらり》《天うらら》。《白色巨塔》等晚年剧。</p>
+        </article>
+        <article>
+          <h3>舞台</h3>
+          <p>明治座座长戏很多。《三婆》《おさん》《女たちの忠臣藏》。《空のかあさま》（2002）。最后一场是 2010 年 5 月中日剧场的《三婆》。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="aoba">
+      <h2>青叶之家</h2>
+      <p class="en">1980年9月2日 – 1981年1月27日 · TBS 周二晚九点</p>
+      <p>长桌、托盘、暖瓶，站着围围裙的那张记录，年代落在这部剧上。剧名《一人来い二人来いみんな来い》，全 22 集，脚本楠田芳子，TBS 与テレパック制作。她演中西律子：丈夫死了，隔了二十年回到娘家，本想把母亲留下的养护设施「青叶の家」解散卖掉。看见一个父亲来接孩子时的自私，她改了主意，自己把房子和孩子们的去路守下来。园里有保育员、炊事员，吃饭就是日常场面。</p>
+      <p>这是她和日本电视的专属刚结束之后，隔了很久再回 TBS 的连续剧。小时候想当幼儿园老师的人，四十七岁站在养护设施的饭桌边。围裙则是《女と味噌汁》里已经穿了十五年的那一件。</p>
+      <div class="slip">
+        <strong>这一页没有剧照的原因</strong>
+        共享资源上她的类别只有五张。1954 年两张和 1961 年这张封面，标的是公有领域，也没有删除提名，收在这里。1959 年《雷电》和 1966 年《沓挂时次郎》的剧照正在版权删除提名之中，不收。1980 年饭桌上的那张，不在这批公有领域文件里。
+      </div>
+    </section>
+
+    <footer>
+      <p>图版来源：<a href="https://commons.wikimedia.org/wiki/File:Ikeuchi-Junko-1.jpg">File:Ikeuchi-Junko-1.jpg</a>、<a href="https://commons.wikimedia.org/wiki/File:Ikeuchi-Junko-2.jpg">File:Ikeuchi-Junko-2.jpg</a>、<a href="https://commons.wikimedia.org/wiki/File:Mrs196110.jpg">File:Mrs196110.jpg</a>。前两张为 960 像素宽衍生物，原扫描更大。封面与肖像按日本旧写真版权，出版于 1957 年以前，共享资源标为公有领域。生平据《日本经济新闻》2010年9月30日讣闻、コトバンク，以及日文维基「池内淳子」「一人来い二人来いみんな来い」条目核对。未见馆藏编号则不写。</p>
+    </footer>
+  </main>
+</div>
+<div id="lightbox" hidden>
+  <img alt="">
+</div>
+<script>
+const box = document.getElementById("lightbox");
+const boxImg = box.querySelector("img");
+document.querySelectorAll("img[src^='originals/']").forEach((img) => {
+  img.addEventListener("click", () => {
+    boxImg.src = img.dataset.full || img.src;
+    boxImg.alt = img.alt;
+    box.hidden = false;
+    box.classList.add("open");
+  });
+});
+box.addEventListener("click", () => {
+  box.classList.remove("open");
+  box.hidden = true;
+  boxImg.src = "";
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") box.click();
+});
+const links = [...document.querySelectorAll("nav a")];
+const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id));
+  });
+}, { rootMargin: "-40% 0px -50% 0px", threshold: 0.01 });
+sections.forEach((s) => s && io.observe(s));
+</script>
+</body>
+</html>

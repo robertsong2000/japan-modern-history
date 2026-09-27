@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>倍赏千惠子 · 一九四一</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f3ecdf;
+  --sheet: #faf6ee;
+  --ink: #241c14;
+  --mute: #6e6256;
+  --yellow: #e3b122;
+  --yellow-deep: #a97812;
+  --night: #1a2330;
+  --line: #ddd2c0;
+  --slip: #fffaf1;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(227, 177, 34, 0.16), transparent 120px),
+    var(--paper);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  line-height: 1.85;
+}
+a { color: var(--yellow-deep); }
+.clothesline {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.pegline {
+  height: 16px;
+  background:
+    linear-gradient(var(--yellow), var(--yellow)) center / 100% 2px no-repeat,
+    radial-gradient(circle at 10px 8px, var(--ink) 2px, transparent 2.4px) left center / 36px 16px repeat-x;
+}
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  overflow-x: auto;
+  padding: 0 18px;
+  background: var(--paper);
+}
+nav a {
+  flex: 0 0 auto;
+  padding: 8px 14px 10px;
+  text-decoration: none;
+  color: var(--mute);
+  font-size: 14px;
+  line-height: 1.35;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+nav a .y {
+  display: block;
+  font-family: "Shippori Mincho", serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--yellow-deep);
+}
+nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--yellow);
+}
+.wrap {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto 80px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 380px);
+  gap: 36px;
+  align-items: end;
+  padding: 36px 0 18px;
+}
+.kicker {
+  margin: 0 0 8px;
+  font-family: "Shippori Mincho", serif;
+  letter-spacing: 0.28em;
+  font-size: 13px;
+  color: var(--yellow-deep);
+}
+h1 {
+  margin: 0;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+}
+h1 small {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--mute);
+}
+.lede {
+  margin: 16px 0 0;
+  font-size: 17px;
+}
+.facts {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 4px 12px;
+  margin: 18px 0 0;
+  font-size: 15px;
+}
+.facts dt { color: var(--mute); }
+.facts dd { margin: 0; }
+.hero figure { margin: 0; }
+.hero img, .shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero figcaption, .cap {
+  margin-top: 8px;
+  color: var(--mute);
+  font-size: 13px;
+  line-height: 1.6;
+}
+article {
+  padding: 42px 0 8px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 120px;
+}
+.when {
+  margin: 0;
+  font-family: "Shippori Mincho", serif;
+  color: var(--yellow-deep);
+  letter-spacing: 0.14em;
+  font-size: 13px;
+}
+h2 {
+  margin: 4px 0 16px;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.12em;
+}
+.shot {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.pair {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: start;
+}
+.note { margin: 14px 0 0; }
+.slip {
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  background: var(--slip);
+  border-left: 3px solid var(--yellow);
+}
+.thread {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+.thread div {
+  background: var(--sheet);
+  padding: 12px 14px;
+  border-top: 3px solid var(--yellow);
+}
+.thread strong {
+  display: block;
+  font-family: "Shippori Mincho", serif;
+  margin-bottom: 4px;
+}
+footer {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 14px;
+}
+#box {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 14, 10, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 6;
+}
+#box.open { display: flex; }
+#box img { max-width: min(1100px, 100%); max-height: 92vh; }
+@media (max-width: 800px) {
+  .hero, .pair, .thread { grid-template-columns: 1fr; }
+  .wrap { width: min(640px, calc(100% - 22px)); }
+  h2 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<div class="clothesline">
+  <div class="pegline" aria-hidden="true"></div>
+  <nav>
+    <a href="#street"><span class="y">1962</span>街头</a>
+    <a href="#stairs"><span class="y">1962</span>台阶</a>
+    <a href="#pebbles"><span class="y">1962</span>河滩</a>
+    <a href="#read"><span class="y">1963</span>间隙</a>
+    <a href="#hina"><span class="y">1963</span>雏</a>
+    <a href="#car"><span class="y">1965</span>开车</a>
+    <a href="#flower"><span class="y">1965</span>白花</a>
+    <a href="#two"><span class="y">1966</span>并肩</a>
+    <a href="#rose"><span class="y">2019</span>白玫瑰</a>
+    <a href="#three"><span class="y">2019</span>三个人</a>
+  </nav>
+</div>
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <p class="kicker">BAISHO CHIEKO</p>
+      <h1>倍赏千惠子<small>一九四一年六月二十九日 · 东京</small></h1>
+      <p class="lede">演员、歌手、声优。银幕上她最常是那个把日子接住的人：寅次郎的妹妹樱，黄手绢底下等丈夫的妻子，以及很晚才主演的那些老人。歌和戏是一件事。《下町的太阳》既是出道曲，也是她的外号。</p>
+      <dl class="facts">
+        <dt>本名</dt><dd>小六千惠子</dd>
+        <dt>出身</dt><dd>丰岛区西巢鸭，长于北区泷野川</dd>
+        <dt>身高</dt><dd>159 厘米</dd>
+        <dt>爱称</dt><dd>チコちゃん</dd>
+      </dl>
+    </div>
+    <figure>
+      <img src="color/color-01-street.jpg" alt="1962年，倍赏千惠子站在市街屋檐下，短发，浅色束腰连衣裙，一手叉腰">
+      <figcaption>《电影旬报》1962年肖像，由黑白原片着色。连衣裙的灰米色是推定。二十一岁，松竹歌剧团已经退了，电影刚开始。</figcaption>
+    </figure>
+  </header>
+
+  <article id="street">
+    <p class="when">01 · 1962 · 《电影旬报》</p>
+    <h2>街头</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="color/color-01-street.jpg">
+        <img src="color/color-01-street.jpg" alt="倍赏千惠子在楼房和条纹雨篷之间，短发齐耳，浅色连衣裙系着绳腰带">
+      </button>
+      <figcaption class="cap">屋檐、电线、身后一排窗户。她短发、灰米色连衣裙，绳腰带在腰上打结，一手叉在身后。底本是电影旬报社的黑白公共领域肖像，颜色后加。</figcaption>
+    </figure>
+    <p class="note">1941年6月29日，她生在东京丰岛区西巢鸭，在北区泷野川长大。战争中曾疏散到茨城。父母都在东京都交通局：父亲美悦开都电，母亲青木花当售票员。姓「倍赏」少见，源出秋田鹿角大汤温泉一带，父亲是从那里到东京来的。五个兄弟姐妹，她排行第二。小五岁的妹妹是演员倍赏美津子，弟弟倍赏明打过高校野球，后来当过日产汽车硬式棒球队监督，2019年去世，七十四岁。</p>
+    <p class="note">小时候她常赢业余歌唱比赛。1954年，十三岁，宝丽金出过一张儿童唱片《云雀的宝宝》（ひばりの赤ちゃん）。1957年进松竹音乐舞蹈学校，1960年以首席毕业，成为松竹歌剧团第13期。首席入团生可以在终场带头走下大台阶，她是第一个。同期有后来的声优加藤绿。</p>
+    <p class="slip">1962年，歌曲《下町的太阳》让她以歌手身份出道，拿下第4届日本唱片大奖新人奖。第二年山田洋次把它拍成同名电影，由她主演。从此这首歌的名字就挂在她身上。</p>
+  </article>
+
+  <article id="stairs">
+    <p class="when">02 · 1962年3月 · 《小说俱乐部》</p>
+    <h2>台阶</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="color/color-02-stairs.jpg">
+        <img src="color/color-02-stairs.jpg" alt="倍赏千惠子长发披肩，穿浅色衬衫，在台阶上回头">
+      </button>
+      <figcaption class="cap">《小说俱乐部》1962年3月号。长发还没有剪成后来的短发，衬衫领子敞着，人在台阶上回头。底本约 560 像素宽，网点很粗。着色后衬衫呈淡蓝，这是推定，不是当年的彩色底片。</figcaption>
+    </figure>
+    <p class="note">1961年松竹把她从歌剧团挖去拍电影。中村登的《斑女》是银幕处女作。那一年她二十岁。松竹当时一年能拍很多片子，她后来回忆，刚入行时电影业正旺，有一年她一个人进了十三部。</p>
+    <p class="note">台阶上的这张还是长发。到《电影旬报》那张街头肖像，头发已经剪短。两年之间，歌剧团的学员变成了松竹的年轻女演员。</p>
+  </article>
+
+  <article id="pebbles">
+    <p class="when">03 · 1962 · 松竹《流雏》</p>
+    <h2>河滩</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="color/color-08-pebbles.jpg">
+        <img src="color/color-08-pebbles.jpg" alt="卵石滩上，一名男子蹲着，倍赏千惠子坐在右侧，双腿伸直">
+      </button>
+      <figcaption class="cap">《流雏》（流し雛，1962）。右侧坐在卵石上的是倍赏千惠子。底本只有约 600 像素，着色时补清了脸和石头，毛衣的黄、裙子的蓝都是推定。左侧蹲着的男子，共享页没有署名。</figcaption>
+    </figure>
+    <p class="note">流雏是把用过的人偶放到河里送走的旧俗。片名用了这个风俗，画面却是干涸的卵石滩：两个人坐在石头上，背后是平地和远处的树。她的戏从这里开始密集起来。官方简历列过的早期片名有《水坑》《二十一岁的父亲》《雾之旗》《再见在舞会之后》《爱的赞歌》。</p>
+    <p class="note">她后来说，这份工作让她借角色活过许多次别人的人生。早期那些片子现在大多不在普通观众的记忆里。记住她的，是再过几年才开始的山田洋次。</p>
+  </article>
+
+  <article id="read">
+    <p class="when">04 · 1963年4月25日 · 《中日新闻》</p>
+    <h2>间隙</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="originals/09-chunichi-ad-1963.jpg">
+        <img src="originals/09-chunichi-ad-1963.jpg" alt="报纸广告：倍赏千惠子低头读书，身旁一位男子也在读书，下方大字是德川家康">
+      </button>
+      <figcaption class="cap">《中日新闻》1963年4月25日朝刊。讲谈社为山冈庄八《德川家康》做的广告。照片说明写着「倍赏也在读」「水原监督也在读」。她的评语印在广告上：拍摄等待的时候，录音的间隙，一有空就在读。</figcaption>
+    </figure>
+    <p class="note">这一年《下町的太阳》拍成电影。她从此成为山田洋次班子里的人。山田后来的原创长片，到《电影天地》为止，她几乎都是主演或女主角。两人合作超过六十部。共事这么久，私底下的交往传闻一次也没有过。</p>
+    <p class="note">1963年到1966年，她连续四次上NHK红白歌会。第14回唱《下町的太阳》，第16回唱《再见在舞会之后》，第17回唱晨间剧《阿花》的印象曲《おはなはん》。第16回的伴舞里有妹妹美津子。</p>
+    <p class="slip">给别的导演拍的戏相对少。她说过想演坏女人，电影里一直没有实现。松竹歌剧团出身的人，开音乐会时反而会往更现代的曲子上走。</p>
+  </article>
+
+  <article id="hina">
+    <p class="when">05 · 1963 · 国际情报社</p>
+    <h2>雏</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="originals/03-1963.jpg">
+        <img src="originals/03-1963.jpg" alt="倍赏千惠子穿白底金纹和服，鬓边插花，身旁是一具穿红衣的雏人偶">
+      </button>
+      <figcaption class="cap">彩色肖像。白底和服上是金线的菊花和叶子，鬓边一排小花。左下方是一具雏人偶，红衣、花笠、珠串。身后是格子门。这张没有印片名。国际情报社，公共领域。</figcaption>
+    </figure>
+    <p class="note">1963年她演过《舞妓小姐》，1964年又有《花的舞妓小姐》。和服与人偶是那几年宣传照里常见的道具，不能据此把这一张钉死在哪一部上。能看见的是二十二岁的脸：笑的时候眼睛弯起来，和后来樱的笑是同一种。</p>
+    <p class="note">山田要的就是这张脸。不是明星腔，是邻家女儿。寅次郎系列开拍以前，山田早期作品里的女主角大多是她。</p>
+  </article>
+
+  <article id="car">
+    <p class="when">06 · 1965 · 《泪别在再见之后》</p>
+    <h2>开车</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="color/color-06-car.jpg">
+        <img src="color/color-06-car.jpg" alt="敞篷车里，倍赏千惠子握着方向盘，桥幸夫靠在座椅上">
+      </button>
+      <figcaption class="cap">《泪别在再见之后》（涙にさよならを，1965），由黑白剧照着色。开车的是倍赏千惠子，米色外套。旁边是桥幸夫，白衬衫，一只脚搭在车门上，后座是格子外套。车身的青绿色是推定。</figcaption>
+    </figure>
+    <p class="note">方向盘在她手里。桥幸夫是那几年的歌手明星，两人还一起灌过唱片。同一年她自己的歌《再见在舞会之后》上了红白。那支恰恰舞曲的旋律，后来常被拿来和1992年动画《美少女战士》的《月光传说》对照，听的人能听出相近的句子。</p>
+    <p class="note">1965年的电影名单里还有松本清张原作的《雾之旗》。她这时既是松竹的女演员，也是有排行榜的歌手。两种工作没有拆开。</p>
+  </article>
+
+  <article id="flower">
+    <p class="when">07 · 1965 · 国际情报社</p>
+    <h2>白花</h2>
+    <div class="pair">
+      <figure>
+        <button class="shot" type="button" aria-label="放大这张照片" data-full="color/color-04-flowers.jpg">
+          <img src="color/color-04-flowers.jpg" alt="倍赏千惠子梳圆髻，髻上插着白色花朵，穿浅色和服，在阳光下笑">
+        </button>
+        <figcaption class="cap">圆髻上插着几朵白花，浅色和服的领口交叠。由黑白原片着色，和服仍是米白。阳光从侧面打过来。没有片名。</figcaption>
+      </figure>
+      <figure>
+        <button class="shot" type="button" aria-label="放大这张照片" data-full="originals/05-1965-b.jpg">
+          <img src="originals/05-1965-b.jpg" alt="倍赏千惠子穿白毛衣，伏在一辆红色轿车的引擎盖上">
+        </button>
+        <figcaption class="cap">同一来源的另一张。白毛衣、深色围巾，人伏在红车的引擎盖上，一只手搭着后视镜。无名指上一枚深色戒指。</figcaption>
+      </figure>
+    </div>
+    <p class="note">和服是宣传，毛衣和红车也是宣传。两张都是二十四岁。插白花的那张笑起来，已经很接近后来观众认得的樱：不锋利，亮，带着一点害羞。伏在红车上的那张不是某一部戏的剧照，是歌手的照片。</p>
+    <p class="note">樱这个角色要到1969年才出现。在那之前的四年，她把松竹青年女星该拍的类型都拍了一遍：舞妓、歌手电影、和桥幸夫的青春片。山田把她从这些类型里留下来，演一个会生气、会心软、把浪子哥哥的家守住的妹妹。</p>
+    <p class="note">歌从歌谣曲唱到抒情歌，也唱童谣和唱歌。声线能拉开，咬字清楚，藤山一郎评价过她的唱功。代表曲除了《下町的太阳》，还有《勿忘草送给你》《樱贝之歌》。</p>
+    <p class="note">1966年红白的曲目是《おはなはん》。那是NHK晨间剧的印象曲，剧名比电影更广地进了家庭。她后来的音乐会从1990年起走过一百多处。2004年起的系列叫「深呼吸以后，想起来了」，演讲常把题目定成「唱歌、演戏，以及活着」。作曲家丈夫小六礼次郎长期和她一起做这些场子。</p>
+    <p class="slip">第一段婚姻是1976年到1980年，丈夫是歌手、演员小宫健五。1993年与小六礼次郎结婚。户籍上的本名从此是小六千惠子。</p>
+  </article>
+
+  <article id="two">
+    <p class="when">08 · 1966年1月5日 · 《中日新闻》</p>
+    <h2>并肩</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="color/color-07-two.jpg">
+        <img src="color/color-07-two.jpg" alt="报纸网目照片：两位年轻女子，近处一位戴软帽、梳侧辫，身后一位仰头、戴珍珠项链">
+      </button>
+      <figcaption class="cap">《中日新闻》1966年1月5日的网目照片，着色后网点被抹平。说明是吉永小百合、倍赏千惠子，报纸没有标左右。近处戴米色软帽、梳侧辫；身后仰着头，藏青衣，一串珍珠。</figcaption>
+    </figure>
+    <p class="note">吉永小百合是同时代松竹另一张脸，更常被写成「美」。倍赏走的是市井。两人并在一张报纸上，正好把两种女演员分开。</p>
+    <p class="note">妹妹美津子比她晚进松竹歌剧团。1967年姐妹在《纯情二重奏》里演异母姐妹，那是美津子的电影出道。美津子后来往另一路走，演过今村昌平、崔洋一的片子，和姐姐的「樱」几乎不在同一个银幕气质里。1986年神代辰巳的《不离婚的女人》里，姐妹再次同框。</p>
+  </article>
+
+  <article id="rose">
+    <p class="when">09 · 2019年11月 · 东京国际电影节</p>
+    <h2>白玫瑰</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="originals/10-tiff-2019.jpg">
+        <img src="originals/10-tiff-2019.jpg" alt="七十八岁的倍赏千惠子，短卷发，细框眼镜，黑外套别着一朵白玫瑰">
+      </button>
+      <figcaption class="cap">第32届东京国际电影节开幕式。她为《男人真命苦：欢迎回来，寅先生》出席。黑外套、白衬衫，领口一朵白玫瑰，一只耳坠是珍珠。摄影：Dick Thomas Johnson，CC BY 2.0。原片由索尼 A7 III 拍摄，此处收的是缩小后的文件。</figcaption>
+    </figure>
+    <p class="note">从1962年的街头到这朵白玫瑰，中间是樱。1969年到1995年，渥美清的车寅次郎拍了48部剧场版，她从头到尾演妹妹诹访樱。樱嫁给印刷厂的博，博由前田吟演满全系列，家在葛饰柴又。寅次郎在外面闯祸、恋爱、失败，最后回到这家。1997年有一部特别篇。渥美清1996年8月4日去世，是山田洋次夜里打电话告诉她的。她后来说，好一阵子不肯相信，也不愿再看那些片子，因为人还在动。告别会上她读了悼词，又唱了《樱的叙事曲》。山田事先说：话说乱了没关系，哭出来也没关系。</p>
+    <p class="note">寅次郎以外，该记住的是这几部。1970年《家族》，她演风见民子，和《望乡篇》一起拿下《电影旬报》女演员奖、每日电影奖主演女演员奖，以及艺术选奖文部大臣奖。1977年《幸福的黄手绢》里她是岛光枝，和高仓健演一对隔着刑期重逢的夫妻，故事放在北海道，改编自皮特·哈米尔的专栏。1980年《远山的呼唤》再演风见民子，第4届日本电影学院奖最优秀主演女演员奖落在这部和《寅次郎芙蓉花》上。1981年《车站》是降旗康男的片子，她演柳田桐子，又拿了《电影旬报》主演女演员奖。</p>
+    <p class="note">2001年她发现乳癌。2005年受紫绶褒章前后参加粉红丝带活动。手术和丈夫怎么陪她，直到2008年在节目里才公开细说。2013年春受旭日小绶章。同年任北海道别海町观光大使，因为黄手绢和远山的呼唤都和那里有关。2022年成为葛饰区名誉区民。</p>
+    <p class="note">2004年她为宫崎骏的《哈尔的移动城堡》配苏菲，并唱了主题曲《世界的约定》，因此得到2005年东京动画奖声优奖。2019年《天气之子》里配立花富美。2022年早川千绘的《PLAN 75》，她主演七十八岁的清洁工角谷美智，面对一项允许七十五岁以上的人申请结束生命的制度。片子进了戛纳「一种关注」。她八十一岁拿到蓝丝带奖主演女演员奖，领奖时说，被人称作最高龄，自己倒觉得奇怪。2025年山田洋次的《东京出租车》里她主演高野堇，和木村拓哉第一次在真人电影里演对手戏。2026年第49届日本电影学院奖，她再拿最优秀主演女演员奖。上一次最优秀奖是1981年。</p>
+  </article>
+
+  <article id="three">
+    <p class="when">10 · 2019年11月 · 同一场开幕式</p>
+    <h2>三个人</h2>
+    <figure>
+      <button class="shot" type="button" aria-label="放大这张照片" data-full="originals/11-tiff-yamada-2019.jpg">
+        <img src="originals/11-tiff-yamada-2019.jpg" alt="红毯上，倍赏千惠子、山田洋次、后藤久美子手拉着手">
+      </button>
+      <figcaption class="cap">左起：倍赏千惠子、山田洋次、后藤久美子。后藤在寅次郎后期演过泉。山田白发、墨镜、紫领带，翻领上一枚小徽章。三个人的手拉在一起。同一摄影师，CC BY 2.0。</figcaption>
+    </figure>
+    <p class="note">2019年的《欢迎回来，寅先生》里，寅次郎本人不再出场，满男一路找失踪的叔叔。她仍是樱。第44届日本电影学院奖给了她优秀主演女演员奖。2023年，意大利乌迪内远东电影节把终身成就奖金桑奖颁给她。影展放了她亲自挑选的第一部《男人真命苦》和1970年的《家族》，也放了当时的新片《PLAN 75》。她说，本来以为奖是给新片的，结果是给从进电影界以来的全部工作。</p>
+    <p class="note">2026年她还在《在那颗星星降落的山丘，想再与你相遇》里演藤谷千代。音乐会也还在开。后期松竹、东宝的电影底片仍在版权期内，寅次郎、黄手绢、远山的呼唤的画面这里没有收。能公开使用的，是这些早年印刷品，和2019年红毯上的两张。</p>
+    <div class="thread">
+      <div><strong>太阳</strong>1962年的歌，1963年的电影。下町、短发、叉着腰的那张脸从这里定下来。</div>
+      <div><strong>樱</strong>1969到1995，四十八部。妹妹把家守在柴又。2019年又演了一次。</div>
+      <div><strong>手绢</strong>1977年的黄手绢，2022年的《PLAN 75》，2025年的出租车。等的人、决定去死的人、重新坐上车的人，都是她。</div>
+    </div>
+  </article>
+
+  <footer>
+    <p>图来自维基共享资源分类 Chieko Baishō。1962至1966年的肖像、剧照和报纸，共享页标为公共领域（日本法人著作已过保护期）：电影旬报社、桃园书房、国际情报社、中日新闻社，以及松竹七十年图录中的《流雏》剧照。其中六张黑白照片做了着色，衣服和车的颜色是推定，不是当年的彩色底片。《流雏》和台阶那两张原图很小，着色时脸被补清楚了。1963年4月25日那整版报纸仍是黑白，版面上的字没有改。2019年东京国际电影节两张的作者是 Dick Thomas Johnson，CC BY 2.0。1963年和服雏人偶、1965年红车，原来就是彩色。后期故事片的画面仍属出品公司，没有收录。</p>
+    <p>生平据日文维基百科「倍赏千惠子」、她的官方简历（baisho-chieko.com）和《中日新闻》1963年4月25日广告上的原文整理。1966年合影没有强行指认左右。</p>
+  </footer>
+</main>
+<div id="box" role="dialog" aria-label="放大图片">
+  <img alt="">
+</div>
+<script>
+const box = document.getElementById("box");
+const big = box.querySelector("img");
+document.querySelectorAll("button.shot").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    big.src = btn.dataset.full;
+    big.alt = btn.querySelector("img").alt;
+    box.classList.add("open");
+  });
+});
+box.addEventListener("click", () => box.classList.remove("open"));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") box.classList.remove("open");
+});
+const links = [...document.querySelectorAll("nav a")];
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((en) => {
+    if (!en.isIntersecting) return;
+    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
+  });
+}, { rootMargin: "-30% 0px -55% 0px" });
+document.querySelectorAll("main article").forEach((el) => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>东京街头 · 一九八〇至八四</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Noto+Serif+SC:wght@500;600&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bench: #121110;
+  --paper: #c9c3b6;
+  --sheet: #e6e1d6;
+  --ink: #161513;
+  --mute: #5e5952;
+  --amber: #e25c1c;
+  --line: #2a2724;
+  --slip: #f3efe6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 480px at 80% -10%, #3a2418 0%, transparent 55%),
+    var(--bench);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  line-height: 1.75;
+}
+a { color: var(--amber); }
+.bench {
+  width: min(1180px, calc(100% - 28px));
+  margin: 28px auto 48px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.05) 0 18px, transparent 18px),
+    var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+}
+.sprocket {
+  background-image: radial-gradient(circle at 10px 12px, #121110 3.5px, transparent 4px);
+  background-size: 100% 28px;
+  background-repeat: repeat-y;
+}
+.sheet {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 28px;
+  padding: 28px 32px 40px 36px;
+}
+header.cover { grid-column: 1 / -1; border-bottom: 1px solid var(--line); padding-bottom: 18px; }
+.kicker {
+  margin: 0 0 8px;
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  color: var(--amber);
+}
+h1 {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  font-weight: 700;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+}
+.lede { max-width: 40em; margin: 12px 0 0; font-size: 18px; }
+.caveat {
+  max-width: 46em;
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  background: var(--slip);
+  border-left: 3px solid var(--amber);
+  color: #3c3832;
+  font-size: 15px;
+}
+nav.dir { position: sticky; top: 16px; align-self: start; }
+nav.dir ol { list-style: none; margin: 0; padding: 0; }
+nav.dir a {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  color: var(--ink);
+  text-decoration: none;
+  border-top: 1px solid rgba(22,21,19,0.18);
+  font-size: 14px;
+}
+nav.dir a .n {
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  color: var(--amber);
+  font-size: 12px;
+}
+nav.dir a.active { background: rgba(226,92,28,0.12); }
+main { min-width: 0; }
+article.leaf {
+  padding: 28px 0 8px;
+  border-bottom: 1px solid rgba(22,21,19,0.2);
+}
+.leaf-head { display: flex; gap: 16px; align-items: baseline; }
+.num {
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  color: var(--amber);
+  font-size: 20px;
+}
+h2 {
+  margin: 0;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: 0.04em;
+}
+.en { margin: 2px 0 0; color: var(--mute); font-size: 14px; }
+figure { margin: 16px 0 8px; }
+figure button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ddd7cc;
+}
+.portrait { max-width: 460px; }
+.square { max-width: 520px; }
+figcaption {
+  margin-top: 8px;
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+}
+.label, .note { margin: 12px 0; }
+.label {
+  padding: 12px 14px;
+  background: var(--slip);
+  border: 1px solid rgba(22,21,19,0.15);
+  font-size: 15px;
+}
+.label p { margin: 0 0 4px; }
+.label p:last-child { margin: 0; }
+.note {
+  padding-left: 12px;
+  border-left: 2px solid rgba(22,21,19,0.35);
+  color: #2c2925;
+}
+.thread {
+  padding-top: 28px;
+}
+.thread h2 { font-family: "Noto Serif SC", serif; font-size: 28px; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin-top: 12px;
+}
+.grid div {
+  padding-top: 8px;
+  border-top: 1px solid rgba(22,21,19,0.25);
+  font-size: 15px;
+}
+footer.colophon {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 14px;
+}
+footer a { color: #8a3d16; }
+#lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(10,9,8,0.88);
+  z-index: 20;
+  padding: 24px;
+}
+#lightbox.open { display: grid; }
+#lightbox img { max-width: min(1100px, 100%); max-height: 90vh; }
+@media (max-width: 860px) {
+  .sheet { grid-template-columns: 1fr; padding: 20px 16px 28px 28px; }
+  nav.dir { position: static; }
+  nav.dir ol { display: grid; grid-template-columns: 1fr 1fr; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="bench sprocket">
+  <div class="sheet">
+    <header class="cover">
+      <p class="kicker">SHOWA 55–59 · TOKYO · GELATIN SILVER</p>
+      <h1>东京街头</h1>
+      <p class="lede">东京都写真美术馆所藏的七张银盐照片，年代落在 1980 到 1984，地点都在东京街上。这是一份馆藏图录，按拍摄年排，不按网页出现的顺序。</p>
+      <p class="caveat">馆方检索对这七张都写着「图像未公开」。本页只放入一张曾在报道中刊出的画面：山内道雄《新宿区 歌舞伎町》（1984）。其余六张用与原作纵横比一致的空框代替，不臆测画面里有什么人。</p>
+    </header>
+
+    <nav class="dir" aria-label="作品目录">
+      <ol>
+        <li><a href="#p01"><span class="n">01</span>原宿</a></li>
+        <li><a href="#p02"><span class="n">02</span>神宫前</a></li>
+        <li><a href="#p03"><span class="n">03</span>新宿三丁目</a></li>
+        <li><a href="#p04"><span class="n">04</span>涩谷</a></li>
+        <li><a href="#p05"><span class="n">05</span>神保町</a></li>
+        <li><a href="#p06"><span class="n">06</span>浅草</a></li>
+        <li><a href="#p07"><span class="n">07</span>歌舞伎町</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <article class="leaf" id="p01">
+        <div class="leaf-head">
+          <span class="num">01</span>
+          <div>
+            <h2>渋谷区 原宿</h2>
+            <p class="en">Harajuku, Shibuya Ward · 长野重一 · 1980</p>
+          </div>
+        </div>
+        <figure>
+          <button type="button" data-full="originals/01-harajuku.svg" aria-label="放大原宿空框">
+            <img src="originals/01-harajuku.svg" alt="原宿，馆方未公开图像，空框比例按 261×391 毫米">
+          </button>
+          <figcaption>261 × 391 mm · 横幅 · 作品番号 10014221</figcaption>
+        </figure>
+        <blockquote class="label">
+          <p>系列《遠い視線》（A Distant Gaze）。明胶银盐，显影纸。所藏东京都写真美术馆。</p>
+          <p>作者生卒：1925–2019。</p>
+        </blockquote>
+        <div class="note">
+          <p>系列名把距离写在标题里。原宿在 1980 年已经是周日步行者天国聚集年轻人的一侧，和后面土田广美的涩谷、昭和馆那张轮滑族是同一带街道上的不同取景。这一张的画面没有公开，空框只标出印相的横竖。</p>
+          <p><a href="https://collection.topmuseum.jp/Publish/detailPage/23821/">馆藏页</a> · <a href="https://museumcollection.tokyo/works/101904/">ToMuCo</a></p>
+        </div>
+      </article>
+
+      <article class="leaf" id="p02">
+        <div class="leaf-head">
+          <span class="num">02</span>
+          <div>
+            <h2>渋谷区神宮前一丁目</h2>
+            <p class="en">Jingumae 1-chome · 桑原甲子雄 · 1980</p>
+          </div>
+        </div>
+        <figure>
+          <button type="button" data-full="originals/02-jingumae.svg" aria-label="放大神宫前空框">
+            <img src="originals/02-jingumae.svg" alt="神宫前一丁目，馆方未公开图像，空框比例按 157×233 毫米">
+          </button>
+          <figcaption>157 × 233 mm · 横幅 · 作品番号 10110975</figcaption>
+        </figure>
+        <blockquote class="label">
+          <p>系列《東京暦日》（Tokyo Day after Day）。明胶银盐，显影纸。</p>
+          <p>作者生卒：1913–2007。制作年写的是 1980，不是一个年代区间。</p>
+        </blockquote>
+        <div class="note">
+          <p>神宫前一丁目靠明治通和原宿站。印相只有 157 毫米高，和下一张新宿三丁目同属他晚年小尺寸的街头日记，不是战后那批 350 毫米以上的大印相。</p>
+          <p><a href="https://collection.topmuseum.jp/Publish/detailPage/46600/">馆藏页</a> · <a href="https://museumcollection.tokyo/works/102030/">ToMuCo</a></p>
+        </div>
+      </article>
+
+      <article class="leaf" id="p03">
+        <div class="leaf-head">
+          <span class="num">03</span>
+          <div>
+            <h2>新宿区新宿三丁目</h2>
+            <p class="en">Shinjuku 3-chome · 桑原甲子雄 · 1980–1989</p>
+          </div>
+        </div>
+        <figure>
+          <button type="button" data-full="originals/03-shinjuku.svg" aria-label="放大新宿三丁目空框">
+            <img src="originals/03-shinjuku.svg" alt="新宿三丁目，馆方未公开图像，空框比例按 163×244 毫米">
+          </button>
+          <figcaption>163 × 244 mm · 横幅 · 作品番号 10110972</figcaption>
+        </figure>
+        <blockquote class="label">
+          <p>系列仍是《東京暦日》。明胶银盐，显影纸。年份著录为 1980–1989，没有落到某一年。</p>
+        </blockquote>
+        <div class="note">
+          <p>馆里另有一张同名作品：系列《東京戦後》，年份 1960–1969，尺寸 357×528 毫米，作品番号 10101950。本页收的是八十年代这张小印相。新宿三丁目在车站东口一带，是商店街，不是歌舞伎町。</p>
+          <p><a href="https://collection.topmuseum.jp/Publish/detailPage/8205/">馆藏页</a> · <a href="https://museumcollection.tokyo/en/works/102028/">ToMuCo</a></p>
+        </div>
+      </article>
+
+      <article class="leaf" id="p04">
+        <div class="leaf-head">
+          <span class="num">04</span>
+          <div>
+            <h2>歩行者天国の日、渋谷</h2>
+            <p class="en">Pedestrian Precinct, Shibuya · 土田广美 · 1981</p>
+          </div>
+        </div>
+        <figure>
+          <button type="button" data-full="originals/04-shibuya.svg" aria-label="放大涩谷空框">
+            <img src="originals/04-shibuya.svg" alt="涩谷步行者天国，馆方未公开图像，空框比例按 300×443 毫米">
+          </button>
+          <figcaption>300 × 443 mm · 横幅 · 作品番号 10008167</figcaption>
+        </figure>
+        <blockquote class="label">
+          <p>系列《砂を数える》（Counting Grains of Sand）。明胶银盐，显影纸。作者 1939 年生。</p>
+        </blockquote>
+        <div class="note">
+          <p>步行者天国是把周日的车道临时让给行人。标题只写「涩谷、步行者天国的日子」，没有写画面里是人群、店招还是空街。系列名叫「数砂」，把人当成可数的颗粒。空框保持 300×443 的横幅，不补人群。</p>
+          <p><a href="https://collection.topmuseum.jp/Publish/detailPage/10707/">馆藏页</a> · <a href="https://museumcollection.tokyo/en/works/102287/">ToMuCo</a></p>
+        </div>
+      </article>
+
+      <article class="leaf" id="p05">
+        <div class="leaf-head">
+          <span class="num">05</span>
+          <div>
+            <h2>千代田区・神田神保町</h2>
+            <p class="en">Kandajinbocho, Chiyoda-ku · 须田一政 · 1981</p>
+          </div>
+        </div>
+        <figure class="portrait">
+          <button type="button" data-full="originals/05-jimbocho.svg" aria-label="放大神保町空框">
+            <img src="originals/05-jimbocho.svg" alt="神田神保町，馆方未公开图像，空框比例按 425×325 毫米">
+          </button>
+          <figcaption>425 × 325 mm · 竖幅 · 作品番号 10010705</figcaption>
+        </figure>
+        <blockquote class="label">
+          <p>系列《東京1980》（Tokyo, 1980）。国内写真作品。作者生卒：1940–2019。</p>
+          <p>这一条的技法栏是空的。同系列《足立区・飯塚》（1981，425×325 mm，作品番号 10010700）著录为明胶银盐，本条不据此填入。</p>
+        </blockquote>
+        <div class="note">
+          <p>七张里唯一明确的竖幅，比横幅街拍高出一头。神保町是旧书街，拍摄年标在 1981，系列名却叫「东京 1980」。画面未公开。</p>
+          <p><a href="https://collection.topmuseum.jp/Publish/detailPage/23420/">馆藏页</a> · <a href="https://museumcollection.tokyo/works/102363/">ToMuCo</a></p>
+        </div>
+      </article>
+
+      <article class="leaf" id="p06">
+        <div class="leaf-head">
+          <span class="num">06</span>
+          <div>
+            <h2>浅草 1983.8</h2>
+            <p class="en">Asakusa 1983.8 · 大西光 · 1983</p>
+          </div>
+        </div>
+        <figure class="square">
+          <button type="button" data-full="originals/06-asakusa.svg" aria-label="放大浅草空框">
+            <img src="originals/06-asakusa.svg" alt="浅草 1983年8月，馆方未公开图像，空框比例按 237×236 毫米">
+          </button>
+          <figcaption>237 × 236 mm · 近方幅 · 作品番号 10101544</figcaption>
+        </figure>
+        <blockquote class="label">
+          <p>系列《ワンダーランド 1980–1989》（Wonder Land 1980–1989）。明胶银盐，显影纸。作者 1952 年生。</p>
+          <p>月份写在作品名里：1983 年 8 月。</p>
+        </blockquote>
+        <div class="note">
+          <p>系列覆盖整个八十年代，这一张只是 1983 年 8 月的浅草，是入口，不是全套。印相几乎是方的。画面未公开，馆藏检索里还能按系列名继续翻。</p>
+          <p><a href="https://collection.topmuseum.jp/Publish/detailPage/25369/">馆藏页</a> · <a href="https://museumcollection.tokyo/en/works/103266/">ToMuCo</a></p>
+        </div>
+      </article>
+
+      <article class="leaf" id="p07">
+        <div class="leaf-head">
+          <span class="num">07</span>
+          <div>
+            <h2>新宿区 歌舞伎町</h2>
+            <p class="en">Kabukicho, Shinjuku-ku · 山内道雄 · 1984</p>
+          </div>
+        </div>
+        <figure>
+          <button type="button" data-full="originals/07-kabukicho.jpg" aria-label="放大歌舞伎町">
+            <img src="originals/07-kabukicho.jpg" alt="歌舞伎町街头：近景年轻男子侧脸，白衬衫领，身后有穿西装的行人">
+          </button>
+          <figcaption>318 × 460 mm · 横幅 · 作品番号 10107185 · 此图 460×314，来自报道，不是馆方扫描</figcaption>
+        </figure>
+        <blockquote class="label">
+          <p>系列《東京》（TOKYO）。明胶银盐，显影纸。作者 1950 年生。</p>
+          <p>2007 年 2 月，东京都写真美术馆「新收藏展 Vol.1」公开展出过这张。线上检索图至今仍标未公开。</p>
+        </blockquote>
+        <div class="note">
+          <p>近景一个年轻男子，深色外套、白领衬衫，头略低，眼睛不看镜头。左缘只剩一件皮夹克的肩和袖。后面站着穿西装的男人，再远是楼和招牌。取景贴着人脸，不是街的全景。</p>
+          <p>图片转自《シブヤ経済新聞》2007 年 1 月 30 日报道所用图，著作权在摄影者与馆方。本地这一份只供对照著录。</p>
+          <p><a href="https://collection.topmuseum.jp/Publish/detailPage/32856/">馆藏页</a> · <a href="https://museumcollection.tokyo/works/103559/">ToMuCo</a> · <a href="https://www.shibukei.com/headline/4021/">报道</a></p>
+        </div>
+      </article>
+
+      <section class="thread" id="thread">
+        <h2>七张怎么接在一起</h2>
+        <div class="grid">
+          <div><strong>日记。</strong>桑原两张都是《东京历日》，印相只有十五厘米高，一年或一个十年记一条街。</div>
+          <div><strong>远。</strong>长野的系列名是「远的视线」，地点却在人最多的原宿。</div>
+          <div><strong>数。</strong>土田把步行者天国当天的涩谷放进「数砂」，人被当成颗粒。</div>
+          <div><strong>竖。</strong>须田把神保町转成竖幅，系列名叫 1980，拍摄年是 1981。</div>
+          <div><strong>月。</strong>大西把「1983.8」写进标题，浅草只占 Wonder Land 的一个月份。</div>
+          <div><strong>近。</strong>山内在歌舞伎町把脸切到画面前面。昭和在 1989 年 1 月 7 日结束，这七张都还在昭和里。</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="colophon">
+      <p>著录据东京都写真美术馆收藏检索（collection.topmuseum.jp）与 ToMuCo。图像文件除歌舞伎町外，检索接口返回「事情により画像は公開しておりません」。没有做修复，也没有上色。</p>
+      <p>东京都写真美术馆：东京都目黑区三田 1-13-3，惠比寿花园广场内。</p>
+    </footer>
+  </div>
+</div>
+
+<div id="lightbox" hidden>
+  <img alt="">
+</div>
+<script>
+(function () {
+  var box = document.getElementById("lightbox");
+  var pic = box.querySelector("img");
+  document.querySelectorAll("figure button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      pic.src = btn.getAttribute("data-full");
+      pic.alt = btn.getAttribute("aria-label") || "";
+      box.hidden = false;
+      box.classList.add("open");
+    });
+  });
+  function close() {
+    box.classList.remove("open");
+    box.hidden = true;
+    pic.removeAttribute("src");
+  }
+  box.addEventListener("click", close);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") close();
+  });
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav.dir a"));
+  var sections = links.map(function (a) {
+    return document.querySelector(a.getAttribute("href"));
+  });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = "#" + entry.target.id;
+        links.forEach(function (a) {
+          a.classList.toggle("active", a.getAttribute("href") === id);
+        });
+      });
+    }, { rootMargin: "-20% 0px -60% 0px", threshold: 0.1 });
+    sections.forEach(function (sec) { if (sec) io.observe(sec); });
+  }
+})();
+</script>
+</body>
+</html>

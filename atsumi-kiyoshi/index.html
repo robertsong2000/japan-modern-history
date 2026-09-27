@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>渥美清 · 一九二八至一九九六</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Zen+Old+Mincho:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dusk: #1c2830;
+  --dusk-2: #2a3b46;
+  --paper: #f4ead7;
+  --sheet: #fbf6ec;
+  --ink: #1b140e;
+  --mute: #6d6256;
+  --hachi: #b8432f;
+  --suit: #8d6844;
+  --line: #d8cbb4;
+  --slip: #fffaf1;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(184, 67, 47, 0.08), transparent 180px),
+    repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(27, 20, 14, 0.025) 28px),
+    var(--paper);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  line-height: 1.85;
+}
+a { color: var(--dusk-2); }
+.shell {
+  display: grid;
+  grid-template-columns: 196px minmax(0, 1fr);
+  width: min(1120px, calc(100% - 28px));
+  margin: 18px auto 72px;
+  gap: 28px;
+}
+nav {
+  position: sticky;
+  top: 14px;
+  align-self: start;
+  padding: 14px 0 8px;
+}
+.mark {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: var(--hachi);
+  margin: 0 0 10px;
+}
+nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+nav a {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--mute);
+  font-size: 15px;
+}
+nav a .n {
+  font-family: "Zen Old Mincho", serif;
+  color: var(--suit);
+}
+nav a.active { color: var(--ink); }
+nav a.active .n { color: var(--hachi); }
+.hero {
+  display: grid;
+  grid-template-columns: 72px minmax(220px, 340px) minmax(0, 1fr);
+  gap: 22px;
+  background: linear-gradient(160deg, var(--dusk) 0%, #12191e 70%);
+  color: #f6efe4;
+  padding: 22px 22px 22px 16px;
+  margin-bottom: 34px;
+  box-shadow: 0 18px 40px rgba(28, 40, 48, 0.18);
+}
+.vtitle {
+  writing-mode: vertical-rl;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 46px;
+  letter-spacing: 0.18em;
+  margin: 0;
+  line-height: 1;
+}
+.vtitle small {
+  display: block;
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.28em;
+  color: #e7b2a8;
+}
+.sprocket {
+  background:
+    radial-gradient(circle at 8px 12px, #f4ead7 3.5px, transparent 4px) left / 16px 22px repeat-y,
+    radial-gradient(circle at calc(100% - 8px) 12px, #f4ead7 3.5px, transparent 4px) right / 16px 22px repeat-y,
+    #0d0d0d;
+  padding: 10px 18px;
+}
+.sprocket img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: contrast(1.05);
+}
+.lede h2 {
+  margin: 0 0 8px;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+}
+.lede p { margin: 0 0 12px; color: #efe6d8; }
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin: 16px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(244, 234, 215, 0.25);
+  font-size: 14px;
+}
+.facts dt { color: #e7b2a8; font-size: 12px; letter-spacing: 0.12em; }
+.facts dd { margin: 0; }
+.leaf { padding: 8px 0 36px; border-top: 1px solid var(--line); }
+.when {
+  margin: 18px 0 6px;
+  font-family: "Zen Old Mincho", serif;
+  color: var(--hachi);
+  letter-spacing: 0.16em;
+  font-size: 14px;
+}
+.leaf h2 {
+  margin: 0 0 14px;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+figure { margin: 0 0 14px; }
+button.shot {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+button.shot img { display: block; width: 100%; height: auto; }
+.pair {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr;
+  gap: 12px;
+  align-items: start;
+}
+.cap {
+  margin: 8px 0 0;
+  color: var(--mute);
+  font-size: 14px;
+}
+.note {
+  margin: 14px 0 0;
+  padding: 4px 0 4px 14px;
+  border-left: 3px solid var(--hachi);
+}
+.slip {
+  margin: 14px 0 0;
+  padding: 12px 16px;
+  background: var(--slip);
+  border: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 15px;
+}
+.thread {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+.thread div {
+  padding: 12px 14px;
+  background: var(--sheet);
+  border-top: 3px solid var(--suit);
+}
+.thread strong { display: block; font-family: "Zen Old Mincho", serif; margin-bottom: 4px; }
+footer {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 14px;
+}
+.tone {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 14px 0 0;
+  border: 1px solid var(--line);
+}
+.tone button {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--mute);
+  cursor: pointer;
+}
+.tone button + button { border-left: 1px solid var(--line); }
+.tone button.on {
+  background: var(--dusk);
+  color: #f6efe4;
+}
+.tone-note {
+  margin: 8px 0 0;
+  color: var(--mute);
+  font-size: 12px;
+  line-height: 1.6;
+}
+#box {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 14, 16, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 5;
+}
+#box.open { display: flex; }
+#box img { max-width: min(1100px, 100%); max-height: 92vh; }
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; width: min(720px, calc(100% - 20px)); }
+  nav { position: static; }
+  nav ol { display: flex; gap: 8px; overflow: auto; border: 0; }
+  nav a { border: 1px solid var(--line); padding: 6px 10px; white-space: nowrap; }
+  .hero, .pair, .facts, .thread { grid-template-columns: 1fr; }
+  .vtitle { writing-mode: horizontal-tb; font-size: 40px; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav>
+    <p class="mark">节目</p>
+    <ol>
+      <li><a href="#face"><span class="n">01</span>脸</a></li>
+      <li><a href="#band"><span class="n">02</span>头巾</a></li>
+      <li><a href="#three"><span class="n">03</span>三个人</a></li>
+      <li><a href="#laugh"><span class="n">04</span>笑</a></li>
+      <li><a href="#case"><span class="n">05</span>皮箱</a></li>
+      <li><a href="#hand"><span class="n">06</span>手印</a></li>
+    </ol>
+    <div class="tone" role="group" aria-label="照片版本">
+      <button type="button" data-tone="bw">黑白</button>
+      <button type="button" data-tone="color">彩色</button>
+    </div>
+    <p class="tone-note">彩色是按黑白原片上的色，不是当年的彩色底片。皮箱和手印本来就是彩色。</p>
+  </nav>
+  <main>
+    <header class="hero">
+      <h1 class="vtitle">渥美清<small>ATSUMI KIYOSHI</small></h1>
+      <div class="sprocket">
+        <img class="swap" src="color/04-eiga-hyoron-color.png" data-bw="originals/04-eiga-hyoron-1963.jpg" data-color="color/04-eiga-hyoron-color.png" alt="1963年《映画评论》二月号上的渥美清肖像">
+      </div>
+      <div class="lede">
+        <h2>演寅次郎的那个人</h2>
+        <p>银幕上他是车寅次郎：礼帽、旧西装、坎肩，在柴又和旅途之间来回，每次恋爱都落空，人却一直乐着。银幕外他叫田所康雄，把家门关得很死。共事二十七年的人，到火化之后才得知死讯。</p>
+        <dl class="facts">
+          <div><dt>本名</dt><dd>田所康雄</dd></div>
+          <div><dt>生卒</dt><dd>1928.3.10 — 1996.8.4</dd></div>
+          <div><dt>出生</dt><dd>东京府下谷区</dd></div>
+          <div><dt>俳号</dt><dd>风天</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <article class="leaf" id="face">
+      <p class="when">01 · 1963年2月 · 《映画评论》</p>
+      <h2>脸</h2>
+      <figure>
+        <button class="shot" type="button" aria-label="放大这张照片" data-full="color/04-eiga-hyoron-color.png">
+          <img class="swap" src="color/04-eiga-hyoron-color.png" data-bw="originals/04-eiga-hyoron-1963.jpg" data-color="color/04-eiga-hyoron-color.png" alt="渥美清半身肖像，白衬衫，目光偏向一侧">
+        </button>
+        <figcaption class="cap">《映画评论》1963年2月号。这时他三十四岁，右肺已经切过，寅次郎还没出现。</figcaption>
+      </figure>
+      <p class="note">1928年3月10日，他生在东京府东京市下谷区，今台东区下谷一带。父亲田所友次郎是地方报纸记者，母亲田所タツ做过小学教员，后来在家贴信封。他是次子，上面有哥哥健一郎。小学在板桥，家里穷，他自己又病，肾炎、关节炎都得过，三年级、四年级长期缺课。缺课的日子他听收音机，听德川梦声和落语，把段子背到学校去说。</p>
+      <p class="note">战争后期的学历有几种说法。一种是1942年进了旧制私立巢鸭中学，被征去板桥的军需工厂做飞机散热器。另一种是他并没读完中学，十四岁就进了志村坂上的东京管乐器町工厂，后来离家跟戏班跑码头。巢鸭的在籍记录毁于战火，学校方面也无法坐实。1945年3月10日，十七岁生日当天，东京大空袭把他家烧了。</p>
+      <p class="note">战后他当过工人，也帮摆摊的干过活，还进过中央大学商学部——这件事同样有争议，有人说那顶角帽是演戏用的。永六辅后来说，废墟里捡金属、在秋叶原买零件装矿石收音机的少年里头，领头的是他。还有一则常被提起的事：他偷过路边的铁链去卖，被警察训过。那个刑警说，这张脸看一眼就忘不了，与其去犯罪，不如去当演员。</p>
+      <p class="slip">他本来想当船上的厨务员，志愿书交到大日本船舶运营会，母亲拦住了。于是靠熟人进了巡回剧团。艺名起初是「渥美悦郎」，取自小说人物；后来有主持人觉得「渥美清」更好叫。也有说法是取「清く、美しく、あったかくあれ」。</p>
+    </article>
+
+    <article class="leaf" id="band">
+      <p class="when">02 · 1963年 · 松竹《拝啓天皇陛下様》</p>
+      <h2>头巾</h2>
+      <div class="pair">
+        <figure>
+          <button class="shot" type="button" aria-label="放大这张照片" data-full="color/02-haikei-fujiyama-color.png">
+            <img class="swap" src="color/02-haikei-fujiyama-color.png" data-bw="originals/02-haikei-fujiyama.jpg" data-color="color/02-haikei-fujiyama-color.png" alt="军营食堂里，渥美清扎头巾坐着，藤山宽美站着端饭">
+          </button>
+          <figcaption class="cap">宣传照。右为渥美清，左为藤山宽美。底边印着片名。画面上有「复制禁止」。</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" aria-label="放大这张照片" data-full="color/01-haikei-portrait-color.png">
+            <img class="swap" src="color/01-haikei-portrait-color.png" data-bw="originals/01-haikei-portrait.jpg" data-color="color/01-haikei-portrait-color.png" alt="渥美清扎白头巾、穿军装、手持筷子的近景">
+          </button>
+          <figcaption class="cap">同一场的近景。原文件只有 600×800 像素，未做放大修补。</figcaption>
+        </figure>
+      </div>
+      <p class="note">1946年他在轻演剧里拉幕、打杂，在《阿部定一代记》里演过小角色。1951年进浅草六区脱衣舞剧场「百万弗剧场」当专属喜剧演员。剧场倒了，次年转到川崎，1953年进法国座。同期有长门勇、东八郎、关敬六，写小品的井上久志也常来。</p>
+      <p class="note">1954年肺结核，右肺切除，在埼玉疗养院住了大约两年。少了一叶肺，从前那种满台乱蹦的闹剧做不了了。1956年秋又因肠胃住了三个月院。出来以后烟、酒、咖啡都戒了。</p>
+      <p class="note">电视第一次是1956年《すいれん夫人とバラ娘》，给朝丘雪路演一个不中用的助手。1958年《おトラさん大繁盛》是电影出道。1961到1966年，NHK的《夢であいましょう》和《若い季節》把他的名字送到全国。1962年《あいつばかりが何故もてる》是电影第一次主演，对手里已经有后来寅次郎班底里的倍赏千惠子。</p>
+      <p class="note">1963年，野村芳太郎的《拝啓天皇陛下様》里，他演一个只会写片假名、把军队当成天堂的老实士兵。演员的名声从这里立住。富士电视台的人看了这部片子，开始琢磨后来的《男人真命苦》。照片上的头巾和军装，就是这个角色。</p>
+    </article>
+
+    <article class="leaf" id="three">
+      <p class="when">03 · 1963年2月 · 《小说俱乐部》</p>
+      <h2>三个人</h2>
+      <figure>
+        <button class="shot" type="button" aria-label="放大这张照片" data-full="color/05-shosetsu-club-color.png">
+          <img class="swap" src="color/05-shosetsu-club-color.png" data-bw="originals/05-shosetsu-club-1963.jpg" data-color="color/05-shosetsu-club-color.png" alt="摄影棚里，渥美清与两名女子站立">
+        </button>
+        <figcaption class="cap">《小说俱乐部》1963年2月号刊出的剧照。左侧是渥美清。这一页没有印剧名。</figcaption>
+      </figure>
+      <p class="note">棚里是办公桌、电话和百叶窗，他穿深色外套、浅色衬衫，站在两个抱着手臂的女人旁边。这不是寅次郎的格子西装。寅次郎要到1968年的电视剧、1969年的电影里才定型。1963年的他，还在喜剧演员和电影演员之间来回接活。</p>
+      <p class="note">1964年，山田洋次的《馬鹿まるだし》只用了他一天。临走他跟山田说，下次做长的。这句话传到富士电视台制片人那里，接上了电视剧《男人真命苦》。1966年5月，他在新宿柯玛剧场演音乐剧《南太平洋》的路德·比利斯，那是他最后一次正式登台。</p>
+      <p class="slip">同一时期东映比松竹更热心推他。冈田茂让他演了《喜剧急行列车》那一组，也在加藤泰的《沓挂时次郎》里演过朝吉。东映的喜剧到底没做起来。冈田后来让他去松竹，说这种运气十年不一定碰上一回。</p>
+    </article>
+
+    <article class="leaf" id="laugh">
+      <p class="when">04 · 1967年11月27日 · 《中日新闻》夕刊</p>
+      <h2>笑</h2>
+      <figure>
+        <button class="shot" type="button" aria-label="放大这张照片" data-full="color/03-chunichi-color.png">
+          <img class="swap" src="color/03-chunichi-color.png" data-bw="originals/03-chunichi-1967.jpg" data-color="color/03-chunichi-color.png" alt="渥美清眯眼大笑的报纸网目肖像">
+        </button>
+        <figcaption class="cap">《中日新闻》1967年11月27日夕刊上的网目肖像。格子外套，还不是后来那一套寅次郎行头。</figcaption>
+      </figure>
+      <p class="note">1968年10月3日起，富士电视台播了半年《男人真命苦》，剧本山田洋次、森崎东。结局写成寅次郎被毒蛇咬死，观众抗议信涌进来。1969年松竹把故事拍成电影，算是补过。第一部观众大约五十四万，第八部一百四十八万，后来常常过两百万，成了松竹的台柱。</p>
+      <p class="note">他演了二十七年、四十八部。同一演员演同一主角的系列片长度，进了吉尼斯纪录。银幕上的人爱家乡，四处失恋，四处流浪。新年进电影院看寅次郎，有一阵几乎成了日本人过年的习惯。</p>
+      <p class="note">1969年3月17日，四十一岁，他和田所正子在出云大社办了只有家里人的婚礼，喜宴在新大谷酒店。他自称是新珠三千代的影迷，结婚时留下一句：「新珠三千代小姐，对不起。」儿子田所健太郎后来进日本放送，简历上只写「父：田所康雄，职业：演员」，人事部门还以为是龙套。</p>
+    </article>
+
+    <article class="leaf" id="case">
+      <p class="when">05 · 纪念馆展柜 · 寅次郎的行李</p>
+      <h2>皮箱</h2>
+      <figure>
+        <button class="shot" type="button" aria-label="放大这张照片" data-full="originals/07-suitcase.jpg">
+          <img src="originals/07-suitcase.jpg" alt="展柜里的格子西装、草帽、草履和打开的皮箱">
+        </button>
+        <figcaption class="cap">展柜题为「寅さん旅の道具公開」。无头人台上是格子西装、毛背心和草帽，地上一双草履，皮箱敞着。墙上那张走路的彩色照片，是系列里的寅次郎。照片作者 Chuck，CC BY-SA 2.0。</figcaption>
+      </figure>
+      <p class="note">礼帽、旧西装、坎肩，这身衣服几乎没换过。拍摄间隙，他后来常坐在这只皮箱上。银幕上的寅次郎走到哪都能跟人热络。渥美清本人把工作和私生活隔开。代官山另有一套只给他自己的公寓。山田洋次、倍赏千惠子、黑柳彻子、关敬六、谷干一，共事几十年，直到他死后才知道他家地址，追悼之前也没见过他的家人。</p>
+      <p class="note">他不是只会演寅次郎。1977年《八墓村》里演金田一耕助，换了一张脸，成了松竹很久没有的卖座片，系列版权在别人手里，只拍了一部。1979年在NHK演过作曲家古贺政男。1980年代以后，寅次郎以外的主演基本没有了。1993年山田洋次的《学校》，是这个系列之外的最后一部。1988年受紫绶褒章。晚年用俳号「风天」写俳句。</p>
+      <p class="note">1991年查出肝癌，1994年转到肺。从1989年第四十二部起，站着的戏越来越少。第四十六部前后改成拍两天、休两天，下午三点以后嗓子就塌。第四十八部只能上午九点开拍、下午一点收工。山田后来说，医生认为他还能演这最后一部，已经近于奇迹。</p>
+      <p class="slip">1996年6月底，他在代官山小川轩还答应了第四十九部去高知拍外景。大约一周前呼吸困难，立刻手术，癌已经扩散。8月4日下午5点10分，在文京区顺天堂医院死于转移性肺癌，六十八岁。遗嘱要求：遗体不给同行看，不取戒名，临终只要家人，讣告等火化之后再发。8月7日下午，松竹才公布死讯。遗作是第四十八部《寅次郎红之花》。</p>
+    </article>
+
+    <article class="leaf" id="hand">
+      <p class="when">06 · 上野公园 · 手印</p>
+      <h2>手印</h2>
+      <figure>
+        <button class="shot" type="button" aria-label="放大这张照片" data-full="originals/06-ueno-hands.jpg">
+          <img src="originals/06-ueno-hands.jpg" alt="上野公园石座上的渥美清手印与铭牌">
+        </button>
+        <figcaption class="cap">上野公园的手印石。铭牌写：通过寅次郎，把微笑和节奏给了全日本的国民电影演员。CC0。</figcaption>
+      </figure>
+      <p class="note">8月13日，告别会在松竹大船摄影所第九舞台举行。祭坛照着柴又的江户川堤，来了两万多人，队伍排到一公里外的大船站。死后获国民荣誉奖，理由是通过《男人真命苦》，用有人情味的表演给了全国的人喜悦和滋润。演员里这是第二个，前一个是长谷川一夫。</p>
+      <p class="note">2000年《电影旬报》评二十世纪日本男演员，他排第九；读者投票第四；「把电影院坐满的卖座明星」，日本第一。2019年系列第五十部《欢迎回来，寅先生》以外甥满男为主角，寅次郎本人不再出场。人已经不在，角色也收了。</p>
+      <div class="thread">
+        <div><strong>浅草</strong>法国座、百万弗剧场。喜剧是从这里练出来的，不是从电影学院。</div>
+        <div><strong>柴又</strong>四十八部的家。叔叔、婶婶、妹妹樱花，和他那只永远在路上的皮箱。</div>
+        <div><strong>家门</strong>寅次郎谁都认得。田所康雄的住址，同事到葬礼之后才知道。</div>
+      </div>
+    </article>
+
+    <footer>
+      <p>图来自维基共享资源分类 Kiyoshi Atsumi。1963年剧照与《映画评论》《小说俱乐部》《中日新闻》肖像，共享页标为公共领域（日本法人著作已过保护期）。上野手印为 CC0。展柜照片作者 Chuck，题「Costumes for that guy」，CC BY-SA 2.0。后期《男人真命苦》的电影底片仍属松竹，这里没有收。</p>
+      <p>生平据日文维基百科「渥美清」整理。学历一条有异说，页内已标出。彩色稿按黑白原片上色，军装、衣服和肤色是推定，脸和构图尽量留在原位。近景原片只有 600×800 像素。</p>
+    </footer>
+  </main>
+</div>
+<div id="box" role="dialog" aria-label="放大图片">
+  <img alt="">
+</div>
+<script>
+const box = document.getElementById("box");
+const big = box.querySelector("img");
+document.querySelectorAll("button.shot").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const img = btn.querySelector("img");
+    big.src = btn.dataset.full;
+    big.alt = img.alt;
+    if (img.dataset.bw) {
+      big.dataset.bw = img.dataset.bw;
+      big.dataset.color = img.dataset.color;
+    } else {
+      delete big.dataset.bw;
+      delete big.dataset.color;
+    }
+    box.classList.add("open");
+  });
+});
+box.addEventListener("click", () => box.classList.remove("open"));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") box.classList.remove("open");
+});
+function applyTone(mode) {
+  document.querySelectorAll("img.swap").forEach((img) => {
+    img.src = img.dataset[mode];
+    const btn = img.closest("button.shot");
+    if (btn) btn.dataset.full = img.dataset[mode];
+  });
+  if (box.classList.contains("open") && big.dataset.bw) {
+    big.src = big.dataset[mode];
+  }
+  document.querySelectorAll(".tone button").forEach((b) => {
+    b.classList.toggle("on", b.dataset.tone === mode);
+  });
+  try { localStorage.setItem("atsumi-tone", mode); } catch (e) {}
+}
+document.querySelectorAll(".tone button").forEach((b) => {
+  b.addEventListener("click", () => applyTone(b.dataset.tone));
+});
+let saved = "color";
+try { saved = localStorage.getItem("atsumi-tone") || "color"; } catch (e) {}
+applyTone(saved === "bw" ? "bw" : "color");
+const links = [...document.querySelectorAll("nav a")];
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((en) => {
+    if (!en.isIntersecting) return;
+    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
+  });
+}, { rootMargin: "-40% 0px -50% 0px" });
+document.querySelectorAll("article.leaf").forEach((el) => obs.observe(el));
+</script>
+</body>
+</html>

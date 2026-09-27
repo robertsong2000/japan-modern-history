@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 325 425" role="img" aria-label="神保町，馆方未公开图像">
+  <rect width="325" height="425" fill="#ddd7cc"/>
+  <rect x="1.5" y="1.5" width="322" height="422" fill="none" stroke="#1c1b18" stroke-width="1.2"/>
+  <rect x="10" y="10" width="305" height="405" fill="none" stroke="#1c1b18" stroke-width="0.6" stroke-dasharray="2 3"/>
+  <text x="162.5" y="204.5" text-anchor="middle" font-family="Georgia, serif" font-size="29.25" fill="#1c1b18">05</text>
+  <text x="162.5" y="228.5" text-anchor="middle" font-family="Georgia, serif" font-size="17.875" fill="#6a645c">未公开</text>
+</svg>

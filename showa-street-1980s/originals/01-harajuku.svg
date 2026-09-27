@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 391 261" role="img" aria-label="原宿，馆方未公开图像">
+  <rect width="391" height="261" fill="#ddd7cc"/>
+  <rect x="1.5" y="1.5" width="388" height="258" fill="none" stroke="#1c1b18" stroke-width="1.2"/>
+  <rect x="10" y="10" width="371" height="241" fill="none" stroke="#1c1b18" stroke-width="0.6" stroke-dasharray="2 3"/>
+  <text x="195.5" y="122.5" text-anchor="middle" font-family="Georgia, serif" font-size="23.49" fill="#1c1b18">01</text>
+  <text x="195.5" y="146.5" text-anchor="middle" font-family="Georgia, serif" font-size="14.355" fill="#6a645c">未公开</text>
+</svg>

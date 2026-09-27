@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>冰川清话 · 胜海舟</title>
+<style>
+  :root {
+    --cloth: #1b2830;
+    --cloth-edge: #31434d;
+    --paper: #f3ecdf;
+    --paper-deep: #e7dcc8;
+    --ink: #241c16;
+    --muted: #6e6256;
+    --seal: #8e2a2a;
+    --rule: #d4c4ac;
+    --ja: #3d342c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--cloth);
+    color: var(--ink);
+    font-family: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "PMingLiU", serif;
+  }
+  .shell {
+    display: grid;
+    grid-template-columns: 248px 1fr;
+    height: 100%;
+  }
+  aside {
+    color: #efe6d6;
+    padding: 28px 18px 20px;
+    overflow: auto;
+    border-right: 1px solid var(--cloth-edge);
+    background:
+      linear-gradient(90deg, rgba(255,255,255,.04), transparent 18px),
+      var(--cloth);
+  }
+  .mark {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .seal {
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--seal);
+    color: #e7b4b0;
+    display: grid;
+    place-items: center;
+    font-size: 15px;
+    letter-spacing: .12em;
+    flex: none;
+    transform: rotate(-8deg);
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: .18em;
+  }
+  .sub {
+    margin: 6px 0 0;
+    color: #c8bba8;
+    font-size: 13px;
+    letter-spacing: .08em;
+    line-height: 1.6;
+  }
+  .tools { margin: 22px 0 14px; display: grid; gap: 8px; }
+  input[type="search"] {
+    width: 100%;
+    background: #132027;
+    color: #efe6d6;
+    border: 1px solid #3c5160;
+    border-radius: 2px;
+    padding: 8px 10px;
+    font: 14px/1.4 "Songti SC", serif;
+  }
+  .modes { display: flex; gap: 6px; }
+  .modes button, .navbtn {
+    background: transparent;
+    color: #efe6d6;
+    border: 1px solid #4a6270;
+    padding: 5px 8px;
+    font: 12px/1 "Songti SC", serif;
+    letter-spacing: .08em;
+    cursor: pointer;
+  }
+  .modes button.on { background: #efe6d6; color: var(--cloth); }
+  .leaf-list { margin: 8px 0 0; padding: 0; list-style: none; }
+  .leaf-list button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: #d9cbb8;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    padding: 7px 4px;
+    font: 13px/1.4 "Songti SC", serif;
+    cursor: pointer;
+  }
+  .leaf-list button.on { color: #fff; background: rgba(255,255,255,.06); }
+  main {
+    overflow: auto;
+    background:
+      radial-gradient(1200px 500px at 20% -10%, rgba(255,255,255,.45), transparent 50%),
+      var(--paper);
+  }
+  article {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 56px 80px;
+  }
+  .kicker {
+    color: var(--seal);
+    letter-spacing: .42em;
+    font-size: 12px;
+    margin: 0 0 10px;
+  }
+  .essay h2 {
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: .2em;
+    margin: 0 0 8px;
+  }
+  .essay .by {
+    color: var(--muted);
+    margin: 0 0 22px;
+    letter-spacing: .12em;
+  }
+  .essay p, .reading p {
+    font-size: 18px;
+    line-height: 1.95;
+    margin: 0 0 1em;
+  }
+  .note {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+  .spread {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 36px;
+    align-items: start;
+  }
+  body.zh-only .spread { grid-template-columns: 1fr; }
+  body.zh-only .ja-col { display: none; }
+  .zh-col h3, .ja-col h3 {
+    margin: 0 0 12px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: .28em;
+    color: var(--muted);
+  }
+  .ja-col {
+    color: var(--ja);
+    border-left: 1px solid var(--rule);
+    padding-left: 22px;
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Songti SC", serif;
+  }
+  .ja-col p { font-size: 15px; line-height: 1.9; }
+  .pager {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+    gap: 12px;
+  }
+  .navbtn {
+    color: var(--ink);
+    border-color: #b7a48a;
+    background: transparent;
+    padding: 8px 14px;
+    letter-spacing: .14em;
+  }
+  mark {
+    background: #f3d27a;
+    color: inherit;
+    padding: 0 .1em;
+  }
+  @media (max-width: 860px) {
+    .shell { grid-template-columns: 1fr; }
+    aside { height: auto; max-height: 42vh; }
+    article { padding: 28px 20px 60px; }
+    .spread { grid-template-columns: 1fr; }
+    .ja-col { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="mark">
+      <div class="seal">海舟</div>
+      <div>
+        <h1>冰川清话</h1>
+        <p class="sub">胜海舟 口述<br>吉本襄 编<br>大文馆书店 · 昭和八年</p>
+      </div>
+    </div>
+    <div class="tools">
+      <input id="q" type="search" placeholder="搜译文或原文" />
+      <div class="modes">
+        <button id="mode-both" class="on" type="button">对照</button>
+        <button id="mode-zh" type="button">只看译文</button>
+      </div>
+    </div>
+    <ul id="leaves" class="leaf-list"></ul>
+  </aside>
+  <main id="main">
+    <article id="view"></article>
+  </main>
+</div>
+<script>
+const INTRO = {
+  title: "先读这一页",
+  html: `
+    <p class="kicker">幕末口述</p>
+    <div class="essay">
+      <h2>冰川清话</h2>
+      <p class="by">胜海舟述 · 吉本襄编 · 1933年大文馆本</p>
+      <div class="note">
+        日文是国会图书馆对1933年大文馆本的识别结果，竖排振假名已尽量去掉，□ 是没认出来的字。中文是整书机译，旧文语和人名经常译歪，例如把「創設」译成「公司」，把年号译错。读的时候以右侧原文为准，译文只作找句子用。
+      </div>
+      <p>胜海舟晚年住在东京赤坂冰川，来客不断。记者吉本襄把报上刊过的谈话收成《海舟先生氷川清話》，1897年起分正编、续编、续续编印行。这里用的是1933年大阪大文馆书店的通行合订本，约四百页，国会图书馆标为保护期已满。</p>
+      <p>书里没有后世加上的章节名。前面是德富猪一郎等人的序，接着是吉本襄写的经历，然后才是海舟自己的话：江户开城、西乡、龙马、冈田以藏，以及他对明治政府的挖苦。从目录里点「第20叶」前后，就是口述正文。</p>
+      <p>左右方向键翻叶。搜索同时查中文和日文。</p>
+    </div>`
+};
+
+let pages = [];
+let index = -1;
+
+function esc(s) {
+  return s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+function paras(s, query) {
+  const bits = s.split(/\n+/).filter(Boolean);
+  return bits.map(line => {
+    let html = esc(line);
+    if (query) {
+      const safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      html = html.replace(new RegExp(safe, 'gi'), m => `<mark>${m}</mark>`);
+    }
+    return `<p>${html}</p>`;
+  }).join('');
+}
+function render() {
+  const q = document.getElementById('q').value.trim();
+  const view = document.getElementById('view');
+  if (index < 0) {
+    view.innerHTML = INTRO.html;
+    return;
+  }
+  const page = pages[index];
+  view.innerHTML = `
+    <p class="kicker">第 ${page.n} 叶 / 共 ${pages.length} 叶</p>
+    <div class="spread">
+      <div class="zh-col">
+        <h3>译文</h3>
+        ${paras(page.zh || '这一叶还没有译文。', q)}
+      </div>
+      <div class="ja-col">
+        <h3>原文</h3>
+        ${paras(page.ja, q)}
+      </div>
+    </div>
+    <div class="pager">
+      <button class="navbtn" type="button" id="prev">上一叶</button>
+      <button class="navbtn" type="button" id="next">下一叶</button>
+    </div>`;
+  document.getElementById('prev').onclick = () => go(index - 1);
+  document.getElementById('next').onclick = () => go(index + 1);
+  document.getElementById('main').scrollTop = 0;
+}
+function go(i) {
+  index = i;
+  document.querySelectorAll('#leaves button').forEach((btn, n) => {
+    btn.classList.toggle('on', n === i + 1);
+  });
+  render();
+}
+function drawList() {
+  const q = document.getElementById('q').value.trim();
+  const ul = document.getElementById('leaves');
+  const rows = [{ n: '序', label: '序 · 怎么读' }].concat(
+    pages.map(p => ({ n: p.n, label: `第${p.n}叶`, page: p }))
+  );
+  ul.innerHTML = '';
+  rows.forEach((row, i) => {
+    if (q && row.page) {
+      const blob = row.page.ja + '\n' + (row.page.zh || '');
+      if (!blob.includes(q)) return;
+    }
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = row.label;
+    if ((index < 0 && i === 0) || (index >= 0 && row.page && pages[index] === row.page)) btn.classList.add('on');
+    btn.onclick = () => go(row.page ? pages.indexOf(row.page) : -1);
+    const li = document.createElement('li');
+    li.appendChild(btn);
+    ul.appendChild(li);
+  });
+}
+document.getElementById('mode-both').onclick = () => {
+  document.body.classList.remove('zh-only');
+  document.getElementById('mode-both').classList.add('on');
+  document.getElementById('mode-zh').classList.remove('on');
+};
+document.getElementById('mode-zh').onclick = () => {
+  document.body.classList.add('zh-only');
+  document.getElementById('mode-zh').classList.add('on');
+  document.getElementById('mode-both').classList.remove('on');
+};
+document.getElementById('q').addEventListener('input', () => { drawList(); render(); });
+document.addEventListener('keydown', e => {
+  if (e.target.id === 'q') return;
+  if (e.key === 'ArrowRight') go(Math.min(pages.length - 1, index + 1));
+  if (e.key === 'ArrowLeft') go(Math.max(-1, index - 1));
+});
+
+fetch('text/pages.json')
+  .then(r => r.json())
+  .then(data => {
+    pages = data;
+    drawList();
+    render();
+  })
+  .catch(() => {
+    document.getElementById('view').innerHTML = '<p>还没有读到 text/pages.json。请等全文整理完成后再打开。</p>';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>浅草见世物 · 十二阶与六区</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f4e6c8;
+  --ink: #1a120c;
+  --muted: #5c4e3e;
+  --lantern: #d3541a;
+  --line: #c9b48a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(211,84,26,.05) 18px, rgba(211,84,26,.05) 19px),
+    var(--paper);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  font-synthesis: none;
+  line-height: 1.75;
+}
+a { color: var(--lantern); }
+.shell {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 156px 1fr;
+  gap: 26px;
+}
+header.cover { grid-column: 1 / -1; padding: 28px 0 4px; }
+.kicker { margin: 0; letter-spacing: 0.42em; font-size: 13px; color: var(--lantern); }
+h1 {
+  margin: 6px 0 0;
+  font-family: "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: clamp(40px, 6vw, 64px);
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+}
+.lede { max-width: 38em; font-size: 18px; }
+.caveat {
+  max-width: 44em;
+  border: 1px solid var(--ink);
+  padding: 8px 12px;
+  background: rgba(255,250,240,.7);
+  font-size: 15px;
+}
+.hero { max-width: 420px; margin: 8px 0 4px; }
+.hero img, figure.plate img {
+  display: block; width: 100%; height: auto; background: #ddd; cursor: zoom-in;
+  border: 8px solid var(--ink);
+}
+.hero figcaption, .cap { color: var(--muted); font-size: 14px; margin-top: 8px; }
+nav.dir { position: sticky; top: 12px; padding: 16px 0 36px; }
+nav.dir p { margin: 0 0 6px; letter-spacing: 0.22em; font-size: 12px; color: var(--muted); }
+nav.dir ol { list-style: none; margin: 0; padding: 0; }
+nav.dir a {
+  display: flex; gap: 8px; padding: 7px 0;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  font-family: "Noto Serif SC", serif;
+  font-weight: 500;
+}
+nav.dir a em { font-style: normal; color: var(--lantern); font-family: "Noto Serif SC", serif; font-weight: 600; }
+nav.dir a.active, nav.dir a:hover { color: var(--lantern); }
+main { padding-bottom: 56px; }
+article { padding: 28px 0 6px; }
+.when { margin: 0; letter-spacing: 0.14em; font-size: 13px; color: var(--lantern); }
+h2 { margin: 2px 0 0; font-family: "Noto Serif SC", serif; font-weight: 600; font-size: 32px; letter-spacing: 0.06em; }
+figure.plate { margin: 14px 0 0; max-width: 860px; }
+.tools { display: flex; gap: 8px; margin-top: 8px; }
+.tools button {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid var(--ink);
+  padding: 2px 12px;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+}
+.tools button[aria-pressed="true"] { background: var(--lantern); color: #fffaf3; border-color: var(--lantern); }
+.screen, .note { max-width: 40em; font-size: 17px; margin: 12px 0 0; }
+.note { font-size: 16px; color: #3a2e22; }
+#thread { margin-top: 28px; padding-top: 8px; border-top: 2px solid var(--ink); }
+#thread h2 { font-size: 28px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+.cols div { border-top: 1px solid var(--line); padding-top: 6px; }
+.cols strong { font-family: "Noto Serif SC", serif; font-weight: 600; display: block; }
+footer { grid-column: 1 / -1; border-top: 2px solid var(--ink); color: var(--muted); font-size: 14px; padding: 14px 0 42px; }
+#lightbox { position: fixed; inset: 0; background: rgba(16,10,6,.92); display: none; align-items: center; justify-content: center; z-index: 4; padding: 18px; }
+#lightbox.open { display: flex; }
+#lightbox img { max-width: min(1040px,100%); max-height: 90vh; border: 6px solid #f4e6c8; }
+@media (max-width: 860px) {
+  .shell { grid-template-columns: 1fr; }
+  nav.dir { position: static; }
+  nav.dir ol { display: flex; flex-wrap: wrap; gap: 0 14px; }
+  nav.dir a { border: 0; }
+  .cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="cover">
+  <p class="kicker">浅草 · 见世物</p>
+  <h1>十二阶底下的街</h1>
+  <p class="lede">银座卖的是橱窗和洋装。浅草六区卖的是塔、画布、歌剧和活动写真。十二阶从 1890 年立到 1923 年被拆，这条街比大正更早开始，地震以后电影院还在。</p>
+  <p class="caveat">八张都是黑白或单色原片，着色按原片上色。画布和衣服的颜色是推定。1904 年那张从立体照片的左半裁出，右半和卡纸边留在原文件里。点图放大，可切回原片。</p>
+  <figure class="hero">
+    <img src="restored/01-tower-color.png" alt="浅草十二阶凌云阁，倒映在池水里">
+    <figcaption>封面：凌云阁，俗称十二阶。着色图。</figcaption>
+  </figure>
+</header>
+<nav class="dir" aria-label="图版目录">
+  <p>八枚</p>
+  <ol>
+    <li><a href="#p01"><em>01</em>十二阶</a></li>
+    <li><a href="#p02"><em>02</em>池边</a></li>
+    <li><a href="#p03"><em>03</em>免费戏</a></li>
+    <li><a href="#p04"><em>04</em>歌剧馆</a></li>
+    <li><a href="#p05"><em>05</em>台上</a></li>
+    <li><a href="#p06"><em>06</em>人潮</a></li>
+    <li><a href="#p07"><em>07</em>六区</a></li>
+    <li><a href="#p08"><em>08</em>拆塔</a></li>
+  </ol>
+</nav>
+<main>
+<article id="p01">
+  <p class="when">01 · 1890–1923 · 浅草公园</p>
+  <h2>十二阶</h2>
+  <figure class="plate" data-color="restored/01-tower-color.png" data-bw="originals/01-twelve.jpg">
+    <img src="restored/01-tower-color.png" alt="砖砌十二层塔，塔下是瓦屋顶，倒映在池中">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">黑白照片着色。天空里有一枚邮戳。</figcaption>
+  </figure>
+  <p class="screen">一座细高的砖塔立在池边，八角形的顶，一层一层的拱窗。塔下是瓦屋顶的铺子。塔影落在水里。这是凌云阁，东京人叫它十二阶。</p>
+  <p class="note">1890 年开业，设计者是英国人伯顿。里面有日本最早的电梯，电梯只到八层，再往上走楼梯。顶上可以看浅草。砖的红色是着色推定。</p>
+</article>
+<article id="p02">
+  <p class="when">02 · 地震前 · 浅草公园</p>
+  <h2>塔旁边的楼</h2>
+  <figure class="plate" data-color="restored/02-pond-color.png" data-bw="originals/02-pond.jpg">
+    <img src="restored/02-pond-color.png" alt="十二阶旁边一座带穹顶的洋楼，前面是池水和柳树">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">拆毁前的浅草公园。黑白照片着色。</figcaption>
+  </figure>
+  <p class="screen">十二阶站在右边。左边是一座带穹顶和拱窗的洋楼，再往左还有歇山顶的馆。前面一池水，柳树挡住楼脚。</p>
+  <p class="note">塔不是单独的纪念碑。它插在公园的游乐建筑中间：水族馆、馆、铺子都挤在同一块地上。文件名写明是毁坏以前。</p>
+</article>
+<article id="p03">
+  <p class="when">03 · 1904年 · 剧院街</p>
+  <h2>站着看免费戏</h2>
+  <figure class="plate" data-color="restored/03-street-color.png" data-bw="originals/04-street-left.jpg">
+    <img src="restored/03-street-color.png" alt="和服人群站在绘看板前，远处是十二阶">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">Underwood 立体照片，1904 年。题为「剧院街上看免费戏，北望浅草塔」。页面用左半幅。</figcaption>
+  </figure>
+  <p class="screen">人穿着和服、踩着木屐，站在铺面前。墙上是一排绘看板：人脸、格斗、房屋。布幡从屋檐挂下来。街的尽头露出十二阶的砖墙。</p>
+  <p class="note">这是见世物的招法：先在门口免费给一段，再引人进场。照片比大正早八年，但这条剧院街一直通到六区。原片是左右两幅的立体卡，着色只做了左半。</p>
+</article>
+<article id="p04">
+  <p class="when">04 · 1909年 · 东京</p>
+  <h2>歌剧馆的转角</h2>
+  <figure class="plate" data-color="restored/04-operakwan-color.png" data-bw="originals/12-operakwan.jpg">
+    <img src="restored/04-operakwan-color.png" alt="圆角剧院立面，中间一块浮雕，门口挤着人">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">文件题作 Opera-kwan，1909 年。黑白照片着色。原片已经发糊。</figcaption>
+  </figure>
+  <p class="screen">一座圆角洋楼。腰上有一块浮雕，像一出戏的场面。旗子从窗下伸出来，拱门底下站满人。</p>
+  <p class="note">浅草歌剧作为大众歌剧，要到 1917 年前后才兴起来，1923 年地震后散掉。这张 1909 年的馆，是更早的歌剧馆房子。原片糊，着色把浮雕和人脸补清楚了，不能当成清晰底片。</p>
+</article>
+<article id="p05">
+  <p class="when">05 · 浅草歌剧</p>
+  <h2>一张大嘴</h2>
+  <figure class="plate" data-color="restored/05-opera-color.png" data-bw="originals/07-opera.jpg">
+    <img src="restored/05-opera-color.png" alt="舞台上画着一张巨嘴，演员在嘴前表演，乐池里有乐队">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">文件题为浅草歌剧。剧名原片没有写。黑白照片着色。</figcaption>
+  </figure>
+  <p class="screen">背景是一张画出来的巨口，两只圆眼睛，一排尖牙。女演员在嘴前面转。右边一人披着白袍，袍上一个太阳纹。台下乐池里，乐手对着谱架。</p>
+  <p class="note">浅草歌剧把西洋歌剧改成普通人买得起的票、听得懂的场面。布景画得又大又直，和帝国剧场的讲究不是一回事。太阳纹和嘴的颜色是着色加上的。</p>
+</article>
+<article id="p06">
+  <p class="when">06 · 六区剧场街</p>
+  <h2>帽子挤满马路</h2>
+  <figure class="plate" data-color="restored/06-rokku-color.png" data-bw="originals/05-rokku.jpg">
+    <img src="restored/06-rokku-color.png" alt="剧场街两侧挂满旗帜和电饰，路上挤满戴帽子的人">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">浅草六区。原页没有写死年份。黑白网目照片着色。</figcaption>
+  </figure>
+  <p class="screen">马路被帽子盖住。两边是剧场门面：竖幅、圆形电灯招牌、一层一层的装饰。人几乎不走路，是挤。</p>
+  <p class="note">六区是浅草公园里的娱乐区。1903 年日本第一家电影院电气馆就开在这里，活动写真从这里进到日常。这张原片的年份没有标明，帽子和电饰看起来是大正末到昭和初。</p>
+</article>
+<article id="p07">
+  <p class="when">07 · 1933年 · 浅草六区</p>
+  <h2>常设馆的街</h2>
+  <figure class="plate" data-color="restored/07-halls-color.png" data-bw="originals/09-halls.jpg">
+    <img src="restored/07-halls-color.png" alt="1933年浅草六区街道，两侧是挂着旗帜的商店和剧场">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">照片上印着「浅草六区的街路活况 / Bustle of Asakusa Rokku Street」。1933 年。</figcaption>
+  </figure>
+  <p class="screen">街比上一张空一点。左边高高的广告牌，中间布幡几乎碰到对面的屋檐。人在路中间走，有和服，也有洋装和草帽。右边是带遮阳篷的铺子。</p>
+  <p class="note">十二阶已经拆了十年，六区还在。活动写真馆变成常设的电影院，招牌换了，街还是那条街。印在天上的英日文标题是原片就有的，着色没有改字。</p>
+</article>
+<article id="p08">
+  <p class="when">08 · 1923年9月 · 浅草</p>
+  <h2>塔被炸倒</h2>
+  <figure class="plate" data-color="restored/08-blast-color.png" data-bw="originals/10-blast.jpg">
+    <img src="restored/08-blast-color.png" alt="残缺的十二阶在尘土中倒塌，前景是铁皮屋顶">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">文件题为 1923 年 9 月凌云阁爆破。黑白照片着色。</figcaption>
+  </figure>
+  <p class="screen">塔只剩半截，上端已经缺了，尘土从腰部喷出来。前面是铁皮屋顶、木棚和一段白柱子。地震把楼震裂，人把它放倒。</p>
+  <p class="note">1923 年 9 月 1 日关东大地震后，凌云阁上部损坏，当月被爆破拆除，怕它自己倒下来。十二阶到此为止。六区的馆后来又建，塔没有再建。</p>
+</article>
+<section id="thread">
+  <h2>这一辑怎么连</h2>
+  <div class="cols">
+    <div><strong>先有一座塔</strong>十二阶是地址。人说去浅草，眼睛先找这根砖柱。</div>
+    <div><strong>门口先看免费的</strong>绘看板和站着看的人，是见世物。票在里面。</div>
+    <div><strong>歌剧和活动写真</strong>同一条街上，台上可以是一张大嘴，隔壁可以是电影院。电气馆 1903 年就开在六区。</div>
+    <div><strong>塔倒了街还在</strong>1923 年拆掉十二阶。1933 年的六区还在挂布幡。银座那一辑的洋装，是另一条街。</div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>图版来自 Wikimedia Commons。未见单独馆藏号。上一辑是 <a href="../ginza-moga/index.html">银座散步</a>，再上一辑是 <a href="../taisho-photos/index.html">大正绘叶书</a>。地震那一个月的下一辑是 <a href="../kanto-1923/index.html">桥还在，街没了</a>。</p>
+  <ul>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ry%C5%8Dunkaku,_Asakusa_12kai.png">十二阶</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ryounkaku-beforedestruction-pond.jpg">池边，拆毁前</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Watching_a_free_show,_on_Theatre_Street,_--locking_north_to_Asakusa_Tower,_Tokyo,_Japan_(1904)_by_Underwood_%26_Underwood,_Publishers.jpg">1904 年剧院街</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Opera-kwan_-_1909_-_tokyo.jpg">歌剧馆，1909</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Asakusa_Opera.jpg">浅草歌剧</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Asakusa_Rokku.jpg">六区人潮</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Picture_halls_in_Asakusa_Park_1933.jpg">六区，1933</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ry%C5%8Dunkaku_blasting,_September_1923.jpg">1923 年爆破</a></li>
+  </ul>
+  <p>着色图是本次根据原片生成的。1904 年与 1909 年两张早于大正，1933 年那张晚于大正，因为这条街跨过了这三个年份。</p>
+</footer>
+</div>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="放大图片"><img alt=""></div>
+<script>
+(function () {
+  document.querySelectorAll("figure.plate, figure.hero").forEach(function (card) {
+    var img = card.querySelector("img");
+    card.querySelectorAll(".tools button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        img.src = card.getAttribute(btn.getAttribute("data-mode") === "color" ? "data-color" : "data-bw");
+        card.querySelectorAll(".tools button").forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+      });
+    });
+    img.addEventListener("click", function () {
+      var box = document.getElementById("lightbox");
+      var big = box.querySelector("img");
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      box.classList.add("open");
+    });
+  });
+  var box = document.getElementById("lightbox");
+  box.addEventListener("click", function () { box.classList.remove("open"); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") box.classList.remove("open"); });
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav.dir a"));
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = "#" + entry.target.id;
+        links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === id); });
+      });
+    }, { rootMargin: "-40% 0px -45% 0px", threshold: 0.01 });
+    links.forEach(function (a) { var s = document.querySelector(a.getAttribute("href")); if (s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>米不许装船 · 1918年米骚动</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f3ecdc;
+  --ink: #1c1812;
+  --muted: #5c5648;
+  --field: #1e4d38;
+  --line: #cfc4ab;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(30,77,56,.05), transparent 220px),
+    var(--paper);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  font-synthesis: none;
+  line-height: 1.75;
+}
+a { color: var(--field); }
+.shell {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 30px;
+}
+header.cover { grid-column: 1 / -1; padding: 26px 0 8px; }
+.kicker { margin: 0; color: var(--field); font-weight: 600; letter-spacing: 0.28em; font-size: 14px; }
+h1 {
+  margin: 8px 0 0;
+  font-family: "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: clamp(36px, 5.6vw, 58px);
+  letter-spacing: 0.06em;
+  line-height: 1.12;
+}
+.lede { max-width: 40em; font-size: 18px; }
+.caveat {
+  max-width: 46em;
+  background: #e7f0ea;
+  border-top: 2px solid var(--field);
+  padding: 8px 12px;
+  font-size: 15px;
+}
+.hero { margin: 14px 0 4px; max-width: 920px; }
+.hero img, figure.plate img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ddd6c6;
+  cursor: zoom-in;
+  border: 1px solid var(--ink);
+}
+.hero figcaption, .cap { color: var(--muted); font-size: 14px; margin-top: 6px; }
+nav.dir { position: sticky; top: 0; padding: 16px 0 40px; background: var(--paper); }
+nav.dir p { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.24em; color: var(--muted); }
+nav.dir ol { list-style: none; margin: 0; padding: 0; }
+nav.dir a {
+  display: flex;
+  gap: 8px;
+  padding: 7px 0;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  font-weight: 500;
+}
+nav.dir a em { font-style: normal; font-weight: 600; color: var(--field); min-width: 1.6em; }
+nav.dir a.active { background: #e7f0ea; }
+main { padding-bottom: 48px; }
+article { padding: 26px 0 8px; }
+.when { margin: 0; font-size: 13px; letter-spacing: 0.14em; color: var(--field); }
+h2 {
+  margin: 2px 0 0;
+  font-family: "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 0.05em;
+}
+figure.plate { margin: 12px 0 0; }
+figure.narrow { max-width: 420px; }
+.tools { display: flex; gap: 8px; margin-top: 8px; }
+.tools button {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 500;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--field);
+  padding: 2px 14px;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+}
+.tools button[aria-pressed="true"] { background: var(--field); color: #f3ecdc; }
+.screen, .note { max-width: 40em; font-size: 17px; margin: 12px 0 0; }
+.note { font-size: 16px; color: #3d3830; }
+#thread { margin-top: 22px; padding-top: 8px; border-top: 2px solid var(--field); }
+#thread h2 { font-size: 26px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+.cols div { border-top: 1px solid var(--line); padding-top: 6px; }
+.cols strong { font-weight: 600; display: block; }
+footer {
+  grid-column: 1 / -1;
+  border-top: 2px solid var(--field);
+  color: var(--muted);
+  font-size: 14px;
+  padding: 14px 0 48px;
+}
+#lightbox {
+  position: fixed; inset: 0;
+  background: rgba(18,16,12,.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  padding: 18px;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: min(1100px, 100%); max-height: 90vh; border: 1px solid #f3ecdc; }
+@media (max-width: 860px) {
+  .shell { grid-template-columns: 1fr; }
+  nav.dir { position: static; }
+  nav.dir ol { display: flex; flex-wrap: wrap; gap: 0 12px; }
+  nav.dir a { border: 0; }
+  .cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="cover">
+  <p class="kicker">大正七年 · 米骚动</p>
+  <h1>米不许装船</h1>
+  <p class="lede">1918 年夏天，富山湾边的人拦住要运走的米。消息登出去以后，大阪、神户、东京的米店挨了砸。寺内内阁撑到 9 月 21 日辞职。原敬的政党内阁在 9 月 29 日接上。</p>
+  <p class="caveat">岸上拦米的女人，这批公版材料里没有一张站在海边的照片，只有报纸。东京的街面照片也没有，东京写在 8 月 13 日的标题里。大阪有一张在乡军人的照片，神户有铃木商店烧过的房子。照片着色是推定。报纸不上色。点图放大。</p>
+  <figure class="hero">
+    <img src="restored/02-osaka-color.png" alt="一群戴帽子、拿木棒和刀的男人站在一起">
+    <figcaption>封面：大阪，1918 年 8 月。在乡军人和预备役组成的自警。着色图。</figcaption>
+  </figure>
+</header>
+<nav class="dir" aria-label="图版目录">
+  <p>五面</p>
+  <ol>
+    <li><a href="#p01"><em>01</em>鱼津</a></li>
+    <li><a href="#p02"><em>02</em>女一揆</a></li>
+    <li><a href="#p03"><em>03</em>东京</a></li>
+    <li><a href="#p04"><em>04</em>大阪</a></li>
+    <li><a href="#p05"><em>05</em>神户</a></li>
+  </ol>
+</nav>
+<main>
+<article id="p01">
+  <p class="when">01 · 1918年7月25日 · 富山日报</p>
+  <h2>米不许装上去</h2>
+  <figure class="plate narrow">
+    <img src="originals/01-block.jpg" alt="报纸竖排标题：米は積ませぬ，鱼津细民在海岸喧哗">
+    <figcaption class="cap">《富山日报》1918 年 7 月 25 日。从整版上裁出标题这一栏。报纸，不上色。</figcaption>
+  </figure>
+  <p class="screen">大标题是「米は積ませぬ」，米不许装上船。旁边一行：鱼津的细民在海岸上喧哗。再旁边：渔船空空地出海。同一版上方有一张立山开山的风景，不是拦米的人，所以没有裁进来。</p>
+  <p class="note">鱼津在富山湾东边，是渔村。本地米被装船运走，岸上的人吃不起。拦的是运出，不是先去砸城里的米店。文件说明写的是「细民妨害米的运出」。女人占多数，是后来的报道才写明的。</p>
+</article>
+<article id="p02">
+  <p class="when">02 · 1918年8月8日 · 东京朝日新闻</p>
+  <h2>把它叫成女一揆</h2>
+  <figure class="plate">
+    <img src="originals/03-women.png" alt="东京朝日新闻竖排报道，标题为米的暴涨生出的富山女一揆">
+    <figcaption class="cap">《东京朝日新闻》1918 年 8 月 8 日。标题「米の暴騰が生んだ富山の女一揆」。报纸，不上色。</figcaption>
+  </figure>
+  <p class="screen">标题把这件事写成女一揆：米价暴涨生出来的、富山女人的骚动。报道点了中新川郡的东水桥、西水桥和滑川。版面是竖排，这里不逐行转录。</p>
+  <p class="note">从鱼津到全国，中间隔了大约两周。西伯利亚出兵的消息在 8 月初传开，米商囤货，城里的价钱跳得更快。报纸把富山的事叫成女人的一揆，后面城市里的骚动就跟着来了。</p>
+</article>
+<article id="p03">
+  <p class="when">03 · 1918年8月13日 · 高冈新报</p>
+  <h2>东京也有了</h2>
+  <figure class="plate">
+    <img src="originals/04-cities.jpg" alt="高冈新报标题：军队出动、东京にも、神户的大骚扰、铃木本店">
+    <figcaption class="cap">《高冈新报》1918 年 8 月 13 日。从整版裁出标题这一块。同一版上的黑部风景照没有裁进来。报纸，不上色。</figcaption>
+  </figure>
+  <p class="screen">这一块里的大标题有：军队出动、京都的警戒、东京にも、神户的大骚扰、铃木本店和其他被烧掉。东京的街面照片不在这批公版材料里。能对上的，是这行「东京也有了」。</p>
+  <p class="note">东京的骚动在 8 月 13 日前后，深川、本所一带的米店被砸，后来军队出动。大阪也在这几天。这一版把城市的名字和军队放在一起。被捕的人后来大约两万多。确切的店名和人数，这一栏读不全，不在这里补。</p>
+</article>
+<article id="p04">
+  <p class="when">04 · 1918年8月 · 大阪</p>
+  <h2>拿棍子的人</h2>
+  <figure class="plate" data-color="restored/02-osaka-color.png" data-bw="originals/06-soldiers.jpg">
+    <img src="restored/02-osaka-color.png" alt="大阪，戴帽穿和服的男人拿着木棒和刀站成一排">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">朝日新闻刊出的照片。说明是大阪，在乡军人和预备役组成自警，对付米骚动。黑白照片着色。</figcaption>
+  </figure>
+  <p class="screen">七个男人站在暗处。有人戴草帽，有人扎头巾，有人穿白短褂。手里是木棒。中间一个人把刀横在身前。这不是砸米店的人群，是被叫出来守街的人。</p>
+  <p class="note">大阪的骚动打的是米店。这张照片站在另一边。衣服的蓝和白是着色加上的。原片是粗网点，脸不能拿来认人。</p>
+</article>
+<article id="p05">
+  <p class="when">05 · 1918年8月 · 神户</p>
+  <h2>铃木商店烧过了</h2>
+  <figure class="plate" data-color="restored/03-kobe-color.png" data-bw="originals/05-suzuki.jpg">
+    <img src="restored/03-kobe-color.png" alt="烧剩的砖墙和满地废墟，烟还在瓦砾上">
+    <div class="tools"><button type="button" data-mode="color" aria-pressed="true">着色</button><button type="button" data-mode="bw" aria-pressed="false">原片</button></div>
+    <figcaption class="cap">文件题为铃木商店烧后。神户。黑白照片着色。高冈新报 8 月 13 日写「铃木本店和其他被烧掉」。</figcaption>
+  </figure>
+  <p class="screen">墙还立着，窗是空的。地上是烧过的梁和铁。烟从瓦砾里冒出来。人已经不在画面里。</p>
+  <p class="note">铃木商店是神户的大商社，做贸易，也碰米。骚动的人把它当成囤米的那一家。神户和大阪隔一条湾，8 月 12 日前后神户烧了这家，大阪同时在砸米店。墙的颜色是着色推定。原片糊，窗洞和烟的位置以原片为准。</p>
+</article>
+<section id="thread">
+  <h2>这一辑怎么连</h2>
+  <div class="cols">
+    <div><strong>先拦船</strong>鱼津拦的是运出去的米。女人的名字，是两周后东京的报纸加上的。</div>
+    <div><strong>再砸店</strong>大阪、神户、东京是米店和商社。神户留下烧过的房子，大阪留下拿棍子的自警。</div>
+    <div><strong>东京在标题里</strong>没有东京的街面照片。8 月 13 日那一版写着「东京にも」，同一天写军队出动。</div>
+    <div><strong>内阁换了</strong>寺内 9 月 21 日辞职。原敬 9 月 29 日组阁。米骚动停在政党内阁的门口。</div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>图版来自 Wikimedia Commons。未见单独馆藏号。报纸按原件裁出标题栏，正文不逐行转录。下一辑按时间是 <a href="../taisho-photos/index.html">大正绘叶书</a>，地震那一辑是 <a href="../kanto-1923/index.html">桥还在，街没了</a>。</p>
+  <ul>
+    <li><a href="https://commons.wikimedia.org/wiki/File:%E9%AD%9A%E6%B4%A5%E3%81%AE%E7%B1%B3%E9%A8%92%E5%8B%95%E5%A0%B1%E9%81%93%E8%A8%98%E4%BA%8B.jpg">富山日报，鱼津，7 月 25 日</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:%E7%B1%B3%E3%81%AE%E6%9A%B4%E9%A8%B0%E3%81%8C%E7%94%9F%E3%82%93%E3%81%A0%E5%AF%8C%E5%B1%B1%E3%81%AE%E5%A5%B3%E4%B8%80%E6%8F%86.png">东京朝日，8 月 8 日</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:%E7%B1%B3%E9%A8%92%E5%8B%95%E5%85%A8%E5%9B%BD%E6%B3%A2%E5%8F%8A%E5%A0%B1%E9%81%93%E8%A8%98%E4%BA%8B.jpg">高冈新报，8 月 13 日</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Retired_soldiers_and_reservists,_1918_rice_riots.jpg">大阪自警</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Suzuki_Shoten_burnt_out.jpg">铃木商店烧后</a></li>
+  </ul>
+  <p>着色图是这次根据原片生成的。鱼津现存仓库和「发祥之地」石碑是后来的照片，没有放进这一辑。</p>
+</footer>
+</div>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="放大图片"><img alt=""></div>
+<script>
+(function () {
+  document.querySelectorAll("figure.plate, figure.hero").forEach(function (card) {
+    var img = card.querySelector("img");
+    card.querySelectorAll(".tools button").forEach(function (btn) {
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        img.src = card.getAttribute(btn.getAttribute("data-mode") === "color" ? "data-color" : "data-bw");
+        card.querySelectorAll(".tools button").forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+      });
+    });
+    img.addEventListener("click", function () {
+      var box = document.getElementById("lightbox");
+      var big = box.querySelector("img");
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      box.classList.add("open");
+    });
+  });
+  var box = document.getElementById("lightbox");
+  box.addEventListener("click", function () { box.classList.remove("open"); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") box.classList.remove("open"); });
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav.dir a"));
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = "#" + entry.target.id;
+        links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === id); });
+      });
+    }, { rootMargin: "-40% 0px -45% 0px", threshold: 0.01 });
+    links.forEach(function (a) { var s = document.querySelector(a.getAttribute("href")); if (s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

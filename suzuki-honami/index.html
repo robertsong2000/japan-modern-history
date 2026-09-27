@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>铃木保奈美 · 月九的夜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Zen+Old+Mincho:wght@500;600;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --night: #101218;
+  --night-2: #171b24;
+  --paper: #f4ecdf;
+  --slip: #fbf6ee;
+  --ink: #1c1714;
+  --mute: #6a5e54;
+  --ivory: #f3eadc;
+  --red: #b03430;
+  --gold: #c6b090;
+  --line: rgba(243, 234, 220, 0.16);
+  --hair: rgba(28, 23, 20, 0.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ivory);
+  background:
+    radial-gradient(900px 480px at 80% -10%, rgba(176, 52, 48, 0.16), transparent 55%),
+    var(--night);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  line-height: 1.85;
+}
+a { color: var(--gold); }
+.shell {
+  display: grid;
+  grid-template-columns: 196px minmax(0, 1fr);
+  width: min(1180px, calc(100% - 28px));
+  margin: 0 auto;
+}
+nav {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  padding: 32px 8px 24px 0;
+  border-right: 1px solid var(--line);
+}
+.mark {
+  margin: 0 0 28px;
+  color: var(--ivory);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+  writing-mode: vertical-rl;
+  height: 9.2em;
+}
+nav a {
+  display: block;
+  margin: 0 0 8px;
+  padding: 4px 0 4px 12px;
+  color: rgba(243, 234, 220, 0.88);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  font-size: 15px;
+}
+nav a.active {
+  color: var(--ivory);
+  border-left-color: var(--red);
+}
+main { padding: 28px 0 80px 36px; }
+.hero img {
+  width: 100%;
+  display: block;
+  cursor: zoom-in;
+}
+.kicker {
+  margin: 22px 0 0;
+  color: var(--gold);
+  letter-spacing: 0.22em;
+  font-size: 13px;
+}
+h1 {
+  margin: 8px 0 0;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: 0.12em;
+  line-height: 1.15;
+}
+.lead {
+  max-width: 40em;
+  margin: 14px 0 0;
+  font-size: 18px;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--gold);
+  font-size: 14px;
+}
+section { margin-top: 64px; }
+h2 {
+  margin: 0 0 16px;
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 0.14em;
+}
+.sheet {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 28px 32px 8px;
+}
+.sheet p { margin: 0 0 18px; }
+.sheet h2 { color: var(--ink); }
+.years {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 8px 16px;
+  margin: 0 0 22px;
+  padding-top: 8px;
+  border-top: 1px solid var(--hair);
+}
+.years b {
+  color: var(--red);
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 600;
+}
+.years span { color: var(--ink); }
+figure { margin: 28px 0 0; }
+figure img {
+  width: 100%;
+  display: block;
+  cursor: zoom-in;
+  background: #000;
+}
+.slip, .plain {
+  margin: 0;
+  padding: 16px 18px 18px;
+}
+.slip {
+  background: var(--slip);
+  color: var(--ink);
+  border-left: 3px solid var(--red);
+}
+.plain {
+  color: rgba(243, 234, 220, 0.86);
+  border-left: 1px solid var(--line);
+}
+.slip strong, .plain strong { font-weight: 600; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.grid figure { margin: 0; }
+.faces {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+.faces figure { margin: 0; }
+.faces img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+  cursor: zoom-in;
+}
+.thread {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.thread article {
+  padding: 16px 14px 8px;
+  border-top: 2px solid var(--red);
+  background: var(--night-2);
+}
+.thread h3 {
+  margin: 0 0 8px;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+.thread p { margin: 0 0 12px; font-size: 14px; color: rgba(243, 234, 220, 0.82); }
+footer {
+  margin-top: 48px;
+  color: rgba(243, 234, 220, 0.55);
+  font-size: 13px;
+}
+footer p { margin: 0 0 10px; }
+#lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  padding: 24px;
+  background: rgba(8, 9, 12, 0.97);
+  z-index: 20;
+}
+#lightbox.open { display: grid; }
+#lightbox img { max-width: min(1100px, 100%); max-height: 88vh; }
+@media (max-width: 980px) {
+  .shell { display: block; width: min(100% - 20px, 1180px); }
+  nav {
+    position: sticky;
+    top: 0;
+    height: auto;
+    z-index: 5;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 12px 0;
+    background: rgba(16, 18, 24, 0.94);
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .mark { display: none; }
+  nav a { white-space: nowrap; margin: 0; border-left: 0; border-bottom: 2px solid transparent; padding: 4px 8px; }
+  nav a.active { border-bottom-color: var(--red); }
+  main { padding: 18px 0 48px; }
+  .grid, .thread, .years, .faces { grid-template-columns: 1fr; }
+  .sheet { padding: 20px 16px 4px; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav>
+  <p class="mark">月九の夜</p>
+  <a href="#open">开场</a>
+  <a href="#faces">照片</a>
+  <a href="#life">履历</a>
+  <a href="#rika">莉香</a>
+  <a href="#getsuku">月九</a>
+  <a href="#return">归来</a>
+  <a href="#cards">角色卡</a>
+  <a href="#thread">脉络</a>
+</nav>
+<main>
+<header class="hero" id="open">
+  <img src="photos/fuji-2018.jpg" alt="《东京爱情故事》剧照，织田裕二与铃木保奈美共围一条黄围巾" data-full="photos/fuji-2018.jpg">
+  <p class="kicker">SUZUKI HONAMI</p>
+  <h1>铃木保奈美</h1>
+  <p class="lead">1966年8月14日生于东京都大田区的日本演员。1991年富士电视台星期一晚九点的《东京爱情故事》里，她把赤名莉香演成了一代人的脸：短发、丝巾，以及一声「カンチ！」。</p>
+  <ul class="meta">
+    <li>茅崎长大</li>
+    <li>镰仓高等学校</li>
+    <li>成城大学文艺学部中退</li>
+    <li>160 cm</li>
+    <li>1986 出道 · 1999 息影 · 2008 复出</li>
+  </ul>
+</header>
+
+<section id="faces">
+  <h2>照片</h2>
+  <p class="plain">先是 1991 年《东京爱情故事》里的赤名莉香，后面是后来的发布会和红毯。点图可以放大。部分剧照画面中央有图片网站加上的标志。</p>
+  <div class="faces">
+    <figure>
+      <img src="photos/tls-key-visual.jpg" alt="1991年《东京爱情故事》主视觉，年轻的铃木保奈美" data-full="photos/tls-key-visual.jpg">
+      <figcaption class="slip"><strong>1991。</strong>《东京爱情故事》主视觉。短发、白衬衫，这是当时海报上的莉香。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/fuji-2018.jpg" alt="《东京爱情故事》剧照，织田裕二与铃木保奈美共围一条黄围巾" data-full="photos/fuji-2018.jpg">
+      <figcaption class="slip"><strong>剧照。</strong>永尾完治与赤名莉香，一条黄围巾。富士电视台 2018 年再放送页面所用画面。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/tls-2625.jpg" alt="《东京爱情故事》海报近景，赤名莉香的脸" data-full="photos/tls-2625.jpg">
+      <figcaption class="slip"><strong>海报近景。</strong>赤名莉香。来源图片网上有水印。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/tls-2616.jpg" alt="赤名莉香在户外笑" data-full="photos/tls-2616.jpg">
+      <figcaption class="slip"><strong>剧照。</strong>户外，莉香笑着。画面上的标志是图片站加的。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/tls-2622.jpg" alt="赤名莉香在街上眯眼笑" data-full="photos/tls-2622.jpg">
+      <figcaption class="slip"><strong>剧照。</strong>街上，眯眼笑。标志同样来自图片站。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/tls-2619.jpg" alt="海边，赤名莉香从身后抱住永尾完治" data-full="photos/tls-2619.jpg">
+      <figcaption class="slip"><strong>剧照。</strong>海边，莉香从身后抱住完治。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/tls-2621.jpg" alt="赤名莉香穿着灰色毛衣打电话" data-full="photos/tls-2621.jpg">
+      <figcaption class="slip"><strong>剧照。</strong>灰色毛衣，打电话。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/tls-2623.jpg" alt="阳台，完治指着远处，莉香在旁边看" data-full="photos/tls-2623.jpg">
+      <figcaption class="slip"><strong>剧照。</strong>阳台上，完治指着远处，莉香在旁边。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/portrait-tp.jpg" alt="铃木保奈美早期写真集封面" data-full="photos/portrait-tp.jpg">
+      <figcaption class="slip"><strong>写真集封面。</strong>《铃木保奈美写真集》，摄影卜沢忠恭。这是戏外的年轻肖像，不是剧照。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/02-salesman-2021.jpg" alt="2021年舞台《推销员之死》采访，铃木保奈美肖像" data-full="photos/02-salesman-2021.jpg">
+      <figcaption class="slip"><strong>2021。</strong>舞台《推销员之死》采访肖像。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/01-chinatown-2021.jpg" alt="2021年电影《唐人街探案》东京发布会，铃木保奈美短发白衣" data-full="photos/01-chinatown-2021.jpg">
+      <figcaption class="slip"><strong>2021年6月24日。</strong>电影《唐人街探案 东京使命》公开前活动。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/03-armani-2019.jpg" alt="2019年阿玛尼东京秀，铃木保奈美穿印花长裙" data-full="photos/03-armani-2019.jpg">
+      <figcaption class="slip"><strong>2019年5月24日。</strong>Giorgio Armani 2020 早春秀，东京。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/04-ooku-2019.jpg" alt="2019年《大奥 最终章》记者会，铃木保奈美着和服" data-full="photos/04-ooku-2019.jpg">
+      <figcaption class="slip"><strong>2019年3月20日。</strong>富士台《大奥 最终章》记者会，剧中天英院的造型。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/06-smoking-gun-2014.jpg" alt="2014年《决定性证据》试映会，铃木保奈美穿衬衫打领带" data-full="photos/06-smoking-gun-2014.jpg">
+      <figcaption class="slip"><strong>2014年4月1日。</strong>《SMOKING GUN～决定性证据～》完成披露试映会。她在剧中饰千代田真纪。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/05-nonmama.jpg" alt="《非妈妈白皮书》制作发表会，左侧黄衣为铃木保奈美" data-full="photos/05-nonmama.jpg">
+      <figcaption class="slip"><strong>2016。</strong>《非妈妈白皮书》制作发表会。左侧黄衣、丝巾的是铃木保奈美，饰土井玲子。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/07-jewelry.jpg" alt="日本珠宝最佳着装奖，左一为铃木保奈美" data-full="photos/07-jewelry.jpg">
+      <figcaption class="slip"><strong>第25届日本珠宝最佳着装奖。</strong>左一，黑色无袖上衣、印花裙。</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/08-glasses-2013.jpg" alt="2013年眼镜最佳着装奖表彰式合影" data-full="photos/08-glasses-2013.jpg">
+      <figcaption class="slip"><strong>2013年10月9日。</strong>第26届日本眼镜最佳着装奖。左起第二位，深色格纹裙、黑框眼镜。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="life">
+  <div class="sheet">
+    <h2>履历</h2>
+    <p>东京都大田区出生，神奈川县茅崎市长大。神奈川县立镰仓高等学校毕业后进入成城大学文艺学部，为演戏中途退学。1984年还在高中时，她报名第9届堀制作人才选拔，约12万报名者里拿到评委特别奖。她后来说，选这家事务所的理由之一，是听说合格者要过宿舍生活；结果她自己并没有住进宿舍。</p>
+    <p>1986年演员出道，拍过嘉娜宝化妆品的泳装广告，也进了当时正盛的潮流剧。1990年代她是富士黄金时段的常任女主角。1998年再婚并怀孕后退出台前，生下三个女儿。2008年女儿们上小学，她加入丈夫石桥贵明的事务所 Arrival，慢慢回到工作里。2011年在大河剧《江》里正式复出。</p>
+    <div class="years">
+      <b>1984</b><span>堀制作选拔，评委特别奖。</span>
+      <b>1986</b><span>《女人风林火山》初次主演，饰松姬。</span>
+      <b>1988</b><span>NHK 晨间剧《ノンちゃんの夢》，饰中元操。</span>
+      <b>1991</b><span>《东京爱情故事》，赤名莉香。</span>
+      <b>1995</b><span>1月1日与赛车解说川井一仁结婚；《恋人啊》获日剧学院奖主演女优赏。1997年11月离婚。</span>
+      <b>1998</b><span>11月13日宣布与石桥贵明再婚，已怀孕三个月，同时宣布息影。《新闻女郎》再获主演女优赏。</span>
+      <b>2000</b><span>已拍完的主演电影《いちげんさん》上映，此后长期不在台前。</span>
+      <b>2008</b><span>12月4日加入 Arrival。同月《ミセス》2009年1月号封面，连载随笔「ほなみ食堂」。</span>
+      <b>2011</b><span>大河剧《江～公主们的战国～》饰市，兼任旁白。</span>
+      <b>2016</b><span>《非妈妈白皮书》，时隔十八年再担连续剧主演。</span>
+      <b>2018</b><span>日版《SUITS》饰幸村千佳。2020年获 SUITS OF THE YEAR。</span>
+      <b>2021</b><span>7月16日，石桥在自己的 YouTube 频道宣布离婚。理由是育儿告一段落。</span>
+    </div>
+  </div>
+</section>
+
+<section id="rika">
+  <h2>赤名莉香</h2>
+  <figure>
+    <img src="originals/03-tokyo.png" alt="1991年角色卡：东京爱情故事，赤名莉香" data-full="originals/03-tokyo.png">
+    <figcaption class="slip"><strong>题。</strong>1991年1月至3月，富士月九。原作柴门文漫画。铃木保奈美饰赤名莉香，织田裕二饰永尾完治。</figcaption>
+    <p class="plain">热到有一句现成的说法：星期一的夜里，街上的女人都不见了。莉香的短发、偏男性化的衣服和丝巾系法，被同一代女性照着学。她喊完治「カンチ！」，这句话进了流行语。潮流剧当时也在亚洲播出，中国和韩国有人向嘉娜宝询问，能不能拿到她做形象的海报。</p>
+  </figure>
+</section>
+
+<section id="getsuku">
+  <h2>月九连庄</h2>
+  <div class="sheet">
+    <p>莉香之后，富士黄金时段的女主角接连落到她身上。1992年《以爱为名》是藤木贵子，1994年《这个世界的尽头》是砂田麻里亚，1995年《恋人啊》是鸿野爱永，1998年《新闻女郎》是麻生环。日剧学院奖的主演女优赏，她拿过两次：1995年的《恋人啊》，1998年的《新闻女郎》。</p>
+    <p>贵子、麻里亚、爱永、环，各自有职业和脾气。观众把她们收成「铃木保奈美的月九」，靠的是同一个播出时段。</p>
+  </div>
+  <div class="grid">
+    <figure>
+      <img src="originals/04-ai.png" alt="1992年角色卡：以爱为名，藤木贵子" data-full="originals/04-ai.png">
+      <figcaption class="slip"><strong>1992。</strong>《爱という名のもとに》，藤木贵子。</figcaption>
+    </figure>
+    <figure>
+      <img src="originals/05-koibito.png" alt="1995年角色卡：恋人啊，鸿野爱永" data-full="originals/05-koibito.png">
+      <figcaption class="slip"><strong>1995。</strong>《恋人よ》，鸿野爱永。日剧学院奖主演女优赏。</figcaption>
+    </figure>
+    <figure>
+      <img src="originals/06-news.png" alt="1998年角色卡：新闻女郎，麻生环" data-full="originals/06-news.png">
+      <figcaption class="slip"><strong>1998。</strong>《ニュースの女》，麻生环。再次获得主演女优赏。</figcaption>
+    </figure>
+    <figure>
+      <img src="originals/01-furinkazan.png" alt="1986年角色卡：女人风林火山，松姬" data-full="originals/01-furinkazan.png">
+      <figcaption class="slip"><strong>1986。</strong>出道年的第一次主演。《おんな風林火山》，松姬。月九成名之前的起点。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="return">
+  <h2>退场与归来</h2>
+  <div class="sheet">
+    <p>1999年大河剧《元禄缭乱》里她演染子。拍摄中查出怀孕，戏份比原计划少了很多，和所属的堀制作关系变坏，随后退出事务所。已经拍完的主演电影《いちげんさん》在2000年上映，那是她离开台前之前的最后一部。此后大约十年，她是三个女儿的母亲。</p>
+    <p>2011年的复出角色是战国的市，织田信长的妹妹，浅井长政的妻子，也是茶茶、初和江的母亲。她在这部大河剧里演戏，也做旁白。同一时期的电影《のぼうの城》饰珠，是时隔十一年再上银幕。2013年电影《白金数据》饰水上江利子。2016年《非妈妈白皮书》饰土井玲子，时隔十八年再担连续剧主演。2017年晨间剧《笑天家》里饰藤冈静。2018年到2020年，日版《SUITS》两季，她是律师事务所的幸村千佳。</p>
+    <p>接受《朝日新闻》采访时，她问过报纸还要把带写真的周刊广告登到什么时候，并说自己在意一件事：那些版面明明是把女性当成商品。别的公开嗜好更日常：她是 Barbie Boys 的歌迷，1992年1月24日乐队解散演出和《以爱为名》的拍摄撞在一起，她向剧组要了大约三十分钟，听了两三首歌再回片场。她也看横滨 DeNA，喜欢核桃面包，做过「核桃面包年度奖」的评委；近年少吃麸质，面包吃得少了。</p>
+  </div>
+  <div class="grid">
+    <figure>
+      <img src="originals/02-nonchan.png" alt="1988年角色卡：ノンちゃんの夢，中元操" data-full="originals/02-nonchan.png">
+      <figcaption class="slip"><strong>1988。</strong>NHK 晨间连续剧《ノンちゃんの夢》，中元操。</figcaption>
+    </figure>
+    <figure>
+      <img src="originals/07-go.png" alt="2011年角色卡：江，市" data-full="originals/07-go.png">
+      <figcaption class="slip"><strong>2011。</strong>大河剧《江～公主们的战国～》，市。离开台前十二年后的正式复出。</figcaption>
+    </figure>
+    <figure>
+      <img src="originals/08-suits.png" alt="2018年角色卡：SUITS，幸村千佳" data-full="originals/08-suits.png">
+      <figcaption class="slip"><strong>2018–2020。</strong>日版《SUITS》第一季与第二季，幸村千佳。2020年 SUITS OF THE YEAR。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="cards">
+  <h2>角色卡说明</h2>
+  <div class="sheet">
+    <p>角色卡仍是这一页自制的片名，用来记住剧名和角色。上面「照片」一节才是她本人。</p>
+    <p>事务所：堀制作，1984年至1999年；Arrival，2008年至今。奖项里还可以记下第25届日本珠宝最佳着装奖四十代部门。近年连续剧包括《35岁的少女》《家庭教师虎子》《人事的人见》《私人银行家》。</p>
+  </div>
+</section>
+
+<section id="thread">
+  <h2>脉络</h2>
+  <div class="thread">
+    <article>
+      <h3>选拔</h3>
+      <p>12万人里的评委特别奖，把一个镰仓高中的学生送进堀制作。宿舍生活没有发生，演员生活发生了。</p>
+    </article>
+    <article>
+      <h3>莉香</h3>
+      <p>1991年的月九把她从「有名的年轻演员」变成一种穿着和说话方式。カンチ是那一季的口令。</p>
+    </article>
+    <article>
+      <h3>连庄</h3>
+      <p>1992、1994、1995、1998，富士黄金档女主角。两次学院奖都落在这几年。</p>
+    </article>
+    <article>
+      <h3>市与千佳</h3>
+      <p>息影十年后再回来，她演母亲、历史人物和律师事务所的合伙人。莉香仍是入口之一。</p>
+    </article>
+  </div>
+  <footer>
+    <p>生平据日文维基「鈴木保奈美」条目，并与映画.com、ORICON 人物页核对。结婚日期取日文维基正文：1995年1月1日与川井一仁结婚，1997年11月离婚；1998年11月13日宣布与石桥贵明再婚。未见馆藏编号，不写。</p>
+    <p>1991 年画面来自<a href="https://www.fujitv.co.jp/muscat/20180619.html">富士电视台 2018 年再放送页</a>、<a href="https://www.crank-in.net/img/db/1107569_1200.jpg">クランクイン！</a>所载主视觉（本页裁出右侧莉香），以及<a href="https://tpwang.com/movie/%E4%B8%9C%E4%BA%AC%E7%88%B1%E6%83%85%E6%95%85%E4%BA%8B">图片网剧照</a>。发布会与红毯仍来自<a href="https://www.crank-in.net/gallery/person/10125">クランクイン！人物图库</a>。角色卡是本地自制图形。</p>
+  </footer>
+</section>
+</main>
+</div>
+<div id="lightbox" hidden>
+  <img alt="">
+</div>
+<script>
+const box = document.getElementById("lightbox");
+const boxImg = box.querySelector("img");
+document.querySelectorAll("img[data-full]").forEach((img) => {
+  img.addEventListener("click", () => {
+    boxImg.src = img.dataset.full;
+    boxImg.alt = img.alt;
+    box.hidden = false;
+    box.classList.add("open");
+  });
+});
+box.addEventListener("click", () => {
+  box.classList.remove("open");
+  box.hidden = true;
+  boxImg.src = "";
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") box.click();
+});
+const links = [...document.querySelectorAll("nav a")];
+const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id));
+  });
+}, { rootMargin: "-40% 0px -50% 0px" });
+sections.forEach((s) => s && spy.observe(s));
+</script>
+</body>
+</html>

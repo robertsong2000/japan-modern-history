@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高龄社会白皮书 · 给中国读者的读法</title>
+<style>
+:root {
+  --paper: #f3eadb;
+  --ink: #1c1612;
+  --muted: #6e6256;
+  --line: #d8c9b3;
+  --card: #fbf6ee;
+  --seal: #8c2e29;
+  --moss: #2c463b;
+  --gold: #8a6232;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 380px at 0% -8%, #fffaf2 0%, transparent 55%),
+    var(--paper);
+  font-family: "Iowan Old Style", Palatino, "Songti SC", "Noto Serif SC", "Source Han Serif SC", serif;
+  line-height: 1.85;
+}
+a { color: var(--seal); text-underline-offset: 0.18em; }
+.wrap { width: min(820px, calc(100% - 40px)); margin: 0 auto; }
+header.top { padding: 36px 0 8px; }
+.kicker {
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--seal);
+  margin: 0 0 10px;
+}
+h1 {
+  font-weight: 520;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.22;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.lede {
+  font-size: 18px;
+  color: #3d342c;
+  margin: 16px 0 0;
+  max-width: 38em;
+}
+nav.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 26px 0 0;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+nav.toc a {
+  color: var(--moss);
+  text-decoration: none;
+  font-size: 14px;
+}
+nav.toc a:hover { color: var(--seal); }
+.figures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0 8px;
+}
+.fig {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 14px 14px 12px;
+}
+.fig b {
+  display: block;
+  font-size: 28px;
+  font-weight: 520;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--seal);
+}
+.fig span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+section { padding: 8px 0 10px; }
+h2 {
+  font-size: 22px;
+  font-weight: 520;
+  margin: 1.6em 0 0.45em;
+  color: var(--moss);
+}
+p { margin: 0 0 0.95em; font-size: 17.5px; }
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 8px 0 18px;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px 18px 8px;
+}
+.panel h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 560;
+  letter-spacing: 0.06em;
+}
+.panel.late { border-top: 3px solid var(--seal); }
+.panel.early { border-top: 3px solid var(--moss); }
+.bars { margin: 8px 0 20px; }
+.row {
+  display: grid;
+  grid-template-columns: 4.2em 1fr 3.2em;
+  gap: 10px;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 14px;
+}
+.track { height: 8px; background: #e7dccb; }
+.fill { height: 8px; background: var(--moss); }
+.fill.jp { background: var(--seal); }
+.cap { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+ol.lessons { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+ol.lessons li {
+  counter-increment: n;
+  border-top: 1px solid var(--line);
+  padding: 16px 0 6px 0;
+}
+ol.lessons h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 520;
+}
+ol.lessons h3::before {
+  content: counter(n, decimal-leading-zero);
+  color: var(--seal);
+  letter-spacing: 0.08em;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.call {
+  background: var(--card);
+  border-left: 3px solid var(--seal);
+  padding: 12px 16px;
+  margin: 8px 0 16px;
+}
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  padding: 22px 0 48px;
+  line-height: 1.7;
+}
+footer a { color: var(--moss); }
+@media (max-width: 700px) {
+  .figures, .split { grid-template-columns: 1fr 1fr; }
+  .row { grid-template-columns: 3.4em 1fr 3em; }
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<p class="kicker">内阁府 · 令和8年版 · 2026</p>
+<h1>高龄社会白皮书<br>给中国读者的读法</h1>
+<p class="lede">这不是一本讲故事的书，而是日本政府每年向国会提交的年次报告。2026年版写的是截至2025年10月的日本。对中国有用的，不是它的政策清单，而是老人已经过成的那种日子。</p>
+<nav class="toc">
+  <a href="#book">这本书</a>
+  <a href="#two">两段老年</a>
+  <a href="#money">钱</a>
+  <a href="#four">四国对照</a>
+  <a href="#borrow">能借的</a>
+  <a href="#limit">借不来的</a>
+</nav>
+<div class="figures">
+  <div class="fig"><b>29.4%</b><span>65岁以上占总人口。3622万人。</span></div>
+  <div class="fig"><b>17.3%</b><span>75岁以上已经多于65到74岁。</span></div>
+  <div class="fig"><b>43.4%</b><span>领年金的老人家庭里，收入全部是年金。</span></div>
+  <div class="fig"><b>13.7%</b><span>日本老人遇事能找朋友的比例，四国最低。</span></div>
+</div>
+</div></header>
+
+<main class="wrap">
+<section id="book">
+<h2>这本书在说什么</h2>
+<p>白皮书依据《高龄社会对策基本法》，从1996年起每年一册。令和8年版分成两截：上一年度老龄化到了什么程度、政府做了什么；下一年度准备做什么。第2章和第3章是日本的预算与法令，制度接不过来。第1章是人口、家庭、就业、健康、住房，以及今年的特集——日本、美国、德国、瑞典四国65岁以上生活意识调查。读法就停在第1章。</p>
+<p>2025年10月1日，日本总人口1亿2322万。65岁以上3622万，男性1570万，女性2052万，大约三比四。再往后性别差拉开：75岁以上每100名女性对应66.9名男性，95岁以上只剩25名男性。老年的后半段，主要是女性自己在过。</p>
+<p>白皮书自己写明，65岁不宜再当成“老了”的统一刻度。日本老年学会主张把线划到75岁。2070年的推计是老龄化率38.7%，大约2.6人里有1个65岁以上，4人里有1个75岁以上。一个老人对应的劳动年龄人口，从1950年的12.1人，降到现在的2.0人，再降到1.3人。</p>
+</section>
+
+<section id="two">
+<h2>老年分成两段</h2>
+<div class="split">
+  <div class="panel early">
+    <h3>65–74岁</h3>
+    <p>1495万人，占总人口12.1%。65到69岁就业率54.5%，男性63.4%，女性46.1%。70到74岁仍有36.2%在工作。这十年里，多数人还出门、还干活。</p>
+  </div>
+  <div class="panel late">
+    <h3>75岁以后</h3>
+    <p>2127万人，占总人口17.3%。照护认定到这个年龄才明显抬高，85岁以上接近六成。独自生活的比例还在升：2020年男性15.0%、女性22.1%，2050年大约到26.1%和29.3%。</p>
+  </div>
+</div>
+<p>65岁以上就业人数已连续22年增加。人去得最多的是批发零售、医疗福利和各类服务。农业从业者里，65岁以上占50.6%。公司把雇佣或委托安排到70岁的，全部企业里只有34.8%，员工301人以上的大企业只有29.5%。留下的是本地的、要跟人接触的活，不是原来的头衔。单位会不会留你，不能写进计划。</p>
+</section>
+
+<section id="money">
+<h2>流量薄，存量厚</h2>
+<p>只有老人、或再加上未成年子女的家庭，2023年全年平均所得314.8万日元，大约是其他家庭671.0万日元的一半。领着公共年金的老人家庭里，43.4%的全部收入就是年金和恩给。</p>
+<p>存款在另一头。户主65岁以上的二人以上家庭，储蓄平均2509万日元，中位数1658万日元，约是全体家庭中位数1189万日元的1.4倍。储蓄4000万日元以上的占20%，全体家庭是13.9%。这个中位数剔除了储蓄为零的家庭。金融资产里，存款占六成多，年纪越大这一项越高。70岁以上接受生活保护的人，约占该年龄人口的3%。</p>
+<p>2023年度社会保障给付费135.5兆日元，占国民所得的30.95%。其中与老人相关的给付86.1兆日元，占全部给付的63.5%。国家的钱，已经围着老人转。</p>
+</section>
+
+<section id="four">
+<h2>四国老人一比，差在人</h2>
+<p>2025年9月到11月，内阁府调查了日本1267人、美国843人、德国766人、瑞典955人，都是65岁以上。日本对现在生活满意的占79.2%，美国93.6%，德国88.5%，瑞典96.6%。约四成日本人还想继续做有收入的工作；其余三国有七成以上想停。</p>
+<p class="cap">遇事时，同居家人以外能找朋友的比例</p>
+<div class="bars">
+  <div class="row"><span>德国</span><div class="track"><div class="fill" style="width:61%"></div></div><span>61%</span></div>
+  <div class="row"><span>美国</span><div class="track"><div class="fill" style="width:31.1%"></div></div><span>31%</span></div>
+  <div class="row"><span>瑞典</span><div class="track"><div class="fill" style="width:26.2%"></div></div><span>26%</span></div>
+  <div class="row"><span>日本</span><div class="track"><div class="fill jp" style="width:13.7%"></div></div><span>14%</span></div>
+</div>
+<p class="cap">能找邻居的比例。日本同样垫底，12.9%；德国52%。</p>
+<div class="bars">
+  <div class="row"><span>德国</span><div class="track"><div class="fill" style="width:52%"></div></div><span>52%</span></div>
+  <div class="row"><span>瑞典</span><div class="track"><div class="fill" style="width:26%"></div></div><span>26%</span></div>
+  <div class="row"><span>美国</span><div class="track"><div class="fill" style="width:25.3%"></div></div><span>25%</span></div>
+  <div class="row"><span>日本</span><div class="track"><div class="fill jp" style="width:12.9%"></div></div><span>13%</span></div>
+</div>
+<p>日本说身边没有可求助的人的，占15.3%。社会活动参加率40.9%，其中最多的是町内会和地区活动，占22.1%。完全没参加过的占37.6%。</p>
+<p>手机会用，手续不会办。日本65岁以上使用智能手机的占65%，用它做网银或证券交易的只有10%，在网上办行政手续的只有9.2%。瑞典这两项是94.2%和71.4%。他们最想新学的三件事几乎并列：兴趣教养31.8%，健康与介护30.5%，手机和电脑30.4%。</p>
+<p>住房上，房东对老年人租房有抵触的大约七成，近九成的理由是怕人死在屋里、以及死后遗物怎么处理。2025年10月修订的住房安全网法，补的就是这一层。</p>
+</section>
+
+<section id="borrow">
+<h2>对中国老人，能借的是这几件</h2>
+<ol class="lessons">
+  <li>
+    <h3>把“老”拆成两段</h3>
+    <p>65到74岁在日本仍是能出门的十年，75岁以后才进入高发照护。中国不少人五十五岁前后就从单位退出，等于把适应退休的那十年提前交出去。退出全职以后，立刻接上一个还要见面的位置。日本增加的老人就业，是零售、照护和本地服务，不是原来的科长。</p>
+  </li>
+  <li>
+    <h3>年金是生活费，存款是备用，房子是住的</h3>
+    <p>近半数领年金的日本老人家庭，进账只有这一项，小缺口靠存款补。中国城镇职工养老要按实际到手算；城乡居民养老更薄，不能照“年金够吃饭”来过。存款留到75岁以后的照护。自住房尽量早还清，并且是腿脚差了也住得下去的那一套。真要换小房子时，房东已经不愿收老人。</p>
+  </li>
+  <li>
+    <h3>在子女和单位之外再留一层人</h3>
+    <p>日本老人并不穷，满意的也占八成，朋友和邻居却薄到四国垫底。中国家庭更小，子女更可能在别的城市。现在就固定几个能在你换不了灯泡、生一场病时上门的人。町内会那种固定活动，比“退休后去旅游”更能把人留在日程里。</p>
+  </li>
+  <li>
+    <h3>手机上的银行和政务，七十岁以前学会</h3>
+    <p>日本老人会用手机联系家人的已经很多，会自己转账、自己办手续的仍然很少。手续一旦只在网上办，不会用的人等于被隔在外面。健康照护和数字操作，都要在脑子还清楚时学。</p>
+  </li>
+  <li>
+    <h3>按活得更长的那一个人安排钱</h3>
+    <p>日本75岁以上明显女多男少。先走的多半是丈夫。房产、存款和医保写在两个人名下，遗嘱在人还清醒时写好。照护知识夫妻都要懂一点：日本的全天陪护大量落在同样年老的妻子身上，中国子女更少，这层会更早露出来。</p>
+  </li>
+</ol>
+</section>
+
+<section id="limit">
+<h2>有一件借不来</h2>
+<div class="call">
+<p>白皮书里的“大体满意”，站在公共年金、全民医保和已经付清的房子上，而且社会保障给付里六成以上已经花在老人身上。中国农村养老、职工医保断缴、房子卖不掉，都比这更硬。</p>
+</div>
+<p>能借的是他们老了以后露出的形状：前十年还过得去，后十年拼的是照护，以及有没有人上门。借不过来的，是那份年金的厚度。</p>
+</section>
+</main>
+
+<footer><div class="wrap">
+<p>数字据内阁府《高龄社会白皮书》令和8年版（2026）第1章，人口截至2025年10月1日。四国调查为内阁府2025年9–11月《老年人的生活与意识国际比较调查》。原文按章节公布，不合成一册。</p>
+<p><a href="https://www8.cao.go.jp/kourei/whitepaper/w-2026/html/zenbun/index.html">白皮书网页版</a> · <a href="https://www8.cao.go.jp/kourei/whitepaper/w-2026/zenbun/08pdf_index.html">PDF目录</a> · <a href="index.html">返回史料目录</a></p>
+<p>本地副本在 source/koureishakai-hakusho-2026/。</p>
+</div></footer>
+</body>
+</html>
