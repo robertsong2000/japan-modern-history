@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>火光里的笔记 · 昭和二十年三月十日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --night: #161311;
+  --paper: #e4ddd2;
+  --sheet: #f4efe7;
+  --ink: #1b1714;
+  --soot: #5e564e;
+  --ember: #9c341c;
+  --line: #cfc4b6;
+  --slip: #efe4d6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  font-synthesis: none;
+  line-height: 1.85;
+}
+a { color: inherit; }
+
+.night {
+  background: var(--night);
+  color: #f3ece3;
+  padding: 28px 0 36px;
+}
+.night-inner {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 28px;
+  align-items: end;
+}
+.era {
+  margin: 0;
+  writing-mode: vertical-rl;
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  letter-spacing: 0.42em;
+  font-size: 14px;
+  color: #c9a090;
+}
+h1 {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+}
+.sub {
+  margin: 14px 0 0;
+  max-width: 38em;
+  color: #d9d0c6;
+  font-size: 17px;
+}
+.ember-rule {
+  width: 72px;
+  height: 2px;
+  margin: 18px 0 0;
+  background: var(--ember);
+}
+
+.shell {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 196px 1fr;
+  gap: 36px;
+  padding-top: 8px;
+}
+
+.places {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  margin: 22px 0 8px;
+}
+.places div {
+  padding: 12px 10px 14px;
+  border-right: 1px solid var(--line);
+  min-height: 92px;
+}
+.places div:last-child { border-right: 0; }
+.places .who {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--ember);
+}
+.places strong {
+  display: block;
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+.places span {
+  display: block;
+  margin-top: 2px;
+  color: var(--soot);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.places .fire {
+  background: #1b1714;
+  color: #f3ece3;
+}
+.places .fire span { color: #c9a090; }
+.places .fire .who { color: #e07a62; }
+
+nav.dir {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding: 22px 0 48px;
+  background: var(--paper);
+}
+nav.dir p {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: var(--soot);
+}
+nav.dir ol { list-style: none; margin: 0; padding: 0; }
+nav.dir a {
+  display: grid;
+  grid-template-columns: 1.6em 1fr;
+  gap: 6px;
+  padding: 8px 0;
+  text-decoration: none;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+}
+nav.dir a em {
+  font-style: normal;
+  font-family: "Shippori Mincho", serif;
+  color: var(--ember);
+}
+nav.dir a.active { box-shadow: inset 3px 0 0 var(--ember); padding-left: 8px; }
+
+main { padding-bottom: 28px; }
+.lead-note {
+  max-width: 40em;
+  margin: 18px 0 0;
+  color: var(--soot);
+  font-size: 15px;
+}
+
+article {
+  padding: 34px 0 8px;
+  border-bottom: 1px solid var(--line);
+}
+.when {
+  margin: 0;
+  font-family: "Shippori Mincho", serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: var(--ember);
+}
+h2 {
+  margin: 4px 0 0;
+  font-family: "Shippori Mincho", "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 0.06em;
+}
+.where {
+  margin: 6px 0 0;
+  color: var(--soot);
+  font-size: 15px;
+}
+.diary {
+  max-width: 38em;
+  margin: 16px 0 0;
+  padding: 18px 20px 8px;
+  background: var(--slip);
+  border-left: 2px solid var(--ember);
+}
+.diary p {
+  margin: 0 0 1em;
+  font-size: 18px;
+}
+article { scroll-margin-top: 16px; }
+aside {
+  max-width: 38em;
+  margin: 4px 0 0;
+  color: var(--soot);
+  font-size: 15px;
+}
+.src {
+  margin: 10px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--soot);
+}
+
+#thread { border-bottom: 0; }
+#thread h2 { font-size: 28px; }
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 28px;
+  max-width: 44em;
+  margin-top: 8px;
+}
+.cols div { border-top: 1px solid var(--ink); padding-top: 8px; }
+.cols strong { display: block; font-weight: 600; }
+
+footer {
+  grid-column: 1 / -1;
+  border-top: 2px solid var(--ink);
+  color: var(--soot);
+  font-size: 14px;
+  padding: 16px 0 56px;
+}
+footer a { color: var(--ember); }
+
+@media (max-width: 860px) {
+  .night-inner { grid-template-columns: 1fr; gap: 10px; }
+  .era { writing-mode: horizontal-tb; letter-spacing: 0.28em; }
+  .shell { grid-template-columns: 1fr; width: min(100% - 28px, 1080px); }
+  nav.dir { position: static; padding-bottom: 0; }
+  nav.dir ol { display: flex; gap: 0 16px; overflow-x: auto; }
+  nav.dir a { border-top: 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .places { grid-template-columns: 1fr 1fr; }
+  .places div { border-bottom: 1px solid var(--line); }
+  .cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="night">
+  <div class="night-inner">
+    <p class="era">昭和二十年三月</p>
+    <div>
+      <h1>火光里的笔记</h1>
+      <p class="sub">一九四五年三月十日，东京下町被烧掉的那一夜。这里只收当时写下的文字，按人落笔的时间排。清泽洌三日是全文。其余是公开印出的段落，没有见到的句子不补。</p>
+      <div class="ember-rule"></div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <section class="places" aria-label="五个人当时所在的位置">
+    <div><b class="who">西南 · 家毁</b><strong>麻布</strong><span>荷风，偏奇馆</span></div>
+    <div><b class="who">番町</b><strong>九段边</strong><span>百闲，火未烧到</span></div>
+    <div><b class="who">目黑</b><strong>能看报</strong><span>风太郎，只见东天</span></div>
+    <div><b class="who">次日进城</b><strong>新桥银座</strong><span>清泽，看见街在烧</span></div>
+    <div><b class="who">第三日</b><strong>东京站</strong><span>高见，遇见灾民</span></div>
+    <div class="fire"><b class="who">下町 · 无人在此写</b><strong>浅草本所深川</strong><span>火场中心，不在这七则里</span></div>
+  </section>
+
+  <nav class="dir" aria-label="目录">
+    <p>目录</p>
+    <ol>
+      <li><a href="#kafu"><em>一</em>荷风</a></li>
+      <li><a href="#hyakken"><em>二</em>百闲</a></li>
+      <li><a href="#futaro"><em>三</em>风太郎</a></li>
+      <li><a href="#kiyosawa10"><em>四</em>清泽 · 十</a></li>
+      <li><a href="#kiyosawa12"><em>五</em>清泽 · 十二</a></li>
+      <li><a href="#takami"><em>六</em>高见</a></li>
+      <li><a href="#kiyosawa31"><em>七</em>清泽 · 卅一</a></li>
+      <li><a href="#thread"><em>终</em>火场中心</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <p class="lead-note">飞机数以各人当晚写下的为准。百闲听到一百三十架，风太郎写下约一百五十架。到达东京并投弹的是二百七十九架。</p>
+
+    <article id="kafu">
+      <p class="when">一 · 三月九日夜至十日凌晨四时</p>
+      <h2>永井荷风</h2>
+      <p class="where">六十六岁。麻布市兵卫町偏奇馆。火场西南，不是浅草、本所的中心。出门时把日记和手稿提走了。</p>
+      <div class="diary">
+        <p>三月九日。天气快晴。夜半有空袭。次日凌晨四时，我的偏奇馆烧毁。火起初起于长垂坂中段，被西北风一卷，顷刻延烧到市兵卫町二丁目的大街。</p>
+        <p>枕边的窗子映上火光，亮了起来。邻居呼叫的声音不对，我吃了一惊，提起装有日记和草稿的手包，出到院子里。</p>
+        <p>看见谷町一带也起了火。远处北方的天空也映着火光。火星被烈风吹得粉碎，落在院子上。</p>
+      </div>
+      <p class="src">《断肠亭日乘》。这段后来收进《罹灾日录》。公开印出的是这一节，当夜全文更长。</p>
+    </article>
+
+    <article id="hyakken">
+      <p class="when">二 · 三月十日</p>
+      <h2>内田百闲</h2>
+      <p class="where">五十五岁。麹町番町，今千代田区五番町。这夜房子还在。五月二十五日才被烧出来。</p>
+      <div class="diary">
+        <p>东边、想来是神田的天空立刻起了火。敌机一架一架来，听说到了一百三十架。往常高度是八千米，今夜是三千、两千，其中还有降到一千米的。火越来越大，也越来越近，街上亮得如同白昼。</p>
+        <p>八叠间天花板上的电灯关掉，只留一盏两烛光的小台灯。时不时进屋看那光，觉得它怪得发青。该是眼睛在外面红火光里看习惯了的缘故。</p>
+        <p>被烧出来的人在门前排成一列走过。火光把天空照亮，脸都看得清楚。大家都若无其事地说着话走过去，声音也亮。东京人未必个个是江户子，可这地方的空气，是不是让人到了这种时候还能这么轻快。有人笑着说：就身上这一套了。</p>
+        <p>两点三十五分，空袭警报终于解除。三点二十分，警戒警报也解除了。火没有烧到这里。进了防空洞。点着蜡烛，夜里打了个盹，重新躺上床已经是早上六点。</p>
+        <p>来回路上看见的焦土，和上次空袭之后的神田不能比，我想已经超过大地震时的大火。以前也想过，自己的家早晚也许会被烧。这一次我认定，近日内一定会被烧。内人也在做这个准备。不只是火灾，炸弹什么时候把人掀掉也不知道。可若是先把死认定了，万事就没了次序。生死听天由命。只要还活着，就先认定自己一定会被烧出来。</p>
+      </div>
+      <p class="src">《东京烧尽》。按公开摘录连成十日这一天。摘录之间原日记还有句子，这里空开的地方没有用别的话填上。</p>
+    </article>
+
+    <article id="futaro">
+      <p class="when">三 · 三月十日</p>
+      <h2>山田风太郎</h2>
+      <p class="where">二十三岁。东京医学专门学校学生，住目黑。一百五十架是他当晚写下的数目。</p>
+      <div class="diary">
+        <p>从午夜零时左右到三时左右，B-29 约一百五十架，夜间轰炸。东方的天空烧得像血，凄惨得说不出来。</p>
+        <p>轰炸在下町，目黑这边却亮到能看报纸。</p>
+      </div>
+      <aside>读过《战中派不战日记》的人还记着同一天早上的事：他赶到新宿的学校，胎生学、组织学、生物学的考试仍照旧举行。那是读者的复述，不是上面这两句原文。</aside>
+      <p class="src">《战中派不战日记》。作者二〇〇一年去世，这里只译公开引用的两句。</p>
+    </article>
+
+    <article id="kiyosawa10">
+      <p class="when">四 · 三月十日 · 全文</p>
+      <h2>清泽洌</h2>
+      <p class="where">外交评论家，五十五岁。警报把他叫醒。后来为了开会，进了市中心。</p>
+      <div class="diary">
+        <p>警报把我惊醒。炮声震耳。B-29 低空飞，探照灯里现出银色的翼，悠悠地过去。高射炮打得很猛，一发也不中。北方的天空忽然变成深红。风里有燃烧的气味。不知是哪里，伤亡想必很多，心里发痛。</p>
+        <p>为出席国民学术协会，进了市中心。新桥站附近左右都在烧。银座从三丁目烧到四丁目。听说浅草、本所、深川几乎烧光。而且因为烈风，有的人跳进水里淹死，有的人进了防空壕被烟呛死，尸体在路上滚着。惨状看不下去。听说吉原也烧掉了。</p>
+        <p>小矶首相对灾民讲必胜的信念，谴责敌人盲目轰炸。宫内省只为马寮被烧一事惶恐谢罪，国民对此反倒要生出反感。</p>
+        <p>今天早报上又任命了两名陆军大将。万骨已枯，二将功成。他们简直旁若无人。</p>
+      </div>
+      <p class="src">《暗黑日记》。青空文库，底本东洋经济新报社一九五四年普及版。作者一九四五年五月去世，这一日可以整段译出。</p>
+    </article>
+
+    <article id="kiyosawa12">
+      <p class="when">五 · 三月十二日 · 全文</p>
+      <h2>清泽洌</h2>
+      <p class="where">到《东洋经济新报》去。记下的是议会里当时肯说的数字，不是事后的统计。</p>
+      <div class="diary">
+        <p>到《东洋经济新报》去。遇见谁，谁都说：「政府到底打算怎么办。」语气里很激动。这也难怪。内务大臣大达茂雄在议会报告：东京空袭，房屋二十三万余户，死者三万二千人；下落不明，就是不明。议员问：「下落不明是多少人？」他答：「不明，所以才叫不明。」听说议员骂了句：「混蛋！」</p>
+      </div>
+      <aside>这三万二千，是十二日当局报告的数字。战后调查里，这一夜的死亡在九万到十万以上。十日夜里他本人还没有这个议会数字，只写下路上所见和传闻。</aside>
+      <p class="src">《暗黑日记》，同前。</p>
+    </article>
+
+    <article id="takami">
+      <p class="when">六 · 三月十二日</p>
+      <h2>高见顺</h2>
+      <p class="where">住镰仓，这天进京。看见的是逃出来的人，不是十日凌晨的火。</p>
+      <div class="diary">
+        <p>要去浅草，在东京站换乘山手线，走到月台廊道上——是一群灾民。样子凄惨得像乞丐，我屏住了气。男的女的脸色都青，上面还有烧伤。即便没有烧伤，鼻子一带也被烟熏得漆黑，眼睛红肿溃烂。有人眉毛烧掉了。孩子裹在湿透的小棉袍里，防空头巾的尖烧焦了。穿着足袋走路的很多，也有光脚的。手里提着破烂。大概什么也没带出来。没有一个人带着完好的东西。</p>
+        <p>一对兄妹蹲在角落里，失神地盯着自己的脚边，一动不动。父母怎么样了。是不是饿得走不动了。我的眼睛热了。</p>
+        <p>朝浅草走。前些日子去看秋山君的家，走过的街、看见的房子，已经全部烧掉。全部——从站前望出去，目力所及，全部化为焦土。厉害。厉害得说不出。超出想象。</p>
+      </div>
+      <p class="src">《败战日记》。据中公文库本约第一百页的公开摘录译出。</p>
+    </article>
+
+    <article id="kiyosawa31">
+      <p class="when">七 · 三月三十一日 · 全文</p>
+      <h2>清泽洌</h2>
+      <p class="where">空袭过去三周。他写的是人怎么解释自己为什么会死。</p>
+      <div class="diary">
+        <p>给《东方经济学家》写了一篇，把空袭的惨状写给美国人看，用以警告。国民的无知超出想象。有人觉得浅草观音在地震里也没烧掉，灵验，这次也不会烧，就往观音那里赶。这是浅草区死得特别多的一个原因。另外，据今天《朝日新闻》的投稿栏，战灾地里一种看法已经很普遍：吃了薤头就不会被炸弹打中，或者只有居心不好的人才会遭灾。</p>
+      </div>
+      <p class="src">《暗黑日记》，同前。《东方经济学家》即 Oriental Economist。</p>
+    </article>
+
+    <article id="thread">
+      <p class="when">终</p>
+      <h2>这七则看不见的地方</h2>
+      <div class="cols">
+        <div><strong>荷风在麻布。</strong>自己的房子凌晨四时烧掉，人提着日记出来了。</div>
+        <div><strong>百闲在番町。</strong>火光照得能看清脸上的人。家还在。</div>
+        <div><strong>风太郎在目黑。</strong>亮到能看报纸。他没有走进下町。</div>
+        <div><strong>清泽次日进城。</strong>新桥、银座在烧。浅草的死状是听来的。</div>
+        <div><strong>高见第三日在东京站。</strong>灾民已经站在月台上。</div>
+        <div><strong>浅草、本所、深川。</strong>当夜没有人在火里把日记写下来。</div>
+      </div>
+      <aside>火场里面的记录，是早乙女胜元一九七一年的《东京大空袭——昭和二十年三月十日的记录》。他当时十二岁，住下町。书是二十五年后写的，夹着记忆和后来的采访，不是三月十日的日记。岩波公开的摘录里，母亲跑着扭过头说：「火不会烧上来吗？」防火壕、隅田川的桥、河里的筏子和船，都没能躲开。全书仍有版权，这一页不把采访录译进去。</aside>
+    </article>
+  </main>
+
+  <footer>
+    <p>译文据公开文本。《暗黑日记》全文见青空文库。荷风这段见日本文学指南所引《断肠亭日乘》。百闲据《东京烧尽》的公开摘录。风太郎两句见西川清史文中所引《战中派不战日记》。高见据《败战日记》约第一百页的公开摘录。</p>
+    <p>这一页没有配烧毁现场的照片。石川光阳那批底片在警视厅系统的记录和后来的写真集里，不放在日记译文旁边。</p>
+  </footer>
+</div>
+<script>
+const links = [...document.querySelectorAll("nav.dir a")];
+const sections = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+const byId = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    links.forEach((a) => a.classList.remove("active"));
+    const hit = byId.get(entry.target.id);
+    if (hit) hit.classList.add("active");
+  });
+}, { rootMargin: "-20% 0px -60% 0px", threshold: 0 });
+sections.forEach((s) => io.observe(s));
+</script>
+</body>
+</html>
